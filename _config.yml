@@ -43,6 +43,9 @@ highlight:
   auto_detect: false
   tab_replace:
 
+# avatar 头像
+avatar: /uploads/avatar.jpg
+
 # Category & Tag
 default_category: uncategorized
 category_map:
