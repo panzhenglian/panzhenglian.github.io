@@ -234,7 +234,7 @@
               
                 
                 <a class="post-title-link" href="/2016/05/16/linux-tar-commond/" itemprop="url">
-                  linux-tar-commond
+                  tar 命令详解
                 </a>
               
             
@@ -277,12 +277,20 @@
       
         
           
-            <pre><code>.tar
-</code></pre><p>　　解包：tar xvf FileName.tar<br>　　打包：tar cvf FileName.tar DirName<br>　　（注：tar是打包，不是压缩！）<br>　　———————————————<br>　　.gz<br>　　解压1：gunzip FileName.gz<br>　　解压2：gzip -d FileName.gz<br>　　压缩：gzip FileName<br>　　.tar.gz 和 .tgz<br>　　解压：tar zxvf FileName.tar.gz<br>　　压缩：tar zcvf FileName.tar.gz DirName<br>　　———————————————<br>　　.bz2<br>　　解压1：bzip2 -d FileName.bz2<br>　　解压2：bunzip2 FileName.bz2<br>　　压缩： bzip2 -z FileName<br>　　.tar.bz2<br>　　解压：tar jxvf FileName.tar.bz2        或tar –bzip xvf FileName.tar.bz2<br>　　压缩：tar jcvf FileName.tar.bz2 DirName<br>　　———————————————<br>　　.bz<br>　　解压1：bzip2 -d FileName.bz<br>　　解压2：bunzip2 FileName.bz<br>　　压缩：未知<br>　　.tar.bz<br>　　解压：tar jxvf FileName.tar.bz<br>　　压缩：未知<br>　　———————————————<br>　　.Z<br>　　解压：uncompress FileName.Z<br>　　压缩：compress FileName<br>　　.tar.Z<br>　　解压：tar Zxvf FileName.tar.Z<br>　　压缩：tar Zcvf FileName.tar.Z DirName<br>　　———————————————<br>　　.zip<br>　　解压：unzip FileName.zip<br>　　压缩：zip FileName.zip DirName<br>　　压缩一个目录使用 -r 参数，-r 递归。例： $ zip -r FileName.zip DirName<br>　　———————————————<br>　　.rar<br>　　解压：rar x FileName.rar<br>　　压缩：rar a FileName.rar DirName<br>　　<br>　　rar请到：<a href="http://www.rarsoft.com/download.htm" target="_blank" rel="external">http://www.rarsoft.com/download.htm</a> 下载！<br>　　解压后请将rar_static拷贝到/usr/bin目录（其他由$PATH环境变量指定的目录也可以）：<br>　　[root@www2 tmp]# cp rar_static /usr/bin/rar<br>　　———————————————<br>　　.lha<br>　　解压：lha -e FileName.lha<br>　　压缩：lha -a FileName.lha FileName<br>　　<br>　　lha请到：<a href="http://www.infor.kanazawa-it.ac.jp/~ishii/lhaunix/下载！" target="_blank" rel="external">http://www.infor.kanazawa-it.ac.jp/~ishii/lhaunix/下载！</a><br>　　&gt;解压后请将lha拷贝到/usr/bin目录（其他由$PATH环境变量指定的目录也可以）：<br>　　[root@www2 tmp]# cp lha /usr/bin/<br>　　———————————————<br>　　.rpm<br>　　解包：rpm2cpio FileName.rpm | cpio -div<br>　　———————————————<br>　　.deb<br>　　解包：ar p FileName.deb data.tar.gz | tar zxf -<br>　　———————————————<br>　　.tar .tgz .tar.gz .tar.Z .tar.bz .tar.bz2 .zip .cpio .rpm .deb .slp .arj .rar .ace .lha .lzh .lzx .lzs .arc .sda .sfx .lnx .zoo .cab .kar .cpt .pit .sit .sea<br>　　解压：sEx x FileName.<em><br>　　压缩：sEx a FileName.</em> FileName<br>　　<br>　　sEx只是调用相关程序，本身并无压缩、解压功能，请注意！<br>　　sEx请到： <a href="http://sourceforge.net/projects/sex下载！" target="_blank" rel="external">http://sourceforge.net/projects/sex下载！</a><br>　　解压后请将sEx拷贝到/usr/bin目录（其他由$PATH环境变量指定的目录也可以）：<br>　　[root@www2 tmp]# cp sEx /usr/bin/</p>
-<p>　Linux下常见文件解压方法及命令<br>　　系统·System<br>　　<br>　　1.以.a为扩展名的文件:<br>　　#tar xv file.a<br>　　2.以.z为扩展名的文件:<br>　　#uncompress file.Z<br>　　3.以.gz为扩展名的文件:<br>　　#gunzip file.gz<br>　　4.以.bz2为扩展名的文件:<br>　　#bunzip2 file.bz2<br>　　5.以.tar.Z为扩展名的文件:<br>　　#tar xvZf file.tar.Z<br>　　或 #compress -dc file.tar.Z | tar xvf<br>　　6.以.tar.gz/.tgz为扩展名的文件:<br>　　#tar xvzf file.tar.gz<br>　　或 gzip -dc file.tar.gz | tar xvf -<br>　　7.以.tar.bz2为扩展名的文件:<br>　　#tar xvIf file.tar.bz2<br>　　或 bzip2 -dc file.tar.bz2 | xvf -<br>　　8.以.cpio.gz/.cgz为扩展名的文件:<br>　　#gzip -dc file.cgz | cpio -div<br>　　9.以.cpio/cpio为扩展名的文件:<br>　　#cpio -div file.cpio<br>　　或cpio -divc file.cpio<br>　　10.以.rpm为扩展名的文件安装:<br>　　#rpm -i file.rpm<br>　　11.以.rpm为扩展名的文件解压缩：<br>　　#rpm2cpio file.rpm | cpio -div<br>　　12.以.deb为扩展名的文件安装：<br>　　#dpkg -i file.deb<br>　　13.以.deb为扩展名的文件解压缩:<br>　　#dpkg-deb -fsys-tarfile file.deb | tar xvf - ar p<br>　　file.deb data.tar.gz | tar xvzf -<br>　　14.以.zip为扩展名的文件:<br>　　#unzip file.zip<br>　　在linux下解压Winzip格式的文件<br>　　要是装了jdk的话，可以用jar命令；还可以使用unzip命令。<br>　　直接解压.tar.gz文件<br>　　xxxx.tar.gz文件使用tar带zxvf参数，可以一次解压开。XXXX为文件名。 例如：<br>　　$tar zxvf xxxx.tar.gz 各种压缩文件的解压（安装方法）
-　　</p>
-<p>　　<br>　　文件扩展名 解压（安装方法）<br>　　<br>　　<br>　　.a ar xv file.a<br>　　.Z uncompress file.Z<br>　　.gz gunzip file.gz<br>　　.bz2 bunzip2 file.bz2<br>　　.tar.Z tar xvZf file.tar.Z<br>　　compress -dc file.tar.Z | tar xvf -<br>　　.tar.gz/.tgz tar xvzf file.tar.gz<br>　　gzip -dc file.tar.gz | tar xvf -<br>　　.tar.bz2 tar xvIf file.tar.bz2<br>　　bzip2 -dc file.tar.bz2 | xvf -<br>　　.cpio.gz/.cgz gzip -dc file.cgz | cpio -div<br>　　.cpio/cpio cpio -div file.cpio<br>　　cpio -divc file.cpio<br>　　.rpm/install rpm -i file.rpm<br>　　.rpm/extract rpm2cpio file.rpm | cpio -div<br>　　.deb/install dpkg -i file.deb<br>　　.deb/exrtact dpkg-deb -fsys-tarfile file.deb | tar xvf -<br>　　ar p file.deb data.tar.gz | tar xvzf -<br>　　.zip unzip file.zip<br>　　<br>　　<br>　　bzip2 -d myfile.tar.bz2 | tar xvf<br>　　<br>　　<br>　　tar xvfz myfile.tar.bz2<br>　　<br>　　<br>　　x 是解压<br>　　v 是复杂输出<br>　　f 是指定文件<br>　　z gz格式<br>　　<br>　　<br>　　gzip<br>　　gzip[选项]要压缩（或解压缩）的文件名<br>　　-c将输出写到标准输出上，并保留原有文件。<br>　　-d将压缩文件压缩。<br>　　-l对每个压缩文件，显示下列字段：压缩文件的大小，未压缩文件的大小、压缩比、未压缩文件的名字<br>　　-r递归式地查找指定目录并压缩或压缩其中的所有文件。<br>　　-t测试压缩文件是正完整。<br>　　-v对每一个压缩和解压缩的文件，显示其文件名和压缩比。<br>　　-num-用指定的数字调整压缩的速度。<br>　　举例：<br>　　把/usr目录并包括它的子目录在内的全部文件做一备份，备份文件名为usr.tar<br>　　tar cvf usr.tar /home<br>　　把/usr 目录并包括它的子目录在内的全部文件做一备份并进行压缩，备份文件名是usr.tar.gz<br>　　tar czvf usr.tar.gz /usr<br>　　压缩一组文件，文件的后缀为tar.gz<br>　　#tar cvf back.tar /back/<br>　　#gzip -q back.tar<br>　　or<br>　　#tar cvfz back.tar.gz /back/<br>　　释放一个后缀为tar.gz的文件。<br>　　#tar zxvf back.tar.gz<br>　　#gzip back.tar.gz<br>　　#tar xvf back.tar</p>
-
+            <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-c: 建立压缩档案  </span><br><span class="line">-x：解压  </span><br><span class="line">-t：查看内容  </span><br><span class="line">-r：向压缩归档文件末尾追加文件  </span><br><span class="line">-u：更新原压缩包中的文件</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这五个是独立的命令，压缩解压都要用到其中一个，可以和别的命令连用但只能用其中一个.<br>下面的参数是根据需要在压缩或解压档案时可选的。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-z：有gzip属性的</span><br><span class="line">-j：有bz2属性的</span><br><span class="line">-Z：有compress属性的</span><br><span class="line">-v：显示所有过程</span><br><span class="line">-O：将文件解开到标准输出</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参数-f是必须的</p>
+</blockquote>
+<p><code>-f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接档案名。</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tar -cf all.tar *.jpg 将所有.jpg的文件打成一个名为all.tar的包。-c是表示产生新的包，<span class="_">-f</span>指定包的文件名。</span><br><span class="line">tar -rf all.tar *.gif 将所有.gif的文件增加到all.tar的包里面去。-r是表示增加文件的意思。 </span><br><span class="line">tar -uf all.tar logo.gif 更新原来tar包all.tar中logo.gif文件，-u是表示更新文件的意思。 </span><br><span class="line">tar -tf all.tar 这条命令是列出all.tar包中所有文件，-t是列出文件的意思 </span><br><span class="line">tar -xf all.tar 这条命令是解出all.tar包中所有文件，-x是解开的意思</span><br></pre></td></tr></table></figure>
+<h3 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -tf aaa.tar.gz   在不解压的情况下查看压缩包的内容</span><br></pre></td></tr></table></figure>
+<h3 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tar –cvf jpg.tar *.jpg 将目录里所有jpg文件打包成tar.jpg  </span><br><span class="line">tar –czf jpg.tar.gz *.jpg 将目录里所有jpg文件打包成jpg.tar后，并且将其用gzip压缩，生成一个gzip压缩过的包，命名为jpg.tar.gz  </span><br><span class="line">tar –cjf jpg.tar.bz2 *.jpg //将目录里所有jpg文件打包成jpg.tar后，并且将其用bzip2压缩，生成一个bzip2压缩过的包，命名为jpg.tar.bz2</span><br><span class="line">tar –cZf jpg.tar.Z *.jpg   //将目录里所有jpg文件打包成jpg.tar后，并且将其用compress压缩，生成一个umcompress压缩过的包，命名为jpg.tar.Z</span><br></pre></td></tr></table></figure>
+<h3 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar –xvf file.tar //解压 tar包</span><br><span class="line">tar -xzvf file.tar.gz //解压tar.gz</span><br><span class="line">tar -xjvf file.tar.bz2   //解压 tar.bz2tar –xZvf file.tar.Z //解压tar.Z</span><br></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">*.tar 用 tar –xvf 解压</span><br><span class="line">*.gz 用 gzip <span class="_">-d</span>或者gunzip 解压</span><br><span class="line">*.tar.gz和*.tgz 用 tar –xzf 解压</span><br><span class="line">*.bz2 用 bzip2 <span class="_">-d</span>或者用bunzip2 解压</span><br><span class="line">*.tar.bz2用tar –xjf 解压</span><br><span class="line">*.Z 用 uncompress 解压</span><br><span class="line">*.tar.Z 用tar –xZf 解压</span><br></pre></td></tr></table></figure>
           
         
       
@@ -662,6 +670,26 @@
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/panzhenglian" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/panzhenglian" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
           
         </div>
 
