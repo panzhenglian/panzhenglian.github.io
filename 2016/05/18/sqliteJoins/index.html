@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android," />
+  <meta name="keywords" content="Android,sqlite3," />
 
 
 
@@ -84,16 +84,37 @@
 
 
 
-<meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455/** * @param address 地址 * @return 根据地址，返回该地址ping速度，如果不可用，返回-1f */private float getSpeed(String addr">
+<meta name="description" content="##Sqlite Joins
+SQLite 的 Joins 子句用于结合两个或多个数据库中表的记录。JOIN 是一种通过共同值来结合两个表中字段的手段.SQL 定义了三种主要类型的连接:
+
+交叉连接 - CROSS JOIN
+内连接 - INNER JOIN
+外连接 - OUTER JOIN
+
+假设我们有两张表table1:12345678910ID          wid         t">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android ping 命令获取连接速度">
-<meta property="og:url" content="http://yoursite.com/2016/05/10/初始化文件/index.html">
+<meta property="og:title" content="sqlite joins 字句结合查询">
+<meta property="og:url" content="http://yoursite.com/2016/05/18/sqliteJoins/index.html">
 <meta property="og:site_name" content="平凡的人生">
-<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455/** * @param address 地址 * @return 根据地址，返回该地址ping速度，如果不可用，返回-1f */private float getSpeed(String addr">
-<meta property="og:updated_time" content="2016-05-15T16:41:40.000Z">
+<meta property="og:description" content="##Sqlite Joins
+SQLite 的 Joins 子句用于结合两个或多个数据库中表的记录。JOIN 是一种通过共同值来结合两个表中字段的手段.SQL 定义了三种主要类型的连接:
+
+交叉连接 - CROSS JOIN
+内连接 - INNER JOIN
+外连接 - OUTER JOIN
+
+假设我们有两张表table1:12345678910ID          wid         t">
+<meta property="og:updated_time" content="2016-05-17T17:02:23.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android ping 命令获取连接速度">
-<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455/** * @param address 地址 * @return 根据地址，返回该地址ping速度，如果不可用，返回-1f */private float getSpeed(String addr">
+<meta name="twitter:title" content="sqlite joins 字句结合查询">
+<meta name="twitter:description" content="##Sqlite Joins
+SQLite 的 Joins 子句用于结合两个或多个数据库中表的记录。JOIN 是一种通过共同值来结合两个表中字段的手段.SQL 定义了三种主要类型的连接:
+
+交叉连接 - CROSS JOIN
+内连接 - INNER JOIN
+外连接 - OUTER JOIN
+
+假设我们有两张表table1:12345678910ID          wid         t">
 
 
 
@@ -111,7 +132,7 @@
   };
 </script>
 
-  <title> Android ping 命令获取连接速度 | 平凡的人生 </title>
+  <title> sqlite joins 字句结合查询 | 平凡的人生 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -231,7 +252,7 @@
             
             
               
-                Android ping 命令获取连接速度
+                sqlite joins 字句结合查询
               
             
           </h1>
@@ -243,8 +264,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-10T00:28:14+08:00" content="2016-05-10">
-              2016-05-10
+            <time itemprop="dateCreated" datetime="2016-05-18T00:19:50+08:00" content="2016-05-18">
+              2016-05-18
             </time>
           </span>
 
@@ -271,7 +292,17 @@
       
 
       
-        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * <span class="doctag">@param</span> address 地址</span><br><span class="line"> * <span class="doctag">@return</span> 根据地址，返回该地址ping速度，如果不可用，返回-1f</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">float</span> <span class="title">getSpeed</span><span class="params">(String address)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    address = address.replace(<span class="string">"http://"</span>, <span class="string">""</span>);</span><br><span class="line">    address = address.replace(<span class="string">"https://"</span>, <span class="string">""</span>);</span><br><span class="line">    address = address.replace(<span class="string">"/"</span>, <span class="string">""</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">float</span> retVal = -<span class="number">1f</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        Runtime runtime = Runtime.getRuntime();</span><br><span class="line"></span><br><span class="line">        Process process = runtime.exec(<span class="string">"/system/bin/ping -c "</span> + <span class="number">5</span> + <span class="string">" "</span> + address);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> status = process.waitFor();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (status != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="comment">//ping 失败</span></span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1f</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        BufferedReader buf = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(process.getInputStream()));</span><br><span class="line"></span><br><span class="line">        String str;</span><br><span class="line">        <span class="comment">//读出所有信息并显示</span></span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> ((str = buf.readLine()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">            sb.append(str);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        String result = sb.toString();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> lastIndexOf = result.lastIndexOf(<span class="string">'/'</span>);</span><br><span class="line">        <span class="keyword">if</span> (lastIndexOf != -<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                result = result.substring(lastIndexOf + <span class="number">1</span>);</span><br><span class="line">                result = result.replaceAll(<span class="string">"ms"</span>, <span class="string">""</span>);</span><br><span class="line">                result = result.replaceAll(<span class="string">" "</span>, <span class="string">""</span>);</span><br><span class="line"></span><br><span class="line">                retVal = Float.valueOf(result);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        buf.close();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> retVal;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <hr>
+<p>##Sqlite Joins</p>
+<p>SQLite 的 Joins 子句用于结合两个或多个数据库中表的记录。JOIN 是一种通过共同值来结合两个表中字段的手段.<br>SQL 定义了三种主要类型的连接:</p>
+<ul>
+<li>交叉连接 - CROSS JOIN</li>
+<li>内连接 - INNER JOIN</li>
+<li>外连接 - OUTER JOIN</li>
+</ul>
+<p>假设我们有两张表<br>table1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ID          wid         type</span><br><span class="line">----------  ----------  ----------</span><br><span class="line">1           11           n</span><br><span class="line">2           11           adj</span><br><span class="line">3           12           n</span><br><span class="line">4           12           adj</span><br><span class="line">5           13           adj</span><br><span class="line">6           13           n</span><br><span class="line">7           14           n</span><br><span class="line">8           14           n</span><br></pre></td></tr></table></figure></p>
+<p>table2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">id          emid        title	    </span><br><span class="line">----------  ----------  ----------  </span><br><span class="line">1           1           the process of becoming acid ...	 </span><br><span class="line">2           1           being or containing an acid;...	 </span><br><span class="line">3           1           being sour to the taste	 </span><br><span class="line">4           2           any of various water-soluble...	 </span><br><span class="line">5           2           street name for lysergic acid  </span><br><span class="line">6           3           harsh or corrosive in tone	 </span><br><span class="line">7           3           being sour to the taste	 </span><br><span class="line">8           3           having the characteristics...</span><br><span class="line">9           4           having no hue</span><br><span class="line">10          4           n</span><br></pre></td></tr></table></figure></p>
+<p>现在的需求是：查询table1中 wid＝12 的所有数据，并且获取所有 table1.id ＝ table2.emid 的数据；<br>sqlite语句：<br><figure class="highlight sql"><figcaption><span>* from table1 </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -295,6 +326,8 @@
           
             <a href="/tags/Android/" rel="tag">#Android</a>
           
+            <a href="/tags/sqlite3/" rel="tag">#sqlite3</a>
+          
         </div>
       
 
@@ -302,16 +335,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/10/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2016/05/16/linux-tar-commond/" rel="next" title="tar 命令详解">
+                <i class="fa fa-chevron-left"></i> tar 命令详解
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/05/10/角落标签/" rel="prev" title="Android  角落标签">
-                Android  角落标签 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/05/18/CURL常用命令/" rel="prev" title="CURL常用命令">
+                CURL常用命令 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
