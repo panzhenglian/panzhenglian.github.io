@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -84,16 +84,31 @@
 
 
 
-<meta name="description" content="/** * @param address 地址 * @return 根据地址，返回该地址ping速度，如果不可用，返回-1f */private float getSpeed(String address) &amp;#123;    address = address.replace(&quot;http://&quot;, &quot;&quot;);    address = address.replace(&quot;https://&quot;, &quot;&quot;)">
+<meta name="description" content="安装Debian/Ubuntu:apt-get install python-pippip install shadowsocks
+CentOS:yum install python-setuptools &amp;amp;&amp;amp; easy_install pippip install shadowsocks
+
+easy_install貌似也可以装shadowsocks，但笔者装完之后未成功连接
+
+s">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android ping 命令获取连接速度">
-<meta property="og:url" content="http://yoursite.com/2016/05/10/初始化文件/index.html">
+<meta property="og:title" content="搭建shadowsocks服务器">
+<meta property="og:url" content="http://yoursite.com/2016/05/28/shadowsocks服务器/index.html">
 <meta property="og:site_name" content="平凡的人生">
-<meta property="og:description" content="/** * @param address 地址 * @return 根据地址，返回该地址ping速度，如果不可用，返回-1f */private float getSpeed(String address) &amp;#123;    address = address.replace(&quot;http://&quot;, &quot;&quot;);    address = address.replace(&quot;https://&quot;, &quot;&quot;)">
-<meta property="og:updated_time" content="2016-05-15T16:41:40.000Z">
+<meta property="og:description" content="安装Debian/Ubuntu:apt-get install python-pippip install shadowsocks
+CentOS:yum install python-setuptools &amp;amp;&amp;amp; easy_install pippip install shadowsocks
+
+easy_install貌似也可以装shadowsocks，但笔者装完之后未成功连接
+
+s">
+<meta property="og:updated_time" content="2016-05-28T02:56:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android ping 命令获取连接速度">
-<meta name="twitter:description" content="/** * @param address 地址 * @return 根据地址，返回该地址ping速度，如果不可用，返回-1f */private float getSpeed(String address) &amp;#123;    address = address.replace(&quot;http://&quot;, &quot;&quot;);    address = address.replace(&quot;https://&quot;, &quot;&quot;)">
+<meta name="twitter:title" content="搭建shadowsocks服务器">
+<meta name="twitter:description" content="安装Debian/Ubuntu:apt-get install python-pippip install shadowsocks
+CentOS:yum install python-setuptools &amp;amp;&amp;amp; easy_install pippip install shadowsocks
+
+easy_install貌似也可以装shadowsocks，但笔者装完之后未成功连接
+
+s">
 
 
 
@@ -111,7 +126,7 @@
   };
 </script>
 
-  <title> Android ping 命令获取连接速度 | 平凡的人生 </title>
+  <title> 搭建shadowsocks服务器 | 平凡的人生 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -231,7 +246,7 @@
             
             
               
-                Android ping 命令获取连接速度
+                搭建shadowsocks服务器
               
             
           </h1>
@@ -243,8 +258,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-10T00:28:14+08:00" content="2016-05-10">
-              2016-05-10
+            <time itemprop="dateCreated" datetime="2016-05-28T02:16:08+08:00" content="2016-05-28">
+              2016-05-28
             </time>
           </span>
 
@@ -271,7 +286,16 @@
       
 
       
-        <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * <span class="doctag">@param</span> address 地址</span><br><span class="line"> * <span class="doctag">@return</span> 根据地址，返回该地址ping速度，如果不可用，返回-1f</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">float</span> <span class="title">getSpeed</span><span class="params">(String address)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    address = address.replace(<span class="string">"http://"</span>, <span class="string">""</span>);</span><br><span class="line">    address = address.replace(<span class="string">"https://"</span>, <span class="string">""</span>);</span><br><span class="line">    address = address.replace(<span class="string">"/"</span>, <span class="string">""</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">float</span> retVal = -<span class="number">1f</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        Runtime runtime = Runtime.getRuntime();</span><br><span class="line"></span><br><span class="line">        Process process = runtime.exec(<span class="string">"/system/bin/ping -c "</span> + <span class="number">5</span> + <span class="string">" "</span> + address);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> status = process.waitFor();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (status != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="comment">//ping 失败</span></span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1f</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        BufferedReader buf = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(process.getInputStream()));</span><br><span class="line"></span><br><span class="line">        String str;</span><br><span class="line">        <span class="comment">//读出所有信息并显示</span></span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> ((str = buf.readLine()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">            sb.append(str);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        String result = sb.toString();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> lastIndexOf = result.lastIndexOf(<span class="string">'/'</span>);</span><br><span class="line">        <span class="keyword">if</span> (lastIndexOf != -<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                result = result.substring(lastIndexOf + <span class="number">1</span>);</span><br><span class="line">                result = result.replaceAll(<span class="string">"ms"</span>, <span class="string">""</span>);</span><br><span class="line">                result = result.replaceAll(<span class="string">" "</span>, <span class="string">""</span>);</span><br><span class="line"></span><br><span class="line">                retVal = Float.valueOf(result);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        buf.close();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> retVal;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>安装<br>Debian/Ubuntu:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">apt-get install python-pip</span><br><span class="line">pip install shadowsocks</span><br></pre></td></tr></table></figure></p>
+<p>CentOS:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum install python-setuptools &amp;&amp; easy_install pip</span><br><span class="line">pip install shadowsocks</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>easy_install貌似也可以装shadowsocks，但笔者装完之后未成功连接</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo easy_install shadowsocks</span><br></pre></td></tr></table></figure>
+<p>用vi新建一个配置文件：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vi /etc/shadowsocks.json</span><br></pre></td></tr></table></figure></p>
+<p>然后输入如下内容：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123; </span><br><span class="line">   &quot;server&quot;:&quot;server_ip&quot;, </span><br><span class="line">   &quot;server_port”:12342, </span><br><span class="line">   &quot;local_address&quot;: &quot;127.0.0.1&quot;, </span><br><span class="line">   &quot;local_port&quot;:1080, </span><br><span class="line">   &quot;password”:”password”,</span><br><span class="line">   &quot;timeout&quot;:300, </span><br><span class="line">   &quot;method”:”rc4-md5”, </span><br><span class="line">   &quot;fast_open&quot;: false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>保存退出。</p>
+<p>后台启动和停止shadowsocks服务器：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssserver -c /etc/shadowsocks.json -d start</span><br><span class="line">ssserver -c /etc/shadowsocks.json -d stop</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -291,27 +315,21 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Android/" rel="tag">#Android</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/10/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2016/05/22/centos7mysql/" rel="next" title="centos7 mysql数据库安装和配置(转载)">
+                <i class="fa fa-chevron-left"></i> centos7 mysql数据库安装和配置(转载)
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/05/10/角落标签/" rel="prev" title="Android  角落标签">
-                Android  角落标签 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/05/28/my-centos-application/" rel="prev" title="centos个人应用清单">
+                centos个人应用清单 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

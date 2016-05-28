@@ -91,7 +91,7 @@ SQLite 的 Joins 子句用于结合两个或多个数据库中表的记录。JOI
 内连接 - INNER JOIN
 外连接 - OUTER JOIN
 
-假设我们有两张表table1:12345678910ID          wid         t">
+假设我们有两张表table1:ID          wid         type--------">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sqlite joins 子句结合查询">
 <meta property="og:url" content="http://yoursite.com/2016/05/18/sqliteJoins/index.html">
@@ -103,7 +103,7 @@ SQLite 的 Joins 子句用于结合两个或多个数据库中表的记录。JOI
 内连接 - INNER JOIN
 外连接 - OUTER JOIN
 
-假设我们有两张表table1:12345678910ID          wid         t">
+假设我们有两张表table1:ID          wid         type--------">
 <meta property="og:updated_time" content="2016-05-18T16:33:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sqlite joins 子句结合查询">
@@ -114,7 +114,7 @@ SQLite 的 Joins 子句用于结合两个或多个数据库中表的记录。JOI
 内连接 - INNER JOIN
 外连接 - OUTER JOIN
 
-假设我们有两张表table1:12345678910ID          wid         t">
+假设我们有两张表table1:ID          wid         type--------">
 
 
 
@@ -300,9 +300,9 @@ SQLite 的 Joins 子句用于结合两个或多个数据库中表的记录。JOI
 <li>内连接 - INNER JOIN</li>
 <li>外连接 - OUTER JOIN</li>
 </ul>
-<p>假设我们有两张表<br>table1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ID          wid         type</span><br><span class="line">----------  ----------  ----------</span><br><span class="line">1           11           n</span><br><span class="line">2           11           adj</span><br><span class="line">3           12           n</span><br><span class="line">4           12           adj</span><br><span class="line">5           13           adj</span><br><span class="line">6           13           n</span><br><span class="line">7           14           n</span><br><span class="line">8           14           n</span><br></pre></td></tr></table></figure></p>
-<p>table2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">id          emid        title	    </span><br><span class="line">----------  ----------  ----------  </span><br><span class="line">1           1           the process of becoming acid ...	 </span><br><span class="line">2           1           being or containing an acid;...	 </span><br><span class="line">3           1           being sour to the taste	 </span><br><span class="line">4           2           any of various water-soluble...	 </span><br><span class="line">5           2           street name for lysergic acid  </span><br><span class="line">6           3           harsh or corrosive in tone	 </span><br><span class="line">7           3           being sour to the taste	 </span><br><span class="line">8           3           having the characteristics...</span><br><span class="line">9           4           having no hue</span><br><span class="line">10          4           n</span><br></pre></td></tr></table></figure></p>
-<p>现在的需求是：查询table1中 wid＝12 的所有数据，并且获取所有 table1.id ＝ table2.emid 的数据；<br>sqlite语句：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from table1 join table2 in table1.id=table2.emid where wid = 12 ;</span><br></pre></td></tr></table></figure></p>
+<p>假设我们有两张表<br>table1:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ID          wid         type</span><br><span class="line">----------  ----------  ----------</span><br><span class="line">1           11           n</span><br><span class="line">2           11           adj</span><br><span class="line">3           12           n</span><br><span class="line">4           12           adj</span><br><span class="line">5           13           adj</span><br><span class="line">6           13           n</span><br><span class="line">7           14           n</span><br><span class="line">8           14           n</span><br></pre></td></tr></table></figure></p>
+<p>table2:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">id          emid        title	    </span><br><span class="line">----------  ----------  ----------  </span><br><span class="line">1           1           the process of becoming acid ...	 </span><br><span class="line">2           1           being or containing an acid;...	 </span><br><span class="line">3           1           being sour to the taste	 </span><br><span class="line">4           2           any of various water-soluble...	 </span><br><span class="line">5           2           street name for lysergic acid  </span><br><span class="line">6           3           harsh or corrosive in tone	 </span><br><span class="line">7           3           being sour to the taste	 </span><br><span class="line">8           3           having the characteristics...</span><br><span class="line">9           4           having no hue</span><br><span class="line">10          4           n</span><br></pre></td></tr></table></figure></p>
+<p>现在的需求是：查询table1中 wid＝12 的所有数据，并且获取所有 table1.id ＝ table2.emid 的数据；<br>sqlite语句：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select * from table1 join table2 in table1.id=table2.emid where wid = 12 ;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -413,7 +413,7 @@ SQLite 的 Joins 子句用于结合两个或多个数据库中表的记录。JOI
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
