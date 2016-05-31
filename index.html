@@ -233,6 +233,114 @@
             
               
                 
+                <a class="post-title-link" href="/2016/06/01/mac-write-ntfs/" itemprop="url">
+                  如何打开Mac OSX原生的读写NTFS功能
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-01T00:39:33+08:00" content="2016-06-01">
+              2016-06-01
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="打开终端，查看磁盘-Volume-Nmae"><a href="#打开终端，查看磁盘-Volume-Nmae" class="headerlink" title="打开终端，查看磁盘 Volume Nmae"></a>打开终端，查看磁盘 Volume Nmae</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">diskutil list</span><br></pre></td></tr></table></figure>
+<p>我的电脑是这样子的</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/dev/disk0 (internal, physical):</span><br><span class="line">   #:                       TYPE NAME                    SIZE       IDENTIFIER</span><br><span class="line">   0:      GUID_partition_scheme                        *251.0 GB   disk0</span><br><span class="line">   1:                        EFI EFI                     209.7 MB   disk0s1</span><br><span class="line">   2:          Apple_CoreStorage Macintosh HD            250.1 GB   disk0s2</span><br><span class="line">   3:                 Apple_Boot Recovery HD             650.0 MB   disk0s3</span><br><span class="line">/dev/disk1 (external, physical):</span><br><span class="line">   #:                       TYPE NAME                    SIZE       IDENTIFIER</span><br><span class="line">   0:     FDisk_partition_scheme                        *1.0 TB     disk2</span><br><span class="line">   1:               Windows_NTFS Expansion               1.0 TB     disk2s1</span><br></pre></td></tr></table></figure>
+<p>Windows_NTFS 后面就是磁盘名字了,可以看到，我的是 Expansion</p>
+<h3 id="编辑-etc-fstab文件"><a href="#编辑-etc-fstab文件" class="headerlink" title="编辑/etc/fstab文件"></a>编辑/etc/fstab文件</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/fstab</span><br></pre></td></tr></table></figure>
+<p>写入以下内容</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">LABEL= Expansion none ntfs rw,auto,nobrowse</span><br></pre></td></tr></table></figure>
+<p>下面来依次解释一下，如果你的名字里面有空格键，就需要用\040的意思是代替空格键，如：Expansion\040Drive。</p>
+<p>后面的Ntfs rw表示把这个分区挂载为可读写的ntfs格式，最后nobrowse非常重要，因为这个代表了在finder里不显示这个分区，这个选项非常重要，如果不打开的话挂载是不会成功的。</p>
+<p>按下 esc，:wq 保存，将硬盘推出，重新插入，这时就不显示磁盘了</p>
+<p>解决办法，给磁盘创建快捷方式</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo ln -s /Volumes/Expansion ~/Desktop/Expansion</span><br></pre></td></tr></table></figure>
+<p>这里的 Expansion 换成你磁盘的名字，懒得写的同学请按tab键,后面的名字随意</p>
+<p>如果想以后都能看到除Expansion以外其他隐藏的驱动器的话，可以多创建一个这个文件夹快捷方式：如下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo ln -s /Volumes ~/Desktop/Volumes</span><br></pre></td></tr></table></figure></p>
+<p>然后我们能在桌面找到，</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/05/28/my-centos-application/" itemprop="url">
                   centos个人应用清单
                 </a>
@@ -1335,7 +1443,7 @@ curl --data @filename https://github.api.com/authorizations
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
