@@ -1,5 +1,5 @@
 ---
-title: centos个人应用清单
+title: Centos个人应用清单
 date: 2016-05-28 10:57:12
 tags: Linux
 ---

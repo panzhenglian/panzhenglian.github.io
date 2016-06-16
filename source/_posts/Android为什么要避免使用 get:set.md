@@ -1,5 +1,5 @@
 ---
-title: Android 为什么不要使用 get／set (译)
+title: Android为什么要避免使用 get/set
 date: 2016-06-05 19:44:21
 tags: Android
 ---

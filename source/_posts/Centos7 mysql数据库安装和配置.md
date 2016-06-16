@@ -1,5 +1,5 @@
 ---
-title: centos7 mysql数据库安装和配置(转载)
+title: Centos7 mysql数据库安装和配置(转载)
 date: 2016-05-22 11:48:58
 tags: 
  - Linux 

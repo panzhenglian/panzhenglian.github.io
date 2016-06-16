@@ -5,8 +5,7 @@ tags:
  - Android
  - sqlite3
 ---
-----------
-##Sqlite Joins
+## Sqlite Joins
 
 SQLite 的 Joins 子句用于结合两个或多个数据库中表的记录。JOIN 是一种通过共同值来结合两个表中字段的手段.
 SQL 定义了三种主要类型的连接:
