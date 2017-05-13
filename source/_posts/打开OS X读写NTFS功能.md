@@ -1,7 +1,7 @@
 ---
 title: 如何打开Mac OSX原生的读写NTFS功能
 date: 2016-06-01 00:39:33
-tags:
+category: Mac
 ---
 
 ### 打开终端，查看磁盘 Volume Nmae

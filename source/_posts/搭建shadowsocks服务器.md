@@ -1,7 +1,7 @@
 ---
 title: 搭建shadowsocks服务器
 date: 2016-05-28 02:16:08
-tags:
+category: 翻墙
 ---
 
 安装

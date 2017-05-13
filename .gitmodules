@@ -1,3 +1,6 @@
 [submodule "themes/next"]
 	path = themes/next
 	url = https://github.com/iissnan/hexo-theme-next
+[submodule "themes/indigo"]
+      path = themes/indigo
+      url = git@github.com:yscoder/hexo-theme-indigo.git
