@@ -26,12 +26,12 @@ diskutil list
 Windows_NTFS 后面就是磁盘名字了,可以看到，我的是 Expansion
 
 ### 编辑/etc/fstab文件
-```
+```base
 sudo vim /etc/fstab
 ```
 写入以下内容
 
-```
+```vim
 LABEL= Expansion none ntfs rw,auto,nobrowse
 ```
 下面来依次解释一下，如果你的名字里面有空格键，就需要用\040的意思是代替空格键，如：Expansion\040Drive。
@@ -42,14 +42,14 @@ LABEL= Expansion none ntfs rw,auto,nobrowse
 
 解决办法，给磁盘创建快捷方式
 
-```
+```base
 sudo ln -s /Volumes/Expansion ~/Desktop/Expansion
 ```
 
 这里的 Expansion 换成你磁盘的名字，懒得写的同学请按tab键,后面的名字随意
 
 如果想以后都能看到除Expansion以外其他隐藏的驱动器的话，可以多创建一个这个文件夹快捷方式：如下：
-```
+```base
 sudo ln -s /Volumes ~/Desktop/Volumes
 ```
 参考：http://bbs.feng.com/read-htm-tid-9932031.html

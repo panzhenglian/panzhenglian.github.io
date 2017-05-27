@@ -4,13 +4,13 @@ date: 2017-05-23 13:16:26
 tags: Video
 ---
 ### 安装ffmpeg
-```
+```base
 brew install ffmpeg
 ```
 
 ### 视频转gif
 
-```
+```base
 ffmpeg -i in.mp4 out.gif
 # 插入字幕
 -vf
@@ -27,7 +27,7 @@ ffmpeg -i in.mp4 out.gif
 
 ### 视频属性调整
 
-```
+```base
 #缩放视频尺寸 ,-1代表保持长宽比
 -vf scale=360:-1
 #加倍速播放视频

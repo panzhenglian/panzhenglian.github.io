@@ -26,15 +26,15 @@ sudo easy_install shadowsocks
 vi /etc/shadowsocks.json
 ```
 然后输入如下内容：
-```
+```json
 { 
    "server":"server_ip", 
-   "server_port”:12342, 
+   "server_port":12342,
    "local_address": "127.0.0.1", 
    "local_port":1080, 
-   "password”:”password”,
+   "password":"password",
    "timeout":300, 
-   "method”:”rc4-md5”, 
+   "method":"rc4-md5",
    "fast_open": false
 }
 ```
