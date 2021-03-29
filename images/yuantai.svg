@@ -1,0 +1,208 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink"
+     xmlns="http://www.w3.org/2000/svg" version="1.1"
+     width="900px" height="450px" viewBox="0 0 1000 500">
+    <svg
+            x="450" y="0"
+            width="500px" height="500px" viewBox="0 0 1142 1142">
+
+
+        <defs>
+            <style media="stroke-width:2" id="line"/>
+            <clipPath id="cut_top_ellipse">
+                <rect x="134" y="990" width="588" height="122"/>
+            </clipPath>
+
+            <clipPath id="cut_top_reverse">
+                <rect x="152" y="860" width="548" height="122"/>
+            </clipPath>
+        </defs>
+
+        <ellipse cx="425" cy="990" rx="289" ry="120"
+                 stroke-width="3"
+                 clip-path="url(#cut_top_ellipse)"
+                 stroke="#000000"
+                 fill-opacity="0"
+                 color="#00000000"/>
+
+        <ellipse cx="425" cy="990" rx="289" ry="120"
+                 stroke-dasharray="4"
+                 stroke-width="3"
+                 clip-path="url(#cut_top_reverse)"
+                 stroke="#000000"
+                 fill-opacity="0"
+                 color="#00000000"/>
+
+        <ellipse cx="425" cy="702" rx="154" ry="60"
+                 stroke-width="3"
+                 stroke="#000000"
+                 fill-opacity="0"
+                 color="#00000000"/>
+
+
+        <path stroke="#000" stroke-width="3"
+              stroke-dasharray="5"
+              d="M136,988 l289,-616"
+              fill-opacity="0"
+        />
+
+        <path stroke="#000" stroke-width="3"
+              d="M136,988 l135,-288"
+              fill-opacity="0"
+        />
+
+        <path stroke="#000" stroke-width="3"
+              stroke-dasharray="5"
+              d="M714,988 l-289,-616"
+              fill-opacity="0"
+        />
+
+        <path stroke="#000" stroke-width="3"
+              d="M714,988 l-135,-288"
+              fill-opacity="0"
+        />
+
+        <path stroke="#000" stroke-width="3"
+              stroke-dasharray="4"
+              d="M714,985 m-289,-616 l525,-340  a680,680,1,0,1,-236,960
+             m-132,-290 a350,350,1,0,0,132,-520"
+              fill-opacity="0"
+        />
+
+        <circle cx="425" cy="990" r="7"/>
+
+
+        <path stroke="#000" stroke-width="3"
+              d="M425,990 l-289,0"
+              stroke-dasharray="4"
+              fill-opacity="0"
+        />
+
+
+        <circle cx="425" cy="702" r="6"/>
+
+
+        <path stroke="#000" stroke-width="3"
+              d="M425,702 l-154,0"
+              fill-opacity="0"
+        />
+
+        <path stroke="#000" stroke-width="3"
+              d="M425,990 l0,-616"
+              stroke-dasharray="4"
+              fill-opacity="0"
+        />
+
+        <circle cx="425" cy="374" r="8"/>
+
+
+        <text x="320" y="965" fill="blank" font-size="82">𝑟</text>
+
+        <text x="450" y="1025" fill="blank" font-size="82">𝑂</text>
+
+        <text x="460" y="725" fill="blank" font-size="82">𝑂′</text>
+
+        <text x="390" y="350" fill="blank" font-size="82">𝐴</text>
+
+        <text x="190" y="725" fill="blank" font-size="82">𝐵′</text>
+
+        <text x="80" y="1025" fill="blank" font-size="82">𝐵</text>
+
+        <text x="320" y="710" fill="blank" font-size="72">𝑟′</text>
+
+        <text x="660" y="850" fill="blank" font-size="82">𝑙</text>
+
+        <text x="500" y="500" fill="blank" font-size="82">𝑙′</text>
+
+        <text x="620" y="450" fill="blank" font-size="82">2𝜋𝑟′</text>
+
+        <text x="860" y="650" fill="blank" font-size="82">2𝜋𝑟</text>
+
+    </svg>
+
+    <svg
+            x="0" y="0"
+            xmlns="http://www.w3.org/2000/svg" version="1.1"
+            width="500px" height="500px" viewBox="0 0 200 200">
+
+
+        <defs>
+            <clipPath id="cut_top">
+                <rect x="0" y="90" width="200" height="100"/>
+            </clipPath>
+
+            <clipPath id="cut_bottom">
+                <rect x="0" y="150" width="200" height="100"/>
+            </clipPath>
+
+            <clipPath id="cut_bottom_reverse">
+                <rect x="0" y="0" width="200" height="150"/>
+            </clipPath>
+        </defs>
+
+        <ellipse cx="100" cy="150" rx="60" ry="20"
+                 stroke-width="1"
+                 stroke="#000000"
+                 clip-path="url(#cut_bottom)"
+                 fill-opacity="0"
+                 color="#00000000"/>
+
+        <ellipse cx="100" cy="150" rx="60" ry="20"
+                 stroke-width="1"
+                 stroke-dasharray="2,1"
+                 clip-path="url(#cut_bottom_reverse)"
+                 stroke="#000000"
+                 fill-opacity="0"
+                 color="#00000000"/>
+
+
+        <ellipse cx="100" cy="90" rx="35" ry="15"
+                 stroke-width="1"
+                 stroke="#000000"
+                 fill-opacity="0"
+                 color="#00000000"/>
+
+
+        <path stroke="#000" stroke-width="1"
+              d="M40,150 l60,-145"
+              clip-path="url(#cut_top)"
+              fill-opacity="0"
+        />
+
+        <path stroke="#000" stroke-width="1"
+              d="M160,150 l-60,-145"
+              clip-path="url(#cut_top)"
+              fill-opacity="0"
+        />
+
+        <circle cx="100" cy="150" r="1.6"/>
+
+
+        <path stroke="#000" stroke-width="1"
+              d="M100,150 l-60,0"
+              stroke-dasharray="2,1"
+              fill-opacity="0"
+        />
+
+
+        <circle cx="100" cy="90" r="1.6"/>
+
+
+        <path stroke="#000" stroke-width="1"
+              d="M100,90 l-35,0"
+              fill-opacity="0"
+        />
+        <path stroke="#000" stroke-width="1"
+              d="M100,90 l35,0"
+              stroke-dasharray="2,1"
+              fill-opacity="0"
+        />
+
+
+        <text x="70" y="145" fill="blank" font-size="14">𝑟</text>
+
+        <text x="80" y="88" fill="blank" font-size="14">𝑟′</text>
+
+        <text x="45" y="115" fill="blank" font-size="14">𝑙</text>
+
+    </svg>
+</svg>

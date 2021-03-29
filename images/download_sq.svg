@@ -1,0 +1,245 @@
+<svg height="490" version="1.1" width="810" viewBox="0 0 810 490" xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink" style="overflow: hidden; position: relative;">
+    <desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.2.0</desc>
+    <defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+        <path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block"
+              style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>
+        <marker id="raphael-marker-endblock55-objblahm" markerHeight="5" markerWidth="5" orient="auto" refX="2.5"
+                refY="2.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+            <use xlink:href="#raphael-marker-block" transform="rotate(180 2.5 2.5) scale(1,1)" stroke-width="1.0000"
+                 fill="#000" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>
+        </marker>
+        <marker id="raphael-marker-endblock55-objmsadi" markerHeight="5" markerWidth="5" orient="auto" refX="2.5"
+                refY="2.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+            <use xlink:href="#raphael-marker-block" transform="rotate(180 2.5 2.5) scale(1,1)" stroke-width="1.0000"
+                 fill="#000" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>
+        </marker>
+        <marker id="raphael-marker-endblock55-objpoo8i" markerHeight="5" markerWidth="5" orient="auto" refX="2.5"
+                refY="2.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+            <use xlink:href="#raphael-marker-block" transform="rotate(180 2.5 2.5) scale(1,1)" stroke-width="1.0000"
+                 fill="#000" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>
+        </marker>
+        <marker id="raphael-marker-endblock55-objfs9qj" markerHeight="5" markerWidth="5" orient="auto" refX="2.5"
+                refY="2.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+            <use xlink:href="#raphael-marker-block" transform="rotate(180 2.5 2.5) scale(1,1)" stroke-width="1.0000"
+                 fill="#000" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>
+        </marker>
+        <marker id="raphael-marker-endblock55-objr832p" markerHeight="5" markerWidth="5" orient="auto" refX="2.5"
+                refY="2.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+            <use xlink:href="#raphael-marker-block" transform="rotate(180 2.5 2.5) scale(1,1)" stroke-width="1.0000"
+                 fill="#000" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>
+        </marker>
+        <marker id="raphael-marker-endblock55-objsn2gp" markerHeight="5" markerWidth="5" orient="auto" refX="2.5"
+                refY="2.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+            <use xlink:href="#raphael-marker-block" transform="rotate(180 2.5 2.5) scale(1,1)" stroke-width="1.0000"
+                 fill="#000" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>
+        </marker>
+        <marker id="raphael-marker-endblock55-objbiyzg" markerHeight="5" markerWidth="5" orient="auto" refX="2.5"
+                refY="2.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+            <use xlink:href="#raphael-marker-block" transform="rotate(180 2.5 2.5) scale(1,1)" stroke-width="1.0000"
+                 fill="#000" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>
+        </marker>
+        <marker id="raphael-marker-endblock55-objyjuk9" markerHeight="5" markerWidth="5" orient="auto" refX="2.5"
+                refY="2.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+            <use xlink:href="#raphael-marker-block" transform="rotate(180 2.5 2.5) scale(1,1)" stroke-width="1.0000"
+                 fill="#000" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>
+        </marker>
+    </defs>
+    <rect x="10" y="20" width="58.40625" height="38" rx="0" ry="0" fill="none" stroke="#000000" stroke-width="2"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>
+    <!--    <rect x="20" y="30" width="38.40625" height="18" rx="0" ry="0" fill="#ffffff" stroke="none"-->
+    <!--          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>-->
+    <text x="39.203125" y="39" text-anchor="middle" font-family="Andale Mono, monospace" font-size="16px" stroke="none"
+          fill="#000000"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: &quot;Andale Mono&quot;, monospace; font-size: 16px;">
+        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="5.5">UI_1</tspan>
+    </text>
+    <rect x="10" y="432.390625" width="58.40625" height="38" rx="0" ry="0" fill="none" stroke="#000000" stroke-width="2"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>
+    <!--    <rect x="20" y="442.390625" width="38.40625" height="18" rx="0" ry="0" fill="#ffffff" stroke="none"-->
+    <!--          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>-->
+    <text x="39.203125" y="451.390625" text-anchor="middle" font-family="Andale Mono, monospace" font-size="16px"
+          stroke="none" fill="#000000"
+          style="-webkit-tap-highlight-color: rgba(255, 0, 0, 255); text-anchor: middle; font-family: &quot;Andale Mono&quot;, monospace; font-size: 16px;">
+        <tspan style="-webkit-tap-highlight-color: rgba(255, 0, 0, 255);" dy="5.5">UI_1</tspan>
+    </text>
+    <path fill="none" stroke="#000000" d="M39.203125,58L39.203125,432.390625" stroke-width="2"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>
+    <rect x="102" y="20" width="183.21875" height="38" rx="0" ry="0" fill="none" stroke="#000000" stroke-width="2"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>
+    <!--    <rect x="111.984375" y="30" width="163.21875" height="18" rx="0" ry="0" fill="#ffffff" stroke="none"-->
+    <!--          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>-->
+    <text x="193.609375" y="39" text-anchor="middle" font-family="Andale Mono, monospace" font-size="16px" stroke="none"
+          fill="#000000"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: &quot;Andale Mono&quot;, monospace; font-size: 16px;">
+        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="5.5">DownloadManager_1</tspan>
+    </text>
+    <rect x="102" y="432.390625" width="183.21875" height="38" rx="0" ry="0" fill="none" stroke="#000000"
+          stroke-width="2" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>
+    <!--    <rect x="111.984375" y="442.390625" width="163.21875" height="18" rx="0" ry="0" fill="#ffffff" stroke="none"-->
+    <!--          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>-->
+    <text x="193.609375" y="451.390625" text-anchor="middle" font-family="Andale Mono, monospace" font-size="16px"
+          stroke="none" fill="#000000"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: &quot;Andale Mono&quot;, monospace; font-size: 16px;">
+        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="5.5">DownloadManager_1</tspan>
+    </text>
+    <path fill="none" stroke="#000000" d="M193.609375,58L193.609375,432.390625" stroke-width="2"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>
+    <rect x="305.21875" y="20" width="58.40625" height="38" rx="0" ry="0" fill="none" stroke="#000000" stroke-width="2"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>
+    <!--    <rect x="315.21875" y="30" width="38.40625" height="18" rx="0" ry="0" fill="#ffffff" stroke="none"-->
+    <!--          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>-->
+    <text x="334.421875" y="39" text-anchor="middle" font-family="Andale Mono, monospace" font-size="16px" stroke="none"
+          fill="#000000"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: &quot;Andale Mono&quot;, monospace; font-size: 16px;">
+        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="5.5">UI_2</tspan>
+    </text>
+    <rect x="305.21875" y="432.390625" width="58.40625" height="38" rx="0" ry="0" fill="none" stroke="#000000"
+          stroke-width="2" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>
+    <!--    <rect x="315.21875" y="442.390625" width="38.40625" height="18" rx="0" ry="0" fill="#ffffff" stroke="none"-->
+    <!--          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>-->
+    <text x="334.421875" y="451.390625" text-anchor="middle" font-family="Andale Mono, monospace" font-size="16px"
+          stroke="none" fill="#000000"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: &quot;Andale Mono&quot;, monospace; font-size: 16px;">
+        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="5.5">UI_2</tspan>
+    </text>
+    <path fill="none" stroke="#000000" d="M334.421875,58L334.421875,432.390625" stroke-width="2"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>
+    <rect x="397.21875" y="20" width="183.21875" height="38" rx="0" ry="0" fill="none" stroke="#000000" stroke-width="2"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>
+    <!--    <rect x="407.203125" y="30" width="163.21875" height="18" rx="0" ry="0" fill="#ffffff" stroke="none"-->
+    <!--          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>-->
+    <text x="488.828125" y="39" text-anchor="middle" font-family="Andale Mono, monospace" font-size="16px" stroke="none"
+          fill="#000000"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: &quot;Andale Mono&quot;, monospace; font-size: 16px;">
+        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="5.5">DownloadManager_2</tspan>
+    </text>
+    <rect x="397.21875" y="432.390625" width="183.21875" height="38" rx="0" ry="0" fill="none" stroke="#000000"
+          stroke-width="2" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>
+    <!--    <rect x="407.203125" y="442.390625" width="163.21875" height="18" rx="0" ry="0" fill="#ffffff" stroke="none"-->
+    <!--          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>-->
+    <text x="488.828125" y="451.390625" text-anchor="middle" font-family="Andale Mono, monospace" font-size="16px"
+          stroke="none" fill="#000000"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: &quot;Andale Mono&quot;, monospace; font-size: 16px;">
+        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="5.5">DownloadManager_2</tspan>
+    </text>
+    <path fill="none" stroke="#000000" d="M488.828125,58L488.828125,432.390625" stroke-width="2"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>
+    <rect x="600.4375" y="20" width="164.015625" height="38" rx="0" ry="0" fill="none" stroke="#000000" stroke-width="2"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>
+    <!--    <rect x="610.421875" y="30" width="144.015625" height="18" rx="0" ry="0" fill="#ffffff" stroke="none"-->
+    <!--          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>-->
+    <text x="682.4453125" y="39" text-anchor="middle" font-family="Andale Mono, monospace" font-size="16px"
+          stroke="none" fill="#000000"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: &quot;Andale Mono&quot;, monospace; font-size: 16px;">
+        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="5.5">DownloadService</tspan>
+    </text>
+    <rect x="600.4375" y="432.390625" width="164.015625" height="38" rx="0" ry="0" fill="none" stroke="#000000"
+          stroke-width="2" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>
+    <!--    <rect x="610.421875" y="442.390625" width="144.015625" height="18" rx="0" ry="0" fill="#ffffff" stroke="none"-->
+    <!--          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>-->
+    <text x="682.4453125" y="451.390625" text-anchor="middle" font-family="Andale Mono, monospace" font-size="16px"
+          stroke="none" fill="#000000"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: &quot;Andale Mono&quot;, monospace; font-size: 16px;">
+        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="5.5">DownloadService</tspan>
+    </text>
+    <path fill="none" stroke="#000000" d="M682.4453125,58L682.4453125,432.390625" stroke-width="2"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>
+    <!--    <rect x="49.203125" y="74" width="134.40625" height="18" rx="0" ry="0" fill="#ffffff" stroke="none"-->
+    <!--          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>-->
+    <text x="116.40625" y="83" text-anchor="middle" font-family="Andale Mono, monospace" font-size="16px" stroke="none"
+          fill="#000000"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: &quot;Andale Mono&quot;, monospace; font-size: 16px;">
+        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="5.5">调用UI_1下载管理</tspan>
+    </text>
+    <path fill="none" stroke="#000000" d="M39.203125,96C39.203125,96,162.08336917310953,96,188.60342187062633,96"
+          stroke-width="2" marker-end="url(#raphael-marker-endblock55-objblahm)" stroke-dasharray="none"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>
+    <!--    <rect x="344.421875" y="112" width="134.40625" height="18" rx="0" ry="0" fill="#ffffff" stroke="none"-->
+    <!--          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>-->
+    <text x="411.625" y="121" text-anchor="middle" font-family="Andale Mono, monospace" font-size="16px" stroke="none"
+          fill="#000000"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: &quot;Andale Mono&quot;, monospace; font-size: 16px;">
+        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="5.5">调用UI_2下载管理</tspan>
+    </text>
+    <path fill="none" stroke="#000000" d="M334.421875,134C334.421875,134,457.30211917310953,134,483.82217187062633,134"
+          stroke-width="2" marker-end="url(#raphael-marker-endblock55-objmsadi)" stroke-dasharray="none"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>
+    <!--    <rect x="537.625" y="150" width="96" height="18" rx="0" ry="0" fill="#ffffff" stroke="none"-->
+    <!--          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>-->
+    <text x="585.63671875" y="159" text-anchor="middle" font-family="Andale Mono, monospace" font-size="16px"
+          stroke="none" fill="#000000"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: &quot;Andale Mono&quot;, monospace; font-size: 16px;">
+        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="5.5">创建下载服务</tspan>
+    </text>
+    <path fill="none" stroke="#000000" d="M488.828125,172C488.828125,172,647.0736492271535,172,677.4400999211337,172"
+          stroke-width="2" marker-end="url(#raphael-marker-endblock55-objpoo8i)" stroke-dasharray="none"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>
+    <!--    <rect x="390.015625" y="188" width="96" height="18" rx="0" ry="0" fill="#ffffff" stroke="none"-->
+    <!--          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>-->
+    <text x="438.02734375" y="197" text-anchor="middle" font-family="Andale Mono, monospace" font-size="16px"
+          stroke="none" fill="#000000"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: &quot;Andale Mono&quot;, monospace; font-size: 16px;">
+        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="5.5">创建下载服务</tspan>
+    </text>
+    <path fill="none" stroke="#000000" d="M193.609375,210C193.609375,210,625.9397874101996,210,677.4479029512586,210"
+          stroke-width="2" marker-end="url(#raphael-marker-endblock55-objfs9qj)" stroke-dasharray="none"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>
+    <rect x="565.4375" y="230" width="234.015625" height="66.390625" rx="0" ry="0" fill="none" stroke="#000000"
+          stroke-width="2" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>
+    <rect x="567" y="231.5" width="231" height="64" rx="0" ry="0" fill="#ffffff" stroke="none"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>
+    <text x="682.4453125" y="263.1953125" text-anchor="middle" font-family="Andale Mono, monospace" font-size="16px"
+          stroke="none" fill="#000000"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: &quot;Andale Mono&quot;, monospace; font-size: 16px;">
+        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="-13.6875">下载服务不提供单例对象</tspan>
+        <tspan dy="19.2" x="684" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">但是每一个DownloadManager
+        </tspan>
+        <tspan dy="19.2" x="683" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">只存放一份DownloadService
+        </tspan>
+    </text>
+    <!--    <rect x="0" y="0" width="0" height="0" rx="0" ry="0" fill="#ffffff" stroke="none"-->
+    <!--          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>-->
+    <text x="438.02734375" y="321.390625" text-anchor="middle" font-family="Andale Mono, monospace" font-size="16px"
+          stroke="none" fill="#000000"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: &quot;Andale Mono&quot;, monospace; font-size: 16px;">
+        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="321.390625"/>
+    </text>
+    <path fill="none" stroke="#000000"
+          d="M682.4453125,316.390625C682.4453125,316.390625,250.11490008980036,316.390625,198.60678454874142,316.390625"
+          stroke-width="2" marker-end="url(#raphael-marker-endblock55-objr832p)" stroke-dasharray="6,2"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>
+    <!--    <rect x="84.40625" y="332.390625" width="64" height="18" rx="0" ry="0" fill="#ffffff" stroke="none"-->
+    <!--          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>-->
+    <text x="116.40625" y="341.390625" text-anchor="middle" font-family="Andale Mono, monospace" font-size="16px"
+          stroke="none" fill="#000000"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: &quot;Andale Mono&quot;, monospace; font-size: 16px;">
+        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="5.5">下载回调</tspan>
+    </text>
+    <path fill="none" stroke="#000000"
+          d="M193.609375,354.390625C193.609375,354.390625,70.72913082689047,354.390625,44.209078129373665,354.390625"
+          stroke-width="2" marker-end="url(#raphael-marker-endblock55-objsn2gp)" stroke-dasharray="6,2"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>
+    <!--    <rect x="0" y="0" width="0" height="0" rx="0" ry="0" fill="#ffffff" stroke="none"-->
+    <!--          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>-->
+    <text x="585.63671875" y="379.390625" text-anchor="middle" font-family="Andale Mono, monospace" font-size="16px"
+          stroke="none" fill="#000000"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: &quot;Andale Mono&quot;, monospace; font-size: 16px;">
+        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="379.390625"/>
+    </text>
+    <path fill="none" stroke="#000000"
+          d="M682.4453125,374.390625C682.4453125,374.390625,524.1997882728465,374.390625,493.83333757886635,374.390625"
+          stroke-width="2" marker-end="url(#raphael-marker-endblock55-objbiyzg)" stroke-dasharray="6,2"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>
+    <!--    <rect x="379.625" y="390.390625" width="64" height="18" rx="0" ry="0" fill="#ffffff" stroke="none"-->
+    <!--          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>-->
+    <text x="411.625" y="399.390625" text-anchor="middle" font-family="Andale Mono, monospace" font-size="16px"
+          stroke="none" fill="#000000"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: &quot;Andale Mono&quot;, monospace; font-size: 16px;">
+        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="5.5">下载回调</tspan>
+    </text>
+    <path fill="none" stroke="#000000"
+          d="M488.828125,412.390625C488.828125,412.390625,365.94788082689047,412.390625,339.42782812937367,412.390625"
+          stroke-width="2" marker-end="url(#raphael-marker-endblock55-objyjuk9)" stroke-dasharray="6,2"
+          style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>
+</svg>

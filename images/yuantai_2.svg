@@ -1,0 +1,110 @@
+<svg
+        x="0" y="0"
+        xmlns="http://www.w3.org/2000/svg" version="1.1"
+        width="500px" height="500px" viewBox="0 0 200 200">
+
+
+    <defs>
+        <clipPath id="cut_top">
+            <rect x="0" y="90" width="200" height="100"/>
+        </clipPath>
+
+        <clipPath id="cut_bottom">
+            <rect x="0" y="170" width="200" height="100"/>
+        </clipPath>
+
+        <clipPath id="cut_bottom_reverse">
+            <rect x="0" y="0" width="200" height="170"/>
+        </clipPath>
+    </defs>
+
+    <ellipse cx="100" cy="170" rx="60" ry="20"
+             stroke-width="1"
+             stroke="#000000"
+             clip-path="url(#cut_bottom)"
+             fill-opacity="0"
+             color="#00000000"/>
+
+    <ellipse cx="100" cy="170" rx="60" ry="20"
+             stroke-width="1"
+             stroke-dasharray="2,1"
+             clip-path="url(#cut_bottom_reverse)"
+             stroke="#000000"
+             fill-opacity="0"
+             color="#00000000"/>
+
+
+    <ellipse cx="100" cy="110" rx="35" ry="15"
+             stroke-width="1"
+             stroke="#000000"
+             fill-opacity="0"
+             color="#00000000"/>
+
+
+    <path stroke="#000" stroke-width="1"
+          d="M40,170 l25,-60"
+          fill-opacity="0"
+    />
+
+
+    <path stroke="#000" stroke-width="1"
+          d="M65,110 l35,-85"
+          stroke-dasharray="2,1"
+          fill-opacity="0"
+    />
+
+    <path stroke="#000" stroke-width="1"
+          d="M160,170 l-25,-60"
+          fill-opacity="0"
+    />
+
+
+    <path stroke="#000" stroke-width="1"
+          d="M135,110 l-35,-85"
+          stroke-dasharray="2,1"
+          fill-opacity="0"
+    />
+
+    <circle cx="100" cy="170" r="1.6"/>
+
+
+    <path stroke="#000" stroke-width="1"
+          d="M100,170 l-60,0"
+          stroke-dasharray="2,1"
+          fill-opacity="0"
+    />
+
+    <circle cx="100" cy="110" r="1.6"/>
+
+    <path stroke="#000" stroke-width="1"
+          d="M100,110 l-35,0"
+          fill-opacity="0"
+    />
+
+
+    <path stroke="#000" stroke-width="1"
+          d="M100,170 l0,-145"
+          stroke-dasharray="2,1"
+          fill-opacity="0"
+    />
+
+
+    <text x="70" y="165" fill="blank" font-size="14">𝑟</text>
+
+    <text x="80" y="108" fill="blank" font-size="14">𝑟′</text>
+
+    <text x="88" y="140" fill="blank" font-size="14">ℎ</text>
+
+    <text x="88" y="80" fill="blank" font-size="14">ℎ′</text>
+
+    <text x="108" y="180" fill="blank" font-size="14">𝑂</text>
+
+    <text x="108" y="115" fill="blank" font-size="14">𝑂′</text>
+
+    <text x="108" y="30" fill="blank" font-size="14">𝐴</text>
+
+<!--    <text x="50" y="115" fill="blank" font-size="14">𝐵′</text>-->
+
+<!--    <text x="30" y="175" fill="blank" font-size="14">𝐵</text>-->
+
+</svg>

@@ -1,0 +1,423 @@
+<svg id="SvgjsSvg1006" width="1003" height="1445" viewBox="0 0 1003 1445" xmlns="http://www.w3.org/2000/svg"
+     version="1.1" >
+    <defs id="SvgjsDefs1007">
+        <marker id="SvgjsMarker1070" markerWidth="16" markerHeight="12" refX="16" refY="6" viewBox="0 0 16 12"
+                orient="auto" markerUnits="userSpaceOnUse">
+            <path id="SvgjsPath1071" d="M0,2 L14,6 L0,11 L0,2" fill="#323232" stroke="#323232" stroke-width="2"/>
+        </marker>
+        <marker id="SvgjsMarker1074" markerWidth="16" markerHeight="12" refX="16" refY="6" viewBox="0 0 16 12"
+                orient="auto" markerUnits="userSpaceOnUse">
+            <path id="SvgjsPath1075" d="M0,2 L14,6 L0,11 L0,2" fill="#323232" stroke="#323232" stroke-width="2"/>
+        </marker>
+        <marker id="SvgjsMarker1079" markerWidth="16" markerHeight="12" refX="16" refY="6" viewBox="0 0 16 12"
+                orient="auto" markerUnits="userSpaceOnUse">
+            <path id="SvgjsPath1080" d="M0,2 L14,6 L0,11 L0,2" fill="#323232" stroke="#323232" stroke-width="2"/>
+        </marker>
+        <marker id="SvgjsMarker1084" markerWidth="16" markerHeight="12" refX="16" refY="6" viewBox="0 0 16 12"
+                orient="auto" markerUnits="userSpaceOnUse">
+            <path id="SvgjsPath1085" d="M0,2 L14,6 L0,11 L0,2" fill="#323232" stroke="#323232" stroke-width="2"/>
+        </marker>
+        <marker id="SvgjsMarker1088" markerWidth="16" markerHeight="12" refX="16" refY="6" viewBox="0 0 16 12"
+                orient="auto" markerUnits="userSpaceOnUse">
+            <path id="SvgjsPath1089" d="M0,2 L14,6 L0,11 L0,2" fill="#323232" stroke="#323232" stroke-width="2"/>
+        </marker>
+        <marker id="SvgjsMarker1092" markerWidth="16" markerHeight="12" refX="16" refY="6" viewBox="0 0 16 12"
+                orient="auto" markerUnits="userSpaceOnUse">
+            <path id="SvgjsPath1093" d="M0,2 L14,6 L0,11 L0,2" fill="#323232" stroke="#323232" stroke-width="2"/>
+        </marker>
+        <marker id="SvgjsMarker1097" markerWidth="16" markerHeight="12" refX="16" refY="6" viewBox="0 0 16 12"
+                orient="auto" markerUnits="userSpaceOnUse">
+            <path id="SvgjsPath1098" d="M0,2 L14,6 L0,11 L0,2" fill="#323232" stroke="#323232" stroke-width="2"/>
+        </marker>
+        <marker id="SvgjsMarker1102" markerWidth="16" markerHeight="12" refX="16" refY="6" viewBox="0 0 16 12"
+                orient="auto" markerUnits="userSpaceOnUse">
+            <path id="SvgjsPath1103" d="M0,2 L14,6 L0,11 L0,2" fill="#323232" stroke="#323232" stroke-width="2"/>
+        </marker>
+        <marker id="SvgjsMarker1107" markerWidth="16" markerHeight="12" refX="16" refY="6" viewBox="0 0 16 12"
+                orient="auto" markerUnits="userSpaceOnUse">
+            <path id="SvgjsPath1108" d="M0,2 L14,6 L0,11 L0,2" fill="#323232" stroke="#323232" stroke-width="2"/>
+        </marker>
+        <marker id="SvgjsMarker1112" markerWidth="16" markerHeight="12" refX="16" refY="6" viewBox="0 0 16 12"
+                orient="auto" markerUnits="userSpaceOnUse">
+            <path id="SvgjsPath1113" d="M0,2 L14,6 L0,11 L0,2" fill="#323232" stroke="#323232" stroke-width="2"/>
+        </marker>
+        <marker id="SvgjsMarker1117" markerWidth="16" markerHeight="12" refX="16" refY="6" viewBox="0 0 16 12"
+                orient="auto" markerUnits="userSpaceOnUse">
+            <path id="SvgjsPath1118" d="M0,2 L14,6 L0,11 L0,2" fill="#323232" stroke="#323232" stroke-width="2"/>
+        </marker>
+        <marker id="SvgjsMarker1121" markerWidth="16" markerHeight="12" refX="16" refY="6" viewBox="0 0 16 12"
+                orient="auto" markerUnits="userSpaceOnUse">
+            <path id="SvgjsPath1122" d="M0,2 L14,6 L0,11 L0,2" fill="#323232" stroke="#323232" stroke-width="2"/>
+        </marker>
+        <marker id="SvgjsMarker1125" markerWidth="16" markerHeight="12" refX="16" refY="6" viewBox="0 0 16 12"
+                orient="auto" markerUnits="userSpaceOnUse">
+            <path id="SvgjsPath1126" d="M0,2 L14,6 L0,11 L0,2" fill="#323232" stroke="#323232" stroke-width="2"/>
+        </marker>
+        <marker id="SvgjsMarker1130" markerWidth="16" markerHeight="12" refX="16" refY="6" viewBox="0 0 16 12"
+                orient="auto" markerUnits="userSpaceOnUse">
+            <path id="SvgjsPath1131" d="M0,2 L14,6 L0,11 L0,2" fill="#323232" stroke="#323232" stroke-width="2"/>
+        </marker>
+        <marker id="SvgjsMarker1135" markerWidth="16" markerHeight="12" refX="16" refY="6" viewBox="0 0 16 12"
+                orient="auto" markerUnits="userSpaceOnUse">
+            <path id="SvgjsPath1136" d="M0,2 L14,6 L0,11 L0,2" fill="#323232" stroke="#323232" stroke-width="2"/>
+        </marker>
+        <marker id="SvgjsMarker1140" markerWidth="16" markerHeight="12" refX="16" refY="6" viewBox="0 0 16 12"
+                orient="auto" markerUnits="userSpaceOnUse">
+            <path id="SvgjsPath1141" d="M0,2 L14,6 L0,11 L0,2" fill="#323232" stroke="#323232" stroke-width="2"/>
+        </marker>
+        <marker id="SvgjsMarker1149" markerWidth="16" markerHeight="12" refX="16" refY="6" viewBox="0 0 16 12"
+                orient="auto" markerUnits="userSpaceOnUse">
+            <path id="SvgjsPath1150" d="M0,2 L14,6 L0,11 L0,2" fill="#323232" stroke="#323232" stroke-width="2"/>
+        </marker>
+    </defs>
+    <g id="SvgjsG1008" transform="translate(25,25)">
+        <path id="SvgjsPath1009"
+              d="M 28.333333333333332 0L 850.6666666666666 0C 888.4444444444445 0 888.4444444444445 85 850.6666666666666 85L 28.333333333333332 85C -9.444444444444445 85 -9.444444444444445 0 28.333333333333332 0Z"
+              stroke="#323232" stroke-width="2" fill="#ffffff"/>
+        <g id="SvgjsG1010">
+            <foreignObject id="SvgjsForeignObject1011" width="859" height="72" x="50" style="overflow:visible;" y="6.5">
+                <div xmlns="http://www.w3.org/1999/xhtml"
+                     style="font-family: Consolas,微软雅黑,serif; text-align: left; font-size: 14px; vertical-align: middle; color: rgb(50, 50, 50); font-weight: 400; line-height: 18px; width: 859px; word-break: break-word; border: 0px;">
+                      构造OralEvalSDKFactory.StartConfig对象
+                    <div>两种构造方式:</div>
+                    <div>1.通过OralEvalSDKFactory.StartConfig getCfg(String txt);
+                        <span style="font-size: inherit;">⇒ 启动评测后会读录音数据流来评测;</span>
+                    </div>
+                    <div>2.通过OralEvalSDKFactory.StartConfig(String oralText, String fileFullName) ⇒ 启动评测后会读文件流评测</div>
+                </div>
+            </foreignObject>
+        </g>
+    </g>
+    <g id="SvgjsG1012" transform="translate(299.5,191)">
+        <path id="SvgjsPath1013" d="M 0 0L 330 0L 330 39L 0 39Z" stroke="#323232" stroke-width="2"
+              fill="#ffffff"/>
+        <g id="SvgjsG1014">
+            <foreignObject id="SvgjsForeignObject1015" width="310" height="18" x="10" style="overflow:visible;"
+                           y="10.5">
+                <div xmlns="http://www.w3.org/1999/xhtml"
+                     style="font-family: Consolas,微软雅黑,serif; text-align: center; font-size: 14px; vertical-align: middle; color: rgb(50, 50, 50); font-weight: 400; line-height: 18px; width: 310px; word-break: break-word; border: 0px;">
+                    OralEvalSDKFactory.start : 启动评测
+                </div>
+            </foreignObject>
+        </g>
+    </g>
+    <g id="SvgjsG1016" transform="translate(355,290)">
+        <path id="SvgjsPath1017" d="M 0 50.5L 109.5 0L 219 50.5L 109.5 101L 0 50.5Z" stroke="#323232" stroke-width="2"
+              fill="#ffffff"/>
+        <g id="SvgjsG1018">
+            <foreignObject id="SvgjsForeignObject1019" width="199" height="18" x="10" style="overflow:visible;"
+                           y="41.5">
+                <div xmlns="http://www.w3.org/1999/xhtml"
+                     style="font-family: 微软雅黑; text-align: center; font-size: 14px; vertical-align: middle; color: rgb(50, 50, 50); font-weight: 400; line-height: 18px; width: 199px; word-break: break-word; border: 0px;">
+                    初始化录音控件或读取文件流
+                </div>
+            </foreignObject>
+        </g>
+    </g>
+    <g id="SvgjsG1020" transform="translate(651,305.5)">
+        <path id="SvgjsPath1021" d="M 0 0L 100 0L 100 70L 0 70Z" stroke="#323232" stroke-width="2"
+              fill="#ffffff"/>
+        <g id="SvgjsG1022">
+            <foreignObject id="SvgjsForeignObject1023" width="80" height="36" x="10" style="overflow:visible;" y="17">
+                <div xmlns="http://www.w3.org/1999/xhtml"
+                     style="font-family: Consolas,微软雅黑,serif; text-align: center; font-size: 14px; vertical-align: middle; color: rgb(50, 50, 50); font-weight: 400; line-height: 18px; width: 80px; word-break: break-word; border: 0px;">
+                    onError释放资源
+                </div>
+            </foreignObject>
+        </g>
+    </g>
+    <g id="SvgjsG1024" transform="translate(413.5,468)">
+        <path id="SvgjsPath1025" d="M 0 0L 100 0L 100 70L 0 70Z" stroke="#323232" stroke-width="2"
+              fill="#ffffff"/>
+        <g id="SvgjsG1026">
+            <foreignObject id="SvgjsForeignObject1027" width="80" height="18" x="10" style="overflow:visible;" y="26">
+                <div xmlns="http://www.w3.org/1999/xhtml"
+                     style="font-family: Consolas,微软雅黑,serif; text-align: center; font-size: 14px; vertical-align: middle; color: rgb(50, 50, 50); font-weight: 400; line-height: 18px; width: 80px; word-break: break-word; border: 0px;">
+                    onStart
+                </div>
+            </foreignObject>
+        </g>
+    </g>
+    <g id="SvgjsG1028" transform="translate(288.5,597)">
+        <path id="SvgjsPath1029" d="M 0 0L 350 0L 350 81L 0 81Z" stroke="#323232" stroke-width="2"
+              fill="#ffffff"/>
+        <g id="SvgjsG1030">
+            <foreignObject id="SvgjsForeignObject1031" width="330" height="72" x="10" style="overflow:visible;" y="4.5">
+                <div xmlns="http://www.w3.org/1999/xhtml"
+                     style="font-family: Consolas,微软雅黑,serif; text-align: left; font-size: 14px; vertical-align: middle; color: rgb(50, 50, 50); font-weight: 400; line-height: 18px; width: 330px; word-break: break-word; border: 0px;">
+                    读数据流,每次读3200byte ;
+                    <div>处理数据流获得实时音量, onVolume ;</div>
+                    <div>回调数据流, onAudioData\onOpusData ;</div>
+                    <div>发送数据流到服务端;</div>
+                </div>
+            </foreignObject>
+        </g>
+    </g>
+    <g id="SvgjsG1032" transform="translate(391.5,741)">
+        <path id="SvgjsPath1033"
+              d="M 0 39.5L 72.36986301369862 0L 144.73972602739724 39.5L 72.36986301369862 79L 0 39.5Z" stroke="#323232"
+              stroke-width="2" fill="#ffffff"/>
+        <g id="SvgjsG1034">
+            <foreignObject id="SvgjsForeignObject1035" width="124.73972602739724" height="18" x="10"
+                           style="overflow:visible;" y="30.5">
+                <div xmlns="http://www.w3.org/1999/xhtml"
+                     style="font-family: Consolas,微软雅黑,serif; text-align: center; font-size: 14px; vertical-align: middle; color: rgb(50, 50, 50); font-weight: 400; line-height: 18px; width: 124.74px; word-break: break-word; border: 0px;">
+                    vad是否超时
+                </div>
+            </foreignObject>
+        </g>
+    </g>
+    <g id="SvgjsG1036" transform="translate(615.8465753424658,741)">
+        <path id="SvgjsPath1037"
+              d="M 0 39.5L 72.36986301369862 0L 144.73972602739724 39.5L 72.36986301369862 79L 0 39.5Z" stroke="#323232"
+              stroke-width="2" fill="#ffffff"/>
+        <g id="SvgjsG1038">
+            <foreignObject id="SvgjsForeignObject1039" width="124.73972602739724" height="18" x="10"
+                           style="overflow:visible;" y="30.5">
+                <div xmlns="http://www.w3.org/1999/xhtml"
+                     style="font-family: Consolas,微软雅黑,serif; text-align: center; font-size: 14px; vertical-align: middle; color: rgb(50, 50, 50); font-weight: 400; line-height: 18px; width: 124.74px; word-break: break-word; border: 0px;">
+                    是否调用cancel
+                </div>
+            </foreignObject>
+        </g>
+    </g>
+    <g id="SvgjsG1040" transform="translate(833.7602739726028,741)">
+        <path id="SvgjsPath1041"
+              d="M 0 39.5L 72.36986301369862 0L 144.73972602739724 39.5L 72.36986301369862 79L 0 39.5Z" stroke="#323232"
+              stroke-width="2" fill="#ffffff"/>
+        <g id="SvgjsG1042">
+            <foreignObject id="SvgjsForeignObject1043" width="124.73972602739724" height="18" x="10"
+                           style="overflow:visible;" y="30.5">
+                <div xmlns="http://www.w3.org/1999/xhtml"
+                     style="font-family: Consolas,微软雅黑,serif; text-align: center; font-size: 14px; vertical-align: middle; color: rgb(50, 50, 50); font-weight: 400; line-height: 18px; width: 124.74px; word-break: break-word; border: 0px;">
+                    是否调用stop
+                </div>
+            </foreignObject>
+        </g>
+    </g>
+    <g id="SvgjsG1044" transform="translate(578.25,1016)">
+        <path id="SvgjsPath1045" d="M 0 0L 222.5 0L 222.5 42L 0 42Z" stroke="#323232" stroke-width="2"
+              fill="#ffffff"/>
+        <g id="SvgjsG1046">
+            <foreignObject id="SvgjsForeignObject1047" width="202.5" height="36" x="10" style="overflow:visible;" y="3">
+                <div xmlns="http://www.w3.org/1999/xhtml"
+                     style="font-family: Consolas,微软雅黑,serif; text-align: center; font-size: 14px; vertical-align: middle; color: rgb(50, 50, 50); font-weight: 400; line-height: 18px; width: 202.5px; word-break: break-word; border: 0px;">
+                    停止录音,调用onStartOralEval
+                </div>
+            </foreignObject>
+        </g>
+    </g>
+    <g id="SvgjsG1048" transform="translate(577.5,1127)">
+        <path id="SvgjsPath1049" d="M 0 0L 224 0L 224 36L 0 36Z" stroke="#323232" stroke-width="2"
+              fill="#ffffff"/>
+        <g id="SvgjsG1050">
+            <foreignObject id="SvgjsForeignObject1051" width="204" height="18" x="10" style="overflow:visible;" y="9">
+                <div xmlns="http://www.w3.org/1999/xhtml"
+                     style="font-family: Consolas,微软雅黑,serif; text-align: center; font-size: 14px; vertical-align: middle; color: rgb(50, 50, 50); font-weight: 400; line-height: 18px; width: 204px; word-break: break-word; border: 0px;">
+                    服务端取结果getResult
+                </div>
+            </foreignObject>
+        </g>
+    </g>
+    <g id="SvgjsG1052" transform="translate(642.5746575342466,883)">
+        <path id="SvgjsPath1053" d="M 0 0L 91.28356164383558 0L 91.28356164383558 54L 0 54Z" stroke="#323232"
+              stroke-width="2" fill="#ffffff"/>
+        <g id="SvgjsG1054">
+            <foreignObject id="SvgjsForeignObject1055" width="71.28356164383558" height="36" x="10"
+                           style="overflow:visible;" y="9">
+                <div xmlns="http://www.w3.org/1999/xhtml"
+                     style="font-family: Consolas,微软雅黑,serif; text-align: center; font-size: 14px; vertical-align: middle; color: rgb(50, 50, 50); font-weight: 400; line-height: 18px; width: 71.2836px; word-break: break-word; border: 0px;">
+                    onCancel释放资源
+                </div>
+            </foreignObject>
+        </g>
+    </g>
+    <g id="SvgjsG1056" transform="translate(853.5,1238.5)">
+        <path id="SvgjsPath1057" d="M 0 0L 77 0L 77 57L 0 57Z" stroke="#323232" stroke-width="2" fill="#ffffff"/>
+        <g id="SvgjsG1058">
+            <foreignObject id="SvgjsForeignObject1059" width="57" height="54" x="10" style="overflow:visible;" y="10">
+                <div xmlns="http://www.w3.org/1999/xhtml"
+                     style="font-family: Consolas,微软雅黑,serif; text-align: center; font-size: 14px; vertical-align: middle; color: rgb(50, 50, 50); font-weight: 400; line-height: 18px; width: 57px; word-break: break-word; border: 0px;">
+                    onError释放资源
+                </div>
+            </foreignObject>
+        </g>
+    </g>
+    <g id="SvgjsG1060" transform="translate(612,1233)">
+        <path id="SvgjsPath1061" d="M 0 34L 77.5 0L 155 34L 77.5 68L 0 34Z" stroke="#323232" stroke-width="2"
+              fill="#ffffff"/>
+        <g id="SvgjsG1062">
+            <foreignObject id="SvgjsForeignObject1063" width="135" height="18" x="10" style="overflow:visible;" y="25">
+                <div xmlns="http://www.w3.org/1999/xhtml"
+                     style="font-family: 微软雅黑; text-align: center; font-size: 14px; vertical-align: middle; color: rgb(50, 50, 50); font-weight: 400; line-height: 18px; width: 135px; word-break: break-word; border: 0px;">
+                    取结果是否成功
+                </div>
+            </foreignObject>
+        </g>
+    </g>
+    <g id="SvgjsG1064" transform="translate(644.25,1377)">
+        <path id="SvgjsPath1065"
+              d="M 14.333333333333334 0L 76.16666666666667 0C 95.27777777777777 0 95.27777777777777 43 76.16666666666667 43L 14.333333333333334 43C -4.777777777777778 43 -4.777777777777778 0 14.333333333333334 0Z"
+              stroke="#323232" stroke-width="2" fill="#ffffff"/>
+        <g id="SvgjsG1066">
+            <foreignObject id="SvgjsForeignObject1067" width="70.5" height="36" x="10" style="overflow:visible;"
+                           y="3.5">
+                <div xmlns="http://www.w3.org/1999/xhtml"
+                     style="font-family: Consolas,微软雅黑,serif; text-align: center; font-size: 14px; vertical-align: middle; color: rgb(50, 50, 50); font-weight: 400; line-height: 18px; width: 70.5px; word-break: break-word; border: 0px;">
+                    onStop释放资源
+                </div>
+            </foreignObject>
+        </g>
+    </g>
+    <g id="SvgjsG1068">
+        <path id="SvgjsPath1069" d="M464.5 230L464.5 260L464.5 260L464.5 290" stroke="#323232" stroke-width="2"
+              fill="none" marker-end="url(#SvgjsMarker1070)"/>
+    </g>
+    <g id="SvgjsG1072">
+        <path id="SvgjsPath1073" d="M574 340.5L612.5 340.5L612.5 340.5L651 340.5" stroke="#323232" stroke-width="2"
+              fill="none" marker-end="url(#SvgjsMarker1074)"/>
+        <foreignObject id="SvgjsForeignObject1076" width="26" height="16" x="599.5" y="332.5">
+            <div xmlns="http://www.w3.org/1999/xhtml"
+                 style="vertical-align: top; text-align: center; color: rgb(50, 50, 50); line-height: 16px; font-size: 13px; font-family: 微软雅黑; white-space: nowrap; display: inline-block; background: rgb(255, 255, 255);">
+                失败
+            </div>
+        </foreignObject>
+    </g>
+    <g id="SvgjsG1077">
+        <path id="SvgjsPath1078" d="M464.5 391L464.5 429.5L463.5 429.5L463.5 468" stroke="#323232" stroke-width="2"
+              fill="none" marker-end="url(#SvgjsMarker1079)"/>
+        <foreignObject id="SvgjsForeignObject1081" width="26" height="16" x="451" y="421.5">
+            <div xmlns="http://www.w3.org/1999/xhtml"
+                 style="vertical-align: top; text-align: center; color: rgb(50, 50, 50); line-height: 16px; font-size: 13px; font-family: 微软雅黑; white-space: nowrap; display: inline-block; background: rgb(255, 255, 255);">
+                成功
+            </div>
+        </foreignObject>
+    </g>
+    <g id="SvgjsG1082">
+        <path id="SvgjsPath1083" d="M463.5 538L463.5 567.5L463.5 567.5L463.5 597" stroke="#323232" stroke-width="2"
+              fill="none" marker-end="url(#SvgjsMarker1084)"/>
+    </g>
+    <g id="SvgjsG1086">
+        <path id="SvgjsPath1087" d="M463.5 678L463.5 709.5L463.8698630136986 709.5L463.8698630136986 741"
+              stroke="#323232" stroke-width="2" fill="none" marker-end="url(#SvgjsMarker1088)"/>
+    </g>
+    <g id="SvgjsG1090">
+        <path id="SvgjsPath1091"
+              d="M536.2397260273972 780.5L576.0431506849316 780.5L576.0431506849316 780.5L615.8465753424658 780.5"
+              stroke="#323232" stroke-width="2" fill="none" marker-end="url(#SvgjsMarker1092)"/>
+        <foreignObject id="SvgjsForeignObject1094" width="14" height="18" x="569.0431506849316" y="771.5">
+            <div xmlns="http://www.w3.org/1999/xhtml"
+                 style="vertical-align: top; text-align: center; color: rgb(50, 50, 50); line-height: 18px; font-size: 14px; font-family: 微软雅黑; white-space: nowrap; display: inline-block; background: rgb(255, 255, 255);">
+                否
+            </div>
+        </foreignObject>
+    </g>
+    <g id="SvgjsG1095">
+        <path id="SvgjsPath1096"
+              d="M760.586301369863 780.5L797.1732876712329 780.5L797.1732876712329 780.5L833.7602739726028 780.5"
+              stroke="#323232" stroke-width="2" fill="none" marker-end="url(#SvgjsMarker1097)"/>
+        <foreignObject id="SvgjsForeignObject1099" width="14" height="18" x="790.1732876712329" y="771.5">
+            <div xmlns="http://www.w3.org/1999/xhtml"
+                 style="vertical-align: top; text-align: center; color: rgb(50, 50, 50); line-height: 18px; font-size: 14px; font-family: 微软雅黑; white-space: nowrap; display: inline-block; background: rgb(255, 255, 255);">
+                否
+            </div>
+        </foreignObject>
+    </g>
+    <g id="SvgjsG1100">
+        <path id="SvgjsPath1101" d="M906.1301369863014 741L906.1301369863014 637.5L638.5 637.5" stroke="#323232"
+              stroke-width="2" fill="none" marker-end="url(#SvgjsMarker1102)"/>
+        <foreignObject id="SvgjsForeignObject1104" width="13" height="16" x="817.5650684931506" y="629.5">
+            <div xmlns="http://www.w3.org/1999/xhtml"
+                 style="vertical-align: top; text-align: center; color: rgb(50, 50, 50); line-height: 16px; font-size: 13px; font-family: 微软雅黑; white-space: nowrap; display: inline-block; background: rgb(255, 255, 255);">
+                否
+            </div>
+        </foreignObject>
+    </g>
+    <g id="SvgjsG1105">
+        <path id="SvgjsPath1106"
+              d="M688.2164383561644 820L688.2164383561644 851.5L688.2164383561644 851.5L688.2164383561644 883"
+              stroke="#323232" stroke-width="2" fill="none" marker-end="url(#SvgjsMarker1107)"/>
+        <foreignObject id="SvgjsForeignObject1109" width="14" height="18" x="681.2164383561644" y="842.5">
+            <div xmlns="http://www.w3.org/1999/xhtml"
+                 style="vertical-align: top; text-align: center; color: rgb(50, 50, 50); line-height: 18px; font-size: 14px; font-family: 微软雅黑; white-space: nowrap; display: inline-block; background: rgb(255, 255, 255);">
+                是
+            </div>
+        </foreignObject>
+    </g>
+    <g id="SvgjsG1110">
+        <path id="SvgjsPath1111" d="M906.1301369863014 820L906.1301369863014 1037L800.75 1037" stroke="#323232"
+              stroke-width="2" fill="none" marker-end="url(#SvgjsMarker1112)"/>
+        <foreignObject id="SvgjsForeignObject1114" width="13" height="16" x="899.6301369863014" y="973.1900684931506">
+            <div xmlns="http://www.w3.org/1999/xhtml"
+                 style="vertical-align: top; text-align: center; color: rgb(50, 50, 50); line-height: 16px; font-size: 13px; font-family: 微软雅黑; white-space: nowrap; display: inline-block; background: rgb(255, 255, 255);">
+                是
+            </div>
+        </foreignObject>
+    </g>
+    <g id="SvgjsG1115">
+        <path id="SvgjsPath1116" d="M689.4999999999999 1058L689.4999999999999 1092.5L689.5 1092.5L689.5 1127"
+              stroke="#323232" stroke-width="2" fill="none" marker-end="url(#SvgjsMarker1117)"/>
+    </g>
+    <g id="SvgjsG1119">
+        <path id="SvgjsPath1120" d="M689.5 1163L689.5 1198L689.5 1198L689.5 1233" stroke="#323232" stroke-width="2"
+              fill="none" marker-end="url(#SvgjsMarker1121)"/>
+    </g>
+    <g id="SvgjsG1123">
+        <path id="SvgjsPath1124" d="M689.5 1301L689.5 1339L689.5 1339L689.5 1377" stroke="#323232" stroke-width="2"
+              fill="none" marker-end="url(#SvgjsMarker1125)"/>
+        <foreignObject id="SvgjsForeignObject1127" width="14" height="18" x="682.5" y="1330">
+            <div xmlns="http://www.w3.org/1999/xhtml"
+                 style="vertical-align: top; text-align: center; color: rgb(50, 50, 50); line-height: 18px; font-size: 14px; font-family: 微软雅黑; white-space: nowrap; display: inline-block; background: rgb(255, 255, 255);">
+                是
+            </div>
+        </foreignObject>
+    </g>
+    <g id="SvgjsG1128">
+        <path id="SvgjsPath1129" d="M463.8698630136986 820L463.8698630136986 1037L578.25 1037" stroke="#323232"
+              stroke-width="2" fill="none" marker-end="url(#SvgjsMarker1130)"/>
+        <foreignObject id="SvgjsForeignObject1132" width="13" height="16" x="457.3698630136986" y="977.6900684931508">
+            <div xmlns="http://www.w3.org/1999/xhtml"
+                 style="vertical-align: top; text-align: center; color: rgb(50, 50, 50); line-height: 16px; font-size: 13px; font-family: 微软雅黑; white-space: nowrap; display: inline-block; background: rgb(255, 255, 255);">
+                是
+            </div>
+        </foreignObject>
+    </g>
+    <g id="SvgjsG1133">
+        <path id="SvgjsPath1134" d="M767 1267L810.25 1267L810.25 1267L853.5 1267" stroke="#323232" stroke-width="2"
+              fill="none" marker-end="url(#SvgjsMarker1135)"/>
+        <foreignObject id="SvgjsForeignObject1137" width="14" height="18" x="803.25" y="1258">
+            <div xmlns="http://www.w3.org/1999/xhtml"
+                 style="vertical-align: top; text-align: center; color: rgb(50, 50, 50); line-height: 18px; font-size: 14px; font-family: 微软雅黑; white-space: nowrap; display: inline-block; background: rgb(255, 255, 255);">
+                否
+            </div>
+        </foreignObject>
+    </g>
+    <g id="SvgjsG1138">
+        <path id="SvgjsPath1139" d="M892 1238.5L892 1145L801.5 1145" stroke-dasharray="8,5" stroke="#323232"
+              stroke-width="2" fill="none" marker-end="url(#SvgjsMarker1140)"/>
+        <foreignObject id="SvgjsForeignObject1142" width="67" height="18" x="858.5" y="1137.5">
+            <div xmlns="http://www.w3.org/1999/xhtml"
+                 style="vertical-align: top; text-align: center; color: rgb(50, 50, 50); line-height: 18px; font-size: 14px; font-family: Consolas,微软雅黑,serif; white-space: nowrap; display: inline-block; background: rgb(255, 255, 255);">
+                setRetry
+            </div>
+        </foreignObject>
+    </g>
+    <g id="SvgjsG1143" transform="translate(104.5,1170)">
+        <path id="SvgjsPath1144" d="M 0 4Q 0 0 4 0L 403 0Q 407 0 407 4L 407 143Q 407 147 403 147L 4 147Q 0 147 0 143Z"
+              stroke="#323232" stroke-width="2" fill="#ffffff"/>
+        <g id="SvgjsG1145">
+            <foreignObject id="SvgjsForeignObject1146" width="387" height="100" x="10" style="overflow:visible;"
+                           y="23.5">
+                <div xmlns="http://www.w3.org/1999/xhtml"
+                     style="font-family: &quot;Courier New&quot;; text-align: left; font-size: 16px; vertical-align: middle; color: rgb(50, 50, 50); font-weight: 700; line-height: 20px; width: 387px; word-break: break-word; border: 0px;">
+                    注: onError并不是只有流程中的这些位置，还包括比方 dns 解析失败，连接 超时等等;<div></div>当一次正常的评测没有成功获取到结果,只要成功录音的,可以调用setRetry接口,发起一次
+                    http 评测，相当于重新进行一次独立的评测流程
+                </div>
+            </foreignObject>
+        </g>
+    </g>
+    <g id="SvgjsG1147">
+        <path id="SvgjsPath1148" d="M464.5 110L464.5 150.5L464.5 150.5L464.5 191" stroke="#323232" stroke-width="2"
+              fill="none" marker-end="url(#SvgjsMarker1149)"/>
+    </g>
+</svg>

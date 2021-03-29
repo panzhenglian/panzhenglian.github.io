@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.panzhenglian.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="首先来个清单列表 Shadowsocks    :服务器架设在国外，作为代理使用 JDK             Apache         :Apache 服务器，占用80端口，作为端口映射以及php程序的容器 tomcat         mysql php phpMyAdmin    :很不错的数据库web管理工具，由php开发，配置简单  Shadowsocks配置  已经有一篇文章单独">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Centos个人应用清单">
+<meta property="og:url" content="http://blog.panzhenglian.com/2016/05/28/Centos%E4%B8%AA%E4%BA%BA%E5%BA%94%E7%94%A8%E6%B8%85%E5%8D%95/index.html">
+<meta property="og:site_name" content="平凡">
+<meta property="og:description" content="首先来个清单列表 Shadowsocks    :服务器架设在国外，作为代理使用 JDK             Apache         :Apache 服务器，占用80端口，作为端口映射以及php程序的容器 tomcat         mysql php phpMyAdmin    :很不错的数据库web管理工具，由php开发，配置简单  Shadowsocks配置  已经有一篇文章单独">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-05-28T02:57:12.000Z">
+<meta property="article:modified_time" content="2017-05-29T18:03:30.000Z">
+<meta property="article:author" content="平凡">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://blog.panzhenglian.com/2016/05/28/Centos%E4%B8%AA%E4%BA%BA%E5%BA%94%E7%94%A8%E6%B8%85%E5%8D%95/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Centos个人应用清单 | 平凡</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">平凡</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.panzhenglian.com/2016/05/28/Centos%E4%B8%AA%E4%BA%BA%E5%BA%94%E7%94%A8%E6%B8%85%E5%8D%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="平凡">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="平凡">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Centos个人应用清单
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-05-28 10:57:12" itemprop="dateCreated datePublished" datetime="2016-05-28T10:57:12+08:00">2016-05-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2017-05-30 02:03:30" itemprop="dateModified" datetime="2017-05-30T02:03:30+08:00">2017-05-30</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="首先来个清单列表"><a href="#首先来个清单列表" class="headerlink" title="首先来个清单列表"></a>首先来个清单列表</h3><ul>
+<li>Shadowsocks    :服务器架设在国外，作为代理使用</li>
+<li>JDK            </li>
+<li>Apache         :Apache 服务器，占用80端口，作为端口映射以及php程序的容器</li>
+<li>tomcat        </li>
+<li>mysql</li>
+<li>php</li>
+<li>phpMyAdmin    :很不错的数据库web管理工具，由php开发，配置简单</li>
+</ul>
+<h3 id="Shadowsocks配置"><a href="#Shadowsocks配置" class="headerlink" title="Shadowsocks配置"></a>Shadowsocks配置</h3><p>  已经有一篇文章单独描述了，点击<a href="./2016/05/28/shadowsocks%E6%9C%8D%E5%8A%A1%E5%99%A8/">这里</a></p>
+<h3 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h3><p>  找到jdk官网，下载rpm包到服务器，执行</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh jdk-7-linux-x64.rpm</span><br></pre></td></tr></table></figure>
+<p>  JDK默认安装在/usr/java中。</p>
+<h4 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h4><p>  执行以下操作，查看信息是否正常：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@keke java]# java</span><br><span class="line">[root@keke java]# javac</span><br><span class="line">[root@keke java]# java -version</span><br><span class="line">java version &quot;1.8.0_91&quot;</span><br><span class="line">Java(TM) SE Runtime Environment (build 1.8.0_91-b14)</span><br><span class="line">Java HotSpot(TM) 64-Bit Server VM (build 25.91-b14, mixed mode)</span><br></pre></td></tr></table></figure>
+<h4 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h4><p>  通过rpm安装包的方式安装后是不需要配置环境变量的，但是通过压缩文件解压需要配置jdk路径<br>  如下：<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi + &#x2F;etc&#x2F;profile</span><br></pre></td></tr></table></figure><br>  添加以下内容<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">JAVA_HOME&#x3D;&#x2F;&#x2F;usr&#x2F;java&#x2F;jdk1.8.0_91</span><br><span class="line">JRE_HOME&#x3D;&#x2F;&#x2F;usr&#x2F;java&#x2F;jdk1.8.0_91&#x2F;jre</span><br><span class="line">PATH&#x3D;$PATH:$JAVA_HOME&#x2F;bin:$JRE_HOME&#x2F;bin</span><br><span class="line">CLASSPATH&#x3D;.:$JAVA_HOME&#x2F;lib&#x2F;dt.jar:$JAVA_HOME&#x2F;lib&#x2F;tools.jar:$JRE_HOME&#x2F;lib</span><br><span class="line">export JAVA_HOME JRE_HOME PATH CLASSPATH</span><br></pre></td></tr></table></figure><br>使修改生效</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source &#x2F;etc&#x2F;profile</span><br></pre></td></tr></table></figure>
+
+<h3 id="Apache、mysql、php"><a href="#Apache、mysql、php" class="headerlink" title="Apache、mysql、php"></a>Apache、mysql、php</h3><h4 id="配置防火墙，开启80端口、3306端口"><a href="#配置防火墙，开启80端口、3306端口" class="headerlink" title="配置防火墙，开启80端口、3306端口"></a>配置防火墙，开启80端口、3306端口</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vi &#x2F;etc&#x2F;sysconfig&#x2F;iptables</span><br><span class="line">-A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT</span><br><span class="line">-A INPUT -m state --state NEW -m tcp -p tcp --dport 3306 -j ACCEPT</span><br></pre></td></tr></table></figure>
+<p>重启防火墙使配置生效</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;etc&#x2F;init.d&#x2F;iptables restart </span><br></pre></td></tr></table></figure>
+
+<h4 id="关闭SELINUX"><a href="#关闭SELINUX" class="headerlink" title="关闭SELINUX,"></a>关闭SELINUX,</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vi &#x2F;etc&#x2F;selinux&#x2F;config</span><br><span class="line">#SELINUX&#x3D;enforcing #注释掉</span><br><span class="line">#SELINUXTYPE&#x3D;targeted #注释掉</span><br><span class="line">SELINUX&#x3D;disabled #增加</span><br><span class="line">:wq #保存，关闭</span><br><span class="line">shutdown -r now #重启系统</span><br></pre></td></tr></table></figure>
+
+<h4 id="安装Apache"><a href="#安装Apache" class="headerlink" title="安装Apache"></a>安装Apache</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install httpd</span><br></pre></td></tr></table></figure>
+<p>配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vi &#x2F;etc&#x2F;httpd&#x2F;conf&#x2F;httpd.conf #编辑</span><br><span class="line">找到 #ServerName www.example.com:80</span><br><span class="line">修改为 ServerName www.osyunwei.com:80 </span><br><span class="line">#这里设置为你自己的域名，如果没有域名，可以设置为localhost</span><br><span class="line">:wq #保存退出</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">chkconfig httpd on #设为开机启动</span><br><span class="line">&#x2F;etc&#x2F;init.d&#x2F;httpd restart #重启Apache</span><br><span class="line">&#x2F;etc&#x2F;init.d&#x2F;httpd start #启动Apache</span><br></pre></td></tr></table></figure>
+<p>或</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">service httpd start</span><br><span class="line">service httpd restart</span><br><span class="line">service httpd stop</span><br></pre></td></tr></table></figure>
+<p>centos 7 上命令有些许不同，应该是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl httpd start</span><br><span class="line">systemctl httpd restart</span><br><span class="line">systemctl httpd stop</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>apache默认的程序目录是/var/www/html</p>
+</blockquote>
+<h4 id="Apache-配置多域名端口转发"><a href="#Apache-配置多域名端口转发" class="headerlink" title="Apache 配置多域名端口转发"></a>Apache 配置多域名端口转发</h4><p>一台主机中可能运行着很多web应用，例如 gitlab，javaweb ，php<br>如果开启多个端口，看着端口怎么都别扭，而且不好记，于是，通过apache完成不同域名转发<br>编辑httpd.conf </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">&lt;&#x2F;VirtualHost&gt;</span><br><span class="line"></span><br><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    ServerName tomcat.panzhenglian.com</span><br><span class="line">    ServerAlias tomcat.uuk4.com</span><br><span class="line">    ProxyPass &#x2F; http:&#x2F;&#x2F;localhost:7896&#x2F;</span><br><span class="line">    ProxyPassReverse &#x2F; http:&#x2F;&#x2F;localhost:7896&#x2F;</span><br><span class="line">    ErrorLog logs&#x2F;tomcat.uuk4.log</span><br><span class="line">    CustomLog logs&#x2F;tomcat.uuk4-access_log common</span><br><span class="line">&lt;&#x2F;VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>第一行为默认配置，如果不配置，所有的请求都会跳转到最后一条 记录，<br>tomcat 开启的端口是 7896，如果通过域名 tomcat.panzhenglian.com 进入的请求会转发至tomcat处理，<br>这样，一台主机上就可以在根目录部署多个网站了，</p>
+</blockquote>
+<h4 id="apache-安全"><a href="#apache-安全" class="headerlink" title="apache 安全"></a>apache 安全</h4><p>程序根目录添加 .htaccess 文件<br>配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;DirectoryMatch .*\.svn|.git|_svn&#x2F;.*&gt;</span><br><span class="line">RewriteEngine On</span><br><span class="line">RewriteRule ^(.*)(\.svn|.git|_svn)(&#x2F;.*)$ &#x2F;index.php [R&#x3D;301]</span><br><span class="line">&lt;&#x2F;DirectoryMatch&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>避免程序下的特定目录被外界访问，无需重启服务器，保存立即生效<br>笔者是通过 git webhooks 来完成程序部署的，因此程序目录下会有.git文件夹，</p>
+</blockquote>
+<h4 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install mysql mysql-server </span><br><span class="line">&#x2F;etc&#x2F;init.d&#x2F;mysqld start #启动MySQL</span><br><span class="line">chkconfig mysqld on #设为开机启动</span><br></pre></td></tr></table></figure>
+
+<p>为root账户设置密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mysql_secure_installation</span><br><span class="line">回车，根据提示输入Y</span><br><span class="line">输入2次密码，回车</span><br><span class="line">根据提示一路输入Y</span><br><span class="line">最后出现：Thanks for using MySQL!</span><br><span class="line">MySql密码设置完成，重新启动 MySQL：</span><br><span class="line">&#x2F;etc&#x2F;init.d&#x2F;mysqld restart #重启</span><br><span class="line">&#x2F;etc&#x2F;init.d&#x2F;mysqld stop #停止</span><br><span class="line">&#x2F;etc&#x2F;init.d&#x2F;mysqld start #启动</span><br></pre></td></tr></table></figure>
+<p>mysql 启动等命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">service mysqld start&#x2F;restart&#x2F;stop</span><br><span class="line"># centos 7 # systemctl mysqld start&#x2F;restart&#x2F;stop</span><br></pre></td></tr></table></figure>
+<h4 id="安装PHP5"><a href="#安装PHP5" class="headerlink" title="安装PHP5"></a>安装PHP5</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install php-fpm php-common php-devel php-mysqlnd php-mbstring php-mcrypt</span><br></pre></td></tr></table></figure>
+
+<h4 id="升级mysql-到-5-5，"><a href="#升级mysql-到-5-5，" class="headerlink" title="升级mysql 到 5.5，"></a>升级mysql 到 5.5，</h4><blockquote>
+<p>yum中的mysql版本较低，添加repo</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rpm -Uvh http:&#x2F;&#x2F;dl.fedoraproject.org&#x2F;pub&#x2F;epel&#x2F;6&#x2F;i386&#x2F;epel-release-6-8.noarch.rpm  </span><br><span class="line">rpm -Uvh http:&#x2F;&#x2F;mirrors.neusoft.edu.cn&#x2F;epel&#x2F;6&#x2F;i386&#x2F;epel-release-6-8.noarch.rpm  </span><br><span class="line">rpm -Uvh http:&#x2F;&#x2F;packages.sw.be&#x2F;rpmforge-release&#x2F;rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm  </span><br><span class="line">rpm -Uvh http:&#x2F;&#x2F;dl.iuscommunity.org&#x2F;pub&#x2F;ius&#x2F;stable&#x2F;Redhat&#x2F;6&#x2F;x86_64&#x2F;epel-release-6-5.noarch.rpm  </span><br><span class="line">rpm -Uvh http:&#x2F;&#x2F;rpms.famillecollet.com&#x2F;enterprise&#x2F;remi-release-6.rpm  </span><br></pre></td></tr></table></figure>
+<p>安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum --enablerepo&#x3D;remi,remi-test install mysql mysql-server </span><br></pre></td></tr></table></figure>
+<p>查看版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select version();</span><br><span class="line">+-----------+</span><br><span class="line">| version() |</span><br><span class="line">+-----------+</span><br><span class="line">| 5.5.49    |</span><br><span class="line">+-----------+</span><br><span class="line">1 row in set (0.00 sec)</span><br><span class="line">mysql&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="升级php到5-5版本"><a href="#升级php到5-5版本" class="headerlink" title="升级php到5.5版本"></a>升级php到5.5版本</h4><p>添加 epel 源,remi 源</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># rpm -Uvh http:&#x2F;&#x2F;download.fedoraproject.org&#x2F;pub&#x2F;epel&#x2F;6&#x2F;x86_64&#x2F;epel-release-6-8.noarch.rpm</span><br><span class="line"># rpm -Uvh http:&#x2F;&#x2F;rpms.famillecollet.com&#x2F;enterprise&#x2F;remi-release-6.rpm</span><br></pre></td></tr></table></figure>
+<p>安装 PHP</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum --enablerepo&#x3D;remi,remi-php55 install php-fpm php-common php-devel php-mysqlnd php-mbstring php-mcrypt</span><br></pre></td></tr></table></figure>
+
+<p>查看php版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@keke &#x2F;]# php -v</span><br><span class="line">PHP 5.5.36 (cli) (built: May 25 2016 16:10:36)</span><br><span class="line">Copyright (c) 1997-2015 The PHP Group</span><br><span class="line">Zend Engine v2.5.0, Copyright (c) 1998-2015 Zend Technologies</span><br><span class="line">[root@keke &#x2F;]#</span><br></pre></td></tr></table></figure>
+<p>启动 php-fpm</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># service php-fpm start</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>需要先安装php，再添加repo升级，不然可能apache服务器不执行php脚本</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2016/05/28/%E6%90%AD%E5%BB%BAshadowsocks%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="prev" title="搭建shadowsocks服务器">
+      <i class="fa fa-chevron-left"></i> 搭建shadowsocks服务器
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2016/06/01/%E6%89%93%E5%BC%80OS%20X%E8%AF%BB%E5%86%99NTFS%E5%8A%9F%E8%83%BD/" rel="next" title="如何打开Mac OSX原生的读写NTFS功能">
+      如何打开Mac OSX原生的读写NTFS功能 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A6%96%E5%85%88%E6%9D%A5%E4%B8%AA%E6%B8%85%E5%8D%95%E5%88%97%E8%A1%A8"><span class="nav-number">1.</span> <span class="nav-text">首先来个清单列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shadowsocks%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">Shadowsocks配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JDK"><span class="nav-number">3.</span> <span class="nav-text">JDK</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81%E5%AE%89%E8%A3%85"><span class="nav-number">3.1.</span> <span class="nav-text">验证安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="nav-number">3.2.</span> <span class="nav-text">配置环境变量</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Apache%E3%80%81mysql%E3%80%81php"><span class="nav-number">4.</span> <span class="nav-text">Apache、mysql、php</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E9%98%B2%E7%81%AB%E5%A2%99%EF%BC%8C%E5%BC%80%E5%90%AF80%E7%AB%AF%E5%8F%A3%E3%80%813306%E7%AB%AF%E5%8F%A3"><span class="nav-number">4.1.</span> <span class="nav-text">配置防火墙，开启80端口、3306端口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B3%E9%97%ADSELINUX"><span class="nav-number">4.2.</span> <span class="nav-text">关闭SELINUX,</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Apache"><span class="nav-number">4.3.</span> <span class="nav-text">安装Apache</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Apache-%E9%85%8D%E7%BD%AE%E5%A4%9A%E5%9F%9F%E5%90%8D%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91"><span class="nav-number">4.4.</span> <span class="nav-text">Apache 配置多域名端口转发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#apache-%E5%AE%89%E5%85%A8"><span class="nav-number">4.5.</span> <span class="nav-text">apache 安全</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85MySQL"><span class="nav-number">4.6.</span> <span class="nav-text">安装MySQL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85PHP5"><span class="nav-number">4.7.</span> <span class="nav-text">安装PHP5</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7mysql-%E5%88%B0-5-5%EF%BC%8C"><span class="nav-number">4.8.</span> <span class="nav-text">升级mysql 到 5.5，</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7php%E5%88%B05-5%E7%89%88%E6%9C%AC"><span class="nav-number">4.9.</span> <span class="nav-text">升级php到5.5版本</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">平凡</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">平凡</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

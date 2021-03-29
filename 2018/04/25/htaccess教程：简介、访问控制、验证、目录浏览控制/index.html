@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.panzhenglian.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="转载，原文链接https:&#x2F;&#x2F;lesca.me&#x2F;archives&#x2F;htaccess-basic.html 一、.htaccess简介什么是.htaccess.htaccess是一个纯文本文件，里面存放着Apache服务器配置相关的一些指令，它类似于Apache的站点配置文件，如httpd.conf（Apache2已经支持多站点，因此你的站点配置文件可能在&#x2F;etc&#x2F;apache2&#x2F;conf.d&#x2F;目录">
+<meta property="og:type" content="article">
+<meta property="og:title" content=".htaccess教程：简介、访问控制、验证、目录浏览控制">
+<meta property="og:url" content="http://blog.panzhenglian.com/2018/04/25/htaccess%E6%95%99%E7%A8%8B%EF%BC%9A%E7%AE%80%E4%BB%8B%E3%80%81%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E3%80%81%E9%AA%8C%E8%AF%81%E3%80%81%E7%9B%AE%E5%BD%95%E6%B5%8F%E8%A7%88%E6%8E%A7%E5%88%B6/index.html">
+<meta property="og:site_name" content="平凡">
+<meta property="og:description" content="转载，原文链接https:&#x2F;&#x2F;lesca.me&#x2F;archives&#x2F;htaccess-basic.html 一、.htaccess简介什么是.htaccess.htaccess是一个纯文本文件，里面存放着Apache服务器配置相关的一些指令，它类似于Apache的站点配置文件，如httpd.conf（Apache2已经支持多站点，因此你的站点配置文件可能在&#x2F;etc&#x2F;apache2&#x2F;conf.d&#x2F;目录">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-04-25T08:38:23.000Z">
+<meta property="article:modified_time" content="2019-05-08T09:03:17.663Z">
+<meta property="article:author" content="平凡">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://blog.panzhenglian.com/2018/04/25/htaccess%E6%95%99%E7%A8%8B%EF%BC%9A%E7%AE%80%E4%BB%8B%E3%80%81%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E3%80%81%E9%AA%8C%E8%AF%81%E3%80%81%E7%9B%AE%E5%BD%95%E6%B5%8F%E8%A7%88%E6%8E%A7%E5%88%B6/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>.htaccess教程：简介、访问控制、验证、目录浏览控制 | 平凡</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">平凡</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.panzhenglian.com/2018/04/25/htaccess%E6%95%99%E7%A8%8B%EF%BC%9A%E7%AE%80%E4%BB%8B%E3%80%81%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E3%80%81%E9%AA%8C%E8%AF%81%E3%80%81%E7%9B%AE%E5%BD%95%E6%B5%8F%E8%A7%88%E6%8E%A7%E5%88%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="平凡">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="平凡">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          .htaccess教程：简介、访问控制、验证、目录浏览控制
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-04-25 16:38:23" itemprop="dateCreated datePublished" datetime="2018-04-25T16:38:23+08:00">2018-04-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-05-08 17:03:17" itemprop="dateModified" datetime="2019-05-08T17:03:17+08:00">2019-05-08</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>转载，原文链接<a target="_blank" rel="noopener" href="https://lesca.me/archives/htaccess-basic.html">https://lesca.me/archives/htaccess-basic.html</a></p>
+<h2 id="一、-htaccess简介"><a href="#一、-htaccess简介" class="headerlink" title="一、.htaccess简介"></a>一、.htaccess简介</h2><h3 id="什么是-htaccess"><a href="#什么是-htaccess" class="headerlink" title="什么是.htaccess"></a>什么是.htaccess</h3><p>.htaccess是一个纯文本文件，里面存放着Apache服务器配置相关的一些指令，它类似于Apache的站点配置文件，如httpd.conf（Apache2已经支持多站点，因此你的站点配置文件可能在/etc/apache2/conf.d/目录下）。<br>.htaccess与httpd.conf配置文件不同的是，它只作用于当前目录。另外httpd.conf是在Apache服务启动的时候就加载的，而.htaccess只有在用户访问目录时加载，开销大、速度慢。<br>既然如此，为什么我们还要用.htaccess呢？因为它配置起来简单，它还支持重定向、URL重写以及访问验证，另外它管理起来很方便，可以很好适应网站迁移。总之，各有优缺点，主要就看你是要从全局考虑还是只配置单个目录。</p>
+<span id="more"></span>
+
+<h3 id="AllowOverride-All"><a href="#AllowOverride-All" class="headerlink" title="AllowOverride All"></a>AllowOverride All</h3><p>通常情况下，Apache是默认启用.htaccess的，但是为了以防万一，请检查一下自己站点的配置文件，如httpd.conf，是否有这行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AllowOverride All </span><br></pre></td></tr></table></figure>
+<p>这行允许重写配置文件。也就是如果能够从.htaccess加载配置文件，那么就以.htaccess为配置文件对其所在目录进行配置。</p>
+<h3 id="500错误"><a href="#500错误" class="headerlink" title="500错误"></a>500错误</h3><p>如果你租用了云服务提供商的主机或者空间，那么他们可能不会给你读写httpd.conf文件的权限，你也不可能检查AllowOverride命令参数是否为All，这时，你可以新建一个目录，在里面写一个.htaccess文件，文件中随意写入一些服务器看不懂的东西，然后访问该目录里的一个页面，耐心等待500错误的出现。<br>如果没有出现，那么.htaccess没有被启用，你需要向你的服务供应商寻求帮助；如果出现了，那么恭喜你，你可以对当前目录重写Apache配置。</p>
+<blockquote>
+<p>注意：.htaccess语法错误可能会影响整个站点，如果你不确定这样做是否安全，请联系你的云服务供应商。</p>
+</blockquote>
+<h3 id="有用的文档"><a href="#有用的文档" class="headerlink" title="有用的文档"></a>有用的文档</h3><p><a target="_blank" rel="noopener" href="https://lesca.me/archives/htaccess-appendix.html#htaccess_regex">.htaccess正则表达式</a><br><a target="_blank" rel="noopener" href="https://lesca.me/archives/htaccess-appendix.html#redirect_codes">HTTP协议重定向编码</a></p>
+<h2 id="二、-htaccess访问控制-Allow-Deny"><a href="#二、-htaccess访问控制-Allow-Deny" class="headerlink" title="二、.htaccess访问控制(Allow/Deny)"></a>二、.htaccess访问控制(Allow/Deny)</h2><h3 id="访问控制基础：Order命令"><a href="#访问控制基础：Order命令" class="headerlink" title="访问控制基础：Order命令"></a>访问控制基础：Order命令</h3><p>为了限制用户访问一些关键目录，.htaccess可以提供目录访问限制。你只需要在要限制的目录中，加入如下.htaccess文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># no one gets in here!</span><br><span class="line">deny from all</span><br></pre></td></tr></table></figure>
+<p>这会限制所有用户通过浏览器访问该目录，这太一刀切了，因此我们还可以增加一些特定的条件，如允许指定IP地址的访问：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Order Allow,Deny</span><br><span class="line">Deny from All</span><br><span class="line">Allow from 192.168.0.0&#x2F;24</span><br></pre></td></tr></table></figure>
+<p>Order命令<br>Order命令是一个难点，也是配置apache的基础，它决定了Apache处理访问规则的顺序。</p>
+<p>通过Allow,Deny参数，Apache首先找到并应用Allow命令，然后应用Deny命令，以阻止所有访问。<br>通过Deny,Allow参数，Apache首先找到并应用Deny命令，然后应用Allow命令，以允许所有访问。<br>了解Order的用法后，再仔细考虑下上面的例子，你或许能够发现Deny命令是多余的，以下用法和之前的描述语义相同：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Order Allow,Deny</span><br><span class="line">Allow from 192.168.0&#x2F;24</span><br></pre></td></tr></table></figure>
+
+<h3 id="利用-htaccess过滤域名或网络主机-Allow-Deny"><a href="#利用-htaccess过滤域名或网络主机-Allow-Deny" class="headerlink" title="利用.htaccess过滤域名或网络主机(Allow/Deny)"></a>利用.htaccess过滤域名或网络主机(Allow/Deny)</h3><p>下例可以限制所有含有“domain.com”的网络主机访问网站：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Order Allow,Deny</span><br><span class="line">Allow from all</span><br><span class="line">Deny from .*domain\.com.*</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Info：有关htaccess的正则表达式用法，请查阅本站《.htaccess正则表达式》一文。</p>
+</blockquote>
+<h3 id="利用-htaccess禁止访问指定文件-Files"><a href="#利用-htaccess禁止访问指定文件-Files" class="headerlink" title="利用.htaccess禁止访问指定文件(Files)"></a>利用.htaccess禁止访问指定文件(Files)</h3><p>Files命令可以用于过滤指定文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># secure htaccess file</span><br><span class="line">&lt;Files .htaccess&gt;</span><br><span class="line"> order allow,deny</span><br><span class="line"> deny from all</span><br><span class="line">&lt;&#x2F;Files&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="利用-htaccess禁止访问指定文件类型-FilesMatch"><a href="#利用-htaccess禁止访问指定文件类型-FilesMatch" class="headerlink" title="利用.htaccess禁止访问指定文件类型(FilesMatch)"></a>利用.htaccess禁止访问指定文件类型(FilesMatch)</h3><p>下面的代码将限制访问所有.log和.exe文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;FilesMatch &quot;.(log|exe)$&quot;&gt;</span><br><span class="line"> Order allow,deny</span><br><span class="line"> Deny from all</span><br><span class="line">&lt;&#x2F;FilesMatch&gt;</span><br></pre></td></tr></table></figure>
+<p>我们还可以通过Files命令描述文件类型，但是需要在命令后面加一个波浪线(~)，该符号启用Files命令的正则表达解析功能：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;Files ~ &quot;^.*\.([Ll][Oo][Gg])|([eE][xX][eE])&quot;&gt;</span><br><span class="line"> Order allow,deny</span><br><span class="line"> Deny from all</span><br><span class="line"> Satisfy All</span><br><span class="line">&lt;&#x2F;Files&gt;</span><br></pre></td></tr></table></figure>
+
+<p>有以下几点需要注意:</p>
+<ul>
+<li>Files之后的波浪线用于开启“正则表达式”分析。请注意，这是个过时的用法，Apache更推荐使用<FilesMatch>指令[3]</li>
+<li>正则表达式必须在双引号之间，有关htaccess的正则表达式用法，请查阅本站《.htaccess正则表达式》一文。</li>
+<li>双引号中的“管道符”(|)用于将两种文件类型（.log和.exe）分开，相当于逻辑“或”Order命令必须嵌在Files节(Section)中，否则将会应用到所有文件</li>
+<li><strong>Satisfy All</strong>表示必须同时满足主机级别(Allow/Denay)和用户级别(Require)的限制，All是默认值，该行可以省略。</li>
+</ul>
+<h3 id="高级访问控制-Rewrite"><a href="#高级访问控制-Rewrite" class="headerlink" title="高级访问控制(Rewrite)"></a>高级访问控制(Rewrite)</h3><p>我们还可以通过运用Rewrite实现更强大的访问控制，但是Rewrite不是本文讨论的内容。读者可以参看：利用RewriteCond和RewriteRule进行访问控制一文。</p>
+<h2 id="三、利用-htaccess进行密码保护与验证"><a href="#三、利用-htaccess进行密码保护与验证" class="headerlink" title="三、利用.htaccess进行密码保护与验证"></a>三、利用.htaccess进行密码保护与验证</h2><h3 id="配置-htaccess"><a href="#配置-htaccess" class="headerlink" title="配置.htaccess"></a>配置.htaccess</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">AuthType Basic</span><br><span class="line">AuthName &quot;restricted area&quot;</span><br><span class="line">AuthUserFile &#x2F;usr&#x2F;local&#x2F;var&#x2F;www&#x2F;html&#x2F;.htpasses</span><br><span class="line">require valid-user</span><br></pre></td></tr></table></figure>
+<p>这个配置文件可以保护.htaccess所在的整个目录，简单说明下参数：</p>
+<ul>
+<li>AuthType：验证类型为基本类型，密码以明文方式传输到服务器上</li>
+<li>AuthName：验证提示，会出现在验证对话框中</li>
+<li>AuthUserFile：验证配置文件，用于匹配用户名与密码，该密码是加密保存的</li>
+<li>require valid-user：只有在AuthUserFile中出现的用户才可以通过验证<br>如果验证失败，则会出现401错误。</li>
+</ul>
+<h3 id="生成-htpasses文件"><a href="#生成-htpasses文件" class="headerlink" title="生成.htpasses文件"></a>生成.htpasses文件</h3><p>如何生成.htpasses文件呢？我们通过htpasswd命令生成密码文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">htpasswd -c &#x2F;usr&#x2F;local&#x2F;var&#x2F;www&#x2F;html&#x2F;.htpasses lesca</span><br></pre></td></tr></table></figure>
+<p>它会提示你输入密码，并确认。之后将密码文件.htpasses保存在/usr/local/var/www/html/目录下。</p>
+<h3 id="对文件进行密码保护"><a href="#对文件进行密码保护" class="headerlink" title="对文件进行密码保护"></a>对文件进行密码保护</h3><p>保护与.htaccess在同一目录下的文件secure.php：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># password-protect single file</span><br><span class="line">&lt;Files secure.php&gt;</span><br><span class="line">AuthType Basic</span><br><span class="line">AuthName &quot;Prompt&quot;</span><br><span class="line">AuthUserFile &#x2F;home&#x2F;path&#x2F;.htpasswd</span><br><span class="line">Require valid-user</span><br><span class="line">&lt;&#x2F;Files&gt;</span><br></pre></td></tr></table></figure>
+<p>保护.htaccess所在目录下的多个文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># password-protect multiple files</span><br><span class="line">&lt;FilesMatch &quot;^(execute|index|secure|insanity|biscuit)*$&quot;&gt;</span><br><span class="line">AuthType basic</span><br><span class="line">AuthName &quot;Development&quot;</span><br><span class="line">AuthUserFile &#x2F;home&#x2F;path&#x2F;.htpasswd</span><br><span class="line">Require valid-user</span><br><span class="line">&lt;&#x2F;FilesMatch&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="对指定IP进行密码保护"><a href="#对指定IP进行密码保护" class="headerlink" title="对指定IP进行密码保护"></a>对指定IP进行密码保护</h3><p>仅允许IP地址为99.88.77.66的主机直接访问该目录，其他IP需要验证。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">AuthType Basic</span><br><span class="line">AuthName &quot;Personal&quot;</span><br><span class="line">AuthUserFile &#x2F;home&#x2F;path&#x2F;.htpasswd</span><br><span class="line">Require valid-user</span><br><span class="line">Allow from 99.88.77.66</span><br><span class="line">Satisfy Any</span><br></pre></td></tr></table></figure>
+<h3 id="安全性"><a href="#安全性" class="headerlink" title="安全性"></a>安全性</h3><p>出于安全考虑，将.htpasses文件存放在WEB目录树之外也许是个好方法，但是由于.htpasses是隐藏文件，而且Apache不会输出隐藏文件，因此可以满足基本的安全要求。这是通过在主配置文件中加入如下限制实现的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;Files ~ &quot;^\.ht&quot;&gt;</span><br><span class="line"> Order allow,deny</span><br><span class="line"> Deny from all</span><br><span class="line"> Satisfy All</span><br><span class="line">&lt;&#x2F;Files&gt;</span><br></pre></td></tr></table></figure>
+<p>一般而言，这是默认设置，用户无需手动添加。我们唯一需要担心的是密码在网络传输过程中是明文形式，这很容易被黑客破译。Coz[1]提供了一个开源项目Pajamas可以在本地利用JS对密码进行MD5加密，有兴趣的读者可以前去研究一下。</p>
+<h2 id="四、目录浏览与主页"><a href="#四、目录浏览与主页" class="headerlink" title="四、目录浏览与主页"></a>四、目录浏览与主页</h2><p>如果你打开本站的下载页面<a target="_blank" rel="noopener" href="http://download.lesca.me/%EF%BC%8C%E5%B0%B1%E4%BC%9A%E5%8F%91%E7%8E%B0%E4%BD%A0%E5%8F%AF%E4%BB%A5%E7%9C%8B%E8%A7%81%E8%BF%99%E4%B8%AA%E7%AB%99%E7%82%B9%E4%B8%8B%E7%9A%84%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6%E3%80%82%E5%83%8F%E8%BF%99%E6%A0%B7%E7%9A%84%E7%89%B9%E6%80%A7%E4%B9%9F%E5%8F%AF%E4%BB%A5%E9%80%9A.htaccess%E6%9D%A5%E8%AE%BE%E7%BD%AE%E7%94%A8%E6%88%B7%E6%98%AF%E5%90%A6%E6%9C%89%E6%9D%83%E9%99%90%E6%B5%8F%E8%A7%88%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%AE%E5%BD%95%E3%80%82">http://download.lesca.me/，就会发现你可以看见这个站点下的所有文件。像这样的特性也可以通.htaccess来设置用户是否有权限浏览服务器目录。</a></p>
+<h3 id="启用目录浏览"><a href="#启用目录浏览" class="headerlink" title="启用目录浏览"></a>启用目录浏览</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># enable directory browsing</span><br><span class="line">Options All +Indexes</span><br></pre></td></tr></table></figure>
+<h3 id="禁用目录浏览"><a href="#禁用目录浏览" class="headerlink" title="禁用目录浏览"></a>禁用目录浏览</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># disable directory browsing</span><br><span class="line">Options All -Indexes</span><br></pre></td></tr></table></figure>
+<p>我们还可以通过IndexIgnore指令来禁用目录浏览。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># prevent folder listing</span><br><span class="line">IndexIgnore *</span><br></pre></td></tr></table></figure>
+<p>通过IndexIgnore指令，我们可以禁止对指定类型的文件浏览：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># prevent display of select file types</span><br><span class="line">IndexIgnore *.wmv *.mp4 *.avi *.etc</span><br></pre></td></tr></table></figure>
+<h3 id="自定义目录浏览"><a href="#自定义目录浏览" class="headerlink" title="自定义目录浏览"></a>自定义目录浏览</h3><p>如果你希望Apache在展示你的WEB目录时看起来与众不同，那么你需要启用FancyIndexing选项：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;IfModule mod_autoindex.c&gt;</span><br><span class="line"> IndexOptions FancyIndexing </span><br><span class="line">&lt;&#x2F;ifModule&gt;</span><br></pre></td></tr></table></figure>
+<p>通过这个选项，你可以实现自定义图标、添加文件类型描述、按日期排序等。但是这些已经超过了本文的讨论范围，Lesca可以给你一个做好的例子，你可以在这页查看效果。</p>
+<h3 id="配置目录主页文件"><a href="#配置目录主页文件" class="headerlink" title="配置目录主页文件"></a>配置目录主页文件</h3><p>即使启用了目录浏览，Apache未必会展示该目录的内容，因为该目录可能存在像index.htm这样的默认主页文件。Apache会有限展示主页文件，我们可以通过.htaccess设置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DirectoryIndex index.html index.php index.htm</span><br></pre></td></tr></table></figure>
+<h3 id="配置错误页面"><a href="#配置错误页面" class="headerlink" title="配置错误页面"></a>配置错误页面</h3><p>如果Apache遇到错误，就会输出错误页面。配置自定义的错误页面，也许可以挽留即将离开的用户。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># custom error documents</span><br><span class="line">ErrorDocument 401 &#x2F;err&#x2F;401.php</span><br><span class="line">ErrorDocument 403 &#x2F;err&#x2F;403.php</span><br><span class="line">ErrorDocument 404 &#x2F;err&#x2F;404.php</span><br><span class="line">ErrorDocument 500 &#x2F;err&#x2F;500.php</span><br></pre></td></tr></table></figure>
+<h2 id="五、URL重写与URL重定向"><a href="#五、URL重写与URL重定向" class="headerlink" title="五、URL重写与URL重定向"></a>五、URL重写与URL重定向</h2><p>下一篇文章，我们将介绍htaccess的重头戏：<a target="_blank" rel="noopener" href="https://lesca.me/archives/htaccess-rewrite.html">URL重写与URL重定向</a></p>
+<p>References:</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="http://corz.org/serv/tricks/htaccess.php">htaccess tips and tricks</a></li>
+<li><a target="_blank" rel="noopener" href="http://perishablepress.com/stupid-htaccess-tricks/">Stupid htaccess Tricks</a></li>
+<li><a target="_blank" rel="noopener" href="http://httpd.apache.org/docs/2.2/mod/core.html#files">Files Directive</a></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/07/03/Xware-%E6%94%AF%E6%8C%81%E4%BA%A7%E5%93%81%E4%B8%8D%E5%AE%8C%E5%85%A8%E5%88%97%E8%A1%A8-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/" rel="prev" title="Xware 支持产品不完全列表[持续更新]">
+      <i class="fa fa-chevron-left"></i> Xware 支持产品不完全列表[持续更新]
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/07/09/iOS%E4%BF%AE%E6%94%B9%E9%93%83%E5%A3%B0/" rel="next" title="iOS修改铃声">
+      iOS修改铃声 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81-htaccess%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">一、.htaccess简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-htaccess"><span class="nav-number">1.1.</span> <span class="nav-text">什么是.htaccess</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AllowOverride-All"><span class="nav-number">1.2.</span> <span class="nav-text">AllowOverride All</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#500%E9%94%99%E8%AF%AF"><span class="nav-number">1.3.</span> <span class="nav-text">500错误</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E7%94%A8%E7%9A%84%E6%96%87%E6%A1%A3"><span class="nav-number">1.4.</span> <span class="nav-text">有用的文档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81-htaccess%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6-Allow-Deny"><span class="nav-number">2.</span> <span class="nav-text">二、.htaccess访问控制(Allow&#x2F;Deny)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E5%9F%BA%E7%A1%80%EF%BC%9AOrder%E5%91%BD%E4%BB%A4"><span class="nav-number">2.1.</span> <span class="nav-text">访问控制基础：Order命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A9%E7%94%A8-htaccess%E8%BF%87%E6%BB%A4%E5%9F%9F%E5%90%8D%E6%88%96%E7%BD%91%E7%BB%9C%E4%B8%BB%E6%9C%BA-Allow-Deny"><span class="nav-number">2.2.</span> <span class="nav-text">利用.htaccess过滤域名或网络主机(Allow&#x2F;Deny)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A9%E7%94%A8-htaccess%E7%A6%81%E6%AD%A2%E8%AE%BF%E9%97%AE%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6-Files"><span class="nav-number">2.3.</span> <span class="nav-text">利用.htaccess禁止访问指定文件(Files)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A9%E7%94%A8-htaccess%E7%A6%81%E6%AD%A2%E8%AE%BF%E9%97%AE%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B-FilesMatch"><span class="nav-number">2.4.</span> <span class="nav-text">利用.htaccess禁止访问指定文件类型(FilesMatch)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E7%BA%A7%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6-Rewrite"><span class="nav-number">2.5.</span> <span class="nav-text">高级访问控制(Rewrite)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%88%A9%E7%94%A8-htaccess%E8%BF%9B%E8%A1%8C%E5%AF%86%E7%A0%81%E4%BF%9D%E6%8A%A4%E4%B8%8E%E9%AA%8C%E8%AF%81"><span class="nav-number">3.</span> <span class="nav-text">三、利用.htaccess进行密码保护与验证</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-htaccess"><span class="nav-number">3.1.</span> <span class="nav-text">配置.htaccess</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E6%88%90-htpasses%E6%96%87%E4%BB%B6"><span class="nav-number">3.2.</span> <span class="nav-text">生成.htpasses文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E6%96%87%E4%BB%B6%E8%BF%9B%E8%A1%8C%E5%AF%86%E7%A0%81%E4%BF%9D%E6%8A%A4"><span class="nav-number">3.3.</span> <span class="nav-text">对文件进行密码保护</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E6%8C%87%E5%AE%9AIP%E8%BF%9B%E8%A1%8C%E5%AF%86%E7%A0%81%E4%BF%9D%E6%8A%A4"><span class="nav-number">3.4.</span> <span class="nav-text">对指定IP进行密码保护</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E6%80%A7"><span class="nav-number">3.5.</span> <span class="nav-text">安全性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E7%9B%AE%E5%BD%95%E6%B5%8F%E8%A7%88%E4%B8%8E%E4%B8%BB%E9%A1%B5"><span class="nav-number">4.</span> <span class="nav-text">四、目录浏览与主页</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E7%94%A8%E7%9B%AE%E5%BD%95%E6%B5%8F%E8%A7%88"><span class="nav-number">4.1.</span> <span class="nav-text">启用目录浏览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A6%81%E7%94%A8%E7%9B%AE%E5%BD%95%E6%B5%8F%E8%A7%88"><span class="nav-number">4.2.</span> <span class="nav-text">禁用目录浏览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9B%AE%E5%BD%95%E6%B5%8F%E8%A7%88"><span class="nav-number">4.3.</span> <span class="nav-text">自定义目录浏览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%9B%AE%E5%BD%95%E4%B8%BB%E9%A1%B5%E6%96%87%E4%BB%B6"><span class="nav-number">4.4.</span> <span class="nav-text">配置目录主页文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E9%94%99%E8%AF%AF%E9%A1%B5%E9%9D%A2"><span class="nav-number">4.5.</span> <span class="nav-text">配置错误页面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81URL%E9%87%8D%E5%86%99%E4%B8%8EURL%E9%87%8D%E5%AE%9A%E5%90%91"><span class="nav-number">5.</span> <span class="nav-text">五、URL重写与URL重定向</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">平凡</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">平凡</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
