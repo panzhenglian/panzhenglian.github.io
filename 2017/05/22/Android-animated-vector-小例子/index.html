@@ -6,8 +6,8 @@
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
@@ -17,15 +17,15 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"blog.panzhenglian.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"blog.panzhenglian.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Android 从5.0开始引入 VectorDrawable，用于实现矢量图。默认情况下，Android L 之前的版本并不支持 vector 标签，但是在 com.android.support:appcompat-v7:23.2.0以上的包中，Google 对vector进行了部分兼容。以下内容，均为兼容 api14以上的代码。  引入appcompat,我这里引入的是25.3.1 1">
+  <meta name="description" content="Android 从5.0开始引入 VectorDrawable，用于实现矢量图。默认情况下，Android L 之前的版本并不支持 vector 标签，但是在 com.android.support:appcompat-v7:23.2.0以上的包中，Google 对vector进行了部分兼容。以下内容，均为兼容 api14以上的代码。  引入appcompat,我这里引入的是25.3.11c">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android animated-vector 小例子">
 <meta property="og:url" content="http://blog.panzhenglian.com/2017/05/22/Android-animated-vector-%E5%B0%8F%E4%BE%8B%E5%AD%90/index.html">
 <meta property="og:site_name" content="平凡">
-<meta property="og:description" content="Android 从5.0开始引入 VectorDrawable，用于实现矢量图。默认情况下，Android L 之前的版本并不支持 vector 标签，但是在 com.android.support:appcompat-v7:23.2.0以上的包中，Google 对vector进行了部分兼容。以下内容，均为兼容 api14以上的代码。  引入appcompat,我这里引入的是25.3.1 1">
+<meta property="og:description" content="Android 从5.0开始引入 VectorDrawable，用于实现矢量图。默认情况下，Android L 之前的版本并不支持 vector 标签，但是在 com.android.support:appcompat-v7:23.2.0以上的包中，Google 对vector进行了部分兼容。以下内容，均为兼容 api14以上的代码。  引入appcompat,我这里引入的是25.3.11c">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://blog.panzhenglian.com/images/play_drawable.png">
 <meta property="og:image" content="http://blog.panzhenglian.com/images/anim.gif">
@@ -200,18 +200,16 @@
       
         <p>   Android 从5.0开始引入 VectorDrawable，用于实现矢量图。默认情况下，Android L 之前的版本并不支持 vector 标签，<br>但是在 <code>com.android.support:appcompat-v7:23.2.0</code>以上的包中，Google 对vector进行了部分兼容。以下内容，均为兼容 api14以上的代码。</p>
 <ul>
-<li><p>引入appcompat,我这里引入的是25.3.1</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compile &quot;com.android.support:appcompat-v7:25.3.1&quot;</span><br></pre></td></tr></table></figure></li>
+<li>引入appcompat,我这里引入的是25.3.1<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compile &quot;com.android.support:appcompat-v7:25.3.1&quot;</span><br></pre></td></tr></table></figure></li>
 <li><p>在 Module的 build.gradle 文件中，加入</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vectorDrawables.useSupportLibrary &#x3D; true</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>如果不加的话，只能兼容静态 vector 标签，而且兼容方式是通过生成位图来做的，在 L版本以前的设备会使用工程生成的 png文件，L版本以后不受影响，但是apk 体积会增大。</p>
 </blockquote>
 </li>
-<li><p>编写vector,这里写一个播放图标效果,静态效果如下,</p>
-<img src="/images/play_drawable.png " width="100" height="100"/>  
-文件名`svg_flash_play.xml`
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">vector</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:width</span>=<span class="string">&quot;25dp&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:height</span>=<span class="string">&quot;25dp&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:viewportHeight</span>=<span class="string">&quot;50.0&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:viewportWidth</span>=<span class="string">&quot;50.0&quot;</span>&gt;</span></span><br><span class="line">    &lt;path</span><br><span class="line">        android:name=&quot;p1&quot;</span><br><span class="line">        android:pathData=&quot;M12 ,38 v-28&quot;</span><br><span class="line">        android:strokeColor=&quot;#fff&quot;</span><br><span class="line">        android:strokeWidth=&quot;4&quot; /&gt;</span><br><span class="line">    &lt;path</span><br><span class="line">        android:name=&quot;p2&quot;</span><br><span class="line">        android:pathData=&quot;M21 ,38 v-30&quot;</span><br><span class="line">        android:strokeColor=&quot;#fff&quot;</span><br><span class="line">        android:strokeWidth=&quot;4&quot;</span><br><span class="line">        android:trimPathEnd=&quot;0.4&quot; /&gt;</span><br><span class="line">    &lt;path</span><br><span class="line">        android:name=&quot;p3&quot;</span><br><span class="line">        android:pathData=&quot;M29 ,38 v-34&quot;</span><br><span class="line">        android:strokeColor=&quot;#fff&quot;</span><br><span class="line">        android:strokeWidth=&quot;4&quot; /&gt;</span><br><span class="line">    &lt;path</span><br><span class="line">        android:name=&quot;p4&quot;</span><br><span class="line">        android:pathData=&quot;M38 ,38 v-32&quot;</span><br><span class="line">        android:strokeColor=&quot;#fff&quot;</span><br><span class="line">        android:strokeWidth=&quot;4&quot;</span><br><span class="line">        android:trimPathEnd=&quot;0.45&quot; /&gt;</span><br><span class="line"><span class="tag">&lt;/<span class="name">vector</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>编写vector,这里写一个播放图标效果,静态效果如下,<br><img src="/images/play_drawable.png " width="100" height="100"/><br>文件名<code>svg_flash_play.xml</code></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">vector</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:width</span>=<span class="string">&quot;25dp&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:height</span>=<span class="string">&quot;25dp&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:viewportHeight</span>=<span class="string">&quot;50.0&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:viewportWidth</span>=<span class="string">&quot;50.0&quot;</span>&gt;</span></span><br><span class="line">    &lt;path</span><br><span class="line">        android:name=&quot;p1&quot;</span><br><span class="line">        android:pathData=&quot;M12 ,38 v-28&quot;</span><br><span class="line">        android:strokeColor=&quot;#fff&quot;</span><br><span class="line">        android:strokeWidth=&quot;4&quot; /&gt;</span><br><span class="line">    &lt;path</span><br><span class="line">        android:name=&quot;p2&quot;</span><br><span class="line">        android:pathData=&quot;M21 ,38 v-30&quot;</span><br><span class="line">        android:strokeColor=&quot;#fff&quot;</span><br><span class="line">        android:strokeWidth=&quot;4&quot;</span><br><span class="line">        android:trimPathEnd=&quot;0.4&quot; /&gt;</span><br><span class="line">    &lt;path</span><br><span class="line">        android:name=&quot;p3&quot;</span><br><span class="line">        android:pathData=&quot;M29 ,38 v-34&quot;</span><br><span class="line">        android:strokeColor=&quot;#fff&quot;</span><br><span class="line">        android:strokeWidth=&quot;4&quot; /&gt;</span><br><span class="line">    &lt;path</span><br><span class="line">        android:name=&quot;p4&quot;</span><br><span class="line">        android:pathData=&quot;M38 ,38 v-32&quot;</span><br><span class="line">        android:strokeColor=&quot;#fff&quot;</span><br><span class="line">        android:strokeWidth=&quot;4&quot;</span><br><span class="line">        android:trimPathEnd=&quot;0.45&quot; /&gt;</span><br><span class="line"><span class="tag">&lt;/<span class="name">vector</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
 <li><p>编写animated-vector，animated-vector 可以看作是一个关联动画与vector适配器,文件名：<code>animation_svg_play.xml</code></p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;animated-vector</span><br><span class="line">    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    android:drawable=&quot;@drawable/svg_flash_play&quot;&gt;</span><br><span class="line">    &lt;target</span><br><span class="line">        android:name=&quot;p1&quot;</span><br><span class="line">        android:animation=&quot;@animator/anim_p1&quot;/&gt;</span><br><span class="line">    &lt;target</span><br><span class="line">        android:name=&quot;p2&quot;</span><br><span class="line">        android:animation=&quot;@animator/anim_p2&quot;/&gt;</span><br><span class="line">    &lt;target</span><br><span class="line">        android:name=&quot;p3&quot;</span><br><span class="line">        android:animation=&quot;@animator/anim_p3&quot;/&gt;</span><br><span class="line">    &lt;target</span><br><span class="line">        android:name=&quot;p4&quot;</span><br><span class="line">        android:animation=&quot;@animator/anim_p4&quot;/&gt;</span><br><span class="line"><span class="tag">&lt;/<span class="name">animated-vector</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>  drawable属性关联需要执行动画的vector，这里写之前的vector文件。</p>
@@ -229,10 +227,10 @@
 <li><p>设置<br>在 ImageView 中设置 <code>app:srcCompat=&quot;@drawable/animation_svg_play&quot;</code> 即可，不能直接用 android:src,这样会报错的。<br>代码中开启动画:  </p>
   <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ImageView imageView = (ImageView) findViewById(R.id.image_view);</span><br><span class="line">Drawable drawable = imageView.getDrawable();</span><br><span class="line"><span class="keyword">if</span> (drawable <span class="keyword">instanceof</span> Animatable)&#123;</span><br><span class="line">     ((Animatable) drawable).start();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>  如果需要在java 代码中设置图片，可以这么写  </p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">AnimatedVectorDrawableCompat animatedVectorDrawableCompat &#x3D; AnimatedVectorDrawableCompat.create(</span><br><span class="line">    getContext(), R.drawable.animation_svg_play</span><br><span class="line">);</span><br><span class="line">imageView.setImageDrawable(animatedVectorDrawableCompat);</span><br></pre></td></tr></table></figure></li>
-<li><p>效果</p>
-<img src="/images/anim.gif" style="zoom:30%" />
-代码已提交 [github](https://github.com/panzhenglian/VectorDemo)</li>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">AnimatedVectorDrawableCompat animatedVectorDrawableCompat &#x3D; AnimatedVectorDrawableCompat.create(</span><br><span class="line">    getContext(), R.drawable.animation_svg_play</span><br><span class="line">);</span><br><span class="line">imageView.setImageDrawable(animatedVectorDrawableCompat);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>效果<br><img src="/images/anim.gif" style="zoom:30%" /><br>代码已提交 <a target="_blank" rel="noopener" href="https://github.com/panzhenglian/VectorDemo">github</a></p>
+</li>
 </ul>
 
     </div>
@@ -367,14 +365,14 @@
 
 <div class="copyright">
   
-  &copy; 2016 – 
+  &copy; 
   <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">平凡</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>
 
         
@@ -423,6 +421,8 @@
 
 
 
+
+  
 
   
 

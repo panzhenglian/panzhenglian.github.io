@@ -6,8 +6,8 @@
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"blog.panzhenglian.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"blog.panzhenglian.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta property="og:type" content="website">
@@ -191,10 +191,9 @@
 <p>1、系统首先root<br>2、在手机上下载并安装证书<br>手机连上charles的代理，qq浏览器输入chls.pro/ssl，会直接下载得到一个 charles-proxy-ssl-proxying-certificate.pem （目前只知道qq浏览器下载的格式为pem）证书。<br>安装方法：设置 &gt; 密码、隐私与安全&gt; 系统安全 &gt; 加密与凭据 &gt;  从SD卡安装(注意要先把之前的清除)<br>3、将下载的pem证书文件传到到电脑上，并执行以下命令得到证书的md5值</p>
 <p>openssl x509 -subject_hash_old -in 文件</p>
 <p>第一行：9fb67cec 即为md5值。</p>
-<p>4、将charles-proxy-ssl-proxying-certificate.pem重命名为:&lt;8位md值&gt;.&lt;0&gt;，这里的md5值为上一步得到的。</p>
+<p>4、将charles-proxy-ssl-proxying-certificate.pem重命名为:<8位md值>.<0>，这里的md5值为上一步得到的。</p>
 <pre><code>5、将上面步骤产生9fb67cec.0证书push到手机目录：/system/etc/security/cacerts
 </code></pre>
-
       
     </div>
 
@@ -256,17 +255,11 @@
 <blockquote>
 <p>首先<a target="_blank" rel="noopener" href="https://download.lineageos.org/sagit">官网</a>下载系统文件 和 Recovery 镜像。如图，实际上测试中 Recovery 镜像是刷不进去的，所以下载左边的系统文件即可。Recovery 使用 <a target="_blank" rel="noopener" href="https://twrp.me/xiaomi/xiaomimi6.html">TWER</a> 替代</p>
 </blockquote>
-<img src="/images/lineage_image.png" style="zoom:40%;float:left">
-<br/><br/><br/><br/>
-###### 1. 重启到引导系统
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb reboot bootloader</span><br></pre></td></tr></table></figure>
-
+<p><img src="/images/lineage_image.png" style="zoom:40%;float:left"><br><br/><br/><br/><br/></p>
+<h6 id="1-重启到引导系统"><a href="#1-重启到引导系统" class="headerlink" title="1. 重启到引导系统"></a>1. 重启到引导系统</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb reboot bootloader</span><br></pre></td></tr></table></figure>
 <h6 id="2-刷入-TWRP-替换自己下载的文件名"><a href="#2-刷入-TWRP-替换自己下载的文件名" class="headerlink" title="2. 刷入 TWRP(替换自己下载的文件名)"></a>2. 刷入 TWRP(替换自己下载的文件名)</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot flash recovery twrp-3.3.1-sagit-20191204.img</span><br></pre></td></tr></table></figure>
-
 <h6 id="3-重启进入-TWRP-，执行完命令马上长按音量"><a href="#3-重启进入-TWRP-，执行完命令马上长按音量" class="headerlink" title="3. 重启进入 TWRP ，执行完命令马上长按音量+"></a>3. 重启进入 TWRP ，执行完命令马上长按音量+</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot reboot</span><br></pre></td></tr></table></figure>
-
 <h6 id="4-格式化，高级，勾选所有（Vendor-除开）"><a href="#4-格式化，高级，勾选所有（Vendor-除开）" class="headerlink" title="4. 格式化，高级，勾选所有（Vendor 除开）"></a>4. 格式化，高级，勾选所有（Vendor 除开）</h6><h6 id="5-TWRP主界面-gt-高级-gt-ADB-Sideload-，滑动开始"><a href="#5-TWRP主界面-gt-高级-gt-ADB-Sideload-，滑动开始" class="headerlink" title="5. TWRP主界面 -&gt; 高级 -&gt; ADB Sideload ，滑动开始"></a>5. TWRP主界面 -&gt; 高级 -&gt; ADB Sideload ，滑动开始</h6><h6 id="6-执行命令，刷入系统文件"><a href="#6-执行命令，刷入系统文件" class="headerlink" title="6. 执行命令，刷入系统文件"></a>6. 执行命令，刷入系统文件</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb sideload lineage-17.1-20200813-nightly-sagit-signed.zip</span><br></pre></td></tr></table></figure>
-
 <h6 id="7-刷入OpenGapps-获取-Google-play"><a href="#7-刷入OpenGapps-获取-Google-play" class="headerlink" title="7. 刷入OpenGapps 获取 Google play"></a>7. 刷入OpenGapps 获取 Google play</h6><p>OpenGapps 地址： <a target="_blank" rel="noopener" href="https://opengapps.org/">https://opengapps.org/</a><br>选择 ARM64，Android 10.0 ，nano(最小化安装Google 服务)<br>通过sideload 刷入</p>
 <h6 id="8-刷入-Magisk-获取更多功能-也是通过-sideload-刷入"><a href="#8-刷入-Magisk-获取更多功能-也是通过-sideload-刷入" class="headerlink" title="8. 刷入 Magisk 获取更多功能,也是通过 sideload 刷入"></a>8. 刷入 Magisk 获取更多功能,也是通过 sideload 刷入</h6><p>下载最新版本 <a target="_blank" rel="noopener" href="https://github.com/topjohnwu/Magisk/releases/">Magisk</a></p>
 <p>完成</p>
@@ -337,20 +330,14 @@
 <p>以下命令所有参数中的应用名称为预选参数，如输入非预选参数，执行不通过</p>
 <p>预选参数列表 <code>keke</code> <code>baby</code> <code>xueba</code> <code>teacher</code> <code>teacherBaby</code> <code>teacherXueba</code></p>
 <h5 id="合并开发分支到主分支"><a href="#合并开发分支到主分支" class="headerlink" title="合并开发分支到主分支"></a>合并开发分支到主分支</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">merge.sh keke v3.4.0</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">merge.sh &lt;应用名&gt; &lt;Tag&gt;</span><br><span class="line">作用：将开发分支合并到主分支，提交Tag，推送到远程仓库，并回归开发分支</span><br><span class="line"><span class="variable">$1</span>: 应用名称，必选</span><br><span class="line"><span class="variable">$2</span>: 提交标签</span><br></pre></td></tr></table></figure>
-
 <h5 id="批量重命名"><a href="#批量重命名" class="headerlink" title="批量重命名"></a>批量重命名</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cname.sh</span><br><span class="line">作用：将当前目录下所有文件按规则重命名，无参数。例如：</span><br><span class="line">appName-release-3.4.0-腾讯.apk</span><br></pre></td></tr></table></figure>
-
 <h5 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dabao.sh keke -rd</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dabao.sh</span><br><span class="line">作用：给指定应用打包，参数1 与参数2 位置顺序无要求,</span><br><span class="line"><span class="variable">$1</span>: 应用名称，必选</span><br><span class="line"><span class="variable">$2</span>: 打包参数，可选。-d 打开发环境包(默认)；-r 打正式环境包；-dr 或 -rd 打所有环境包</span><br><span class="line"><span class="variable">$3</span>: 打包完成后，默认会发送推送告知测试人员，如果存在参数3，则不发送推送，适合个人调试打包使用</span><br></pre></td></tr></table></figure>
-
 <h5 id="执行文件加固"><a href="#执行文件加固" class="headerlink" title="执行文件加固"></a>执行文件加固</h5><blockquote>
 <p>执行360文件上传-加固-多渠道打包-签名，并将文件输出到对应版本目录下，例如：当前加固文件的版本号为 3.4.0 ,应用名为 keke，打包后的所有渠道包会自动输出到 kekeRelease_v3.4.0 目录下 </p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">jiagu.sh</span><br><span class="line">作用：给指定应用加固，并将加固完成的包自动上传到对应目录下</span><br><span class="line"><span class="variable">$1</span>: 应用名称，必选。该参数可以选择非预选参数，但必须是一个文件的完整路径，选择后会将该文件进行上传-加固-签名-多渠道打包</span><br></pre></td></tr></table></figure>
-
 
       
     </div>
@@ -413,28 +400,16 @@
 <p>原文链接：<a target="_blank" rel="noopener" href="http://trac.ffmpeg.org/wiki/How%20to%20speed%20up%20/%20slow%20down%20a%20video">FFmpeg</a></p>
 </blockquote>
 <h3 id="Speeding-up-slowing-down-video"><a href="#Speeding-up-slowing-down-video" class="headerlink" title="Speeding up/slowing down video"></a>Speeding up/slowing down video</h3><p>You can change the speed of a video stream using the <a target="_blank" rel="noopener" href="http://ffmpeg.org/ffmpeg-all.html#setpts_002c-asetpts">setpts</a> video filter. Note that in the following examples, the audio stream is not changed, so it should ideally be disabled with <code>-an</code>.</p>
-<p>To double the speed of the video, you can use:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mkv -filter:v <span class="string">&quot;setpts=0.5*PTS&quot;</span> output.mkv</span><br></pre></td></tr></table></figure>
-
+<p>To double the speed of the video, you can use:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mkv -filter:v <span class="string">&quot;setpts=0.5*PTS&quot;</span> output.mkv</span><br></pre></td></tr></table></figure></p>
 <p>The filter works by changing the presentation timestamp (PTS) of each video frame. For example, if there are two succesive frames shown at timestamps 1 and 2, and you want to speed up the video, those timestamps need to become 0.5 and 1, respectively. Thus, we have to multiply them by 0.5.</p>
-<p>Note that this method will drop frames to achieve the desired speed.  You can avoid dropped frames by specifying a higher output frame rate than the input. For example, to go from an input of 4 FPS to one that is sped up to 4x that (16 FPS):</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mkv -r 16 -filter:v <span class="string">&quot;setpts=0.25*PTS&quot;</span> output.mkv</span><br></pre></td></tr></table></figure>
-
-<p>To slow down your video, you have to use a multiplier greater than 1:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mkv -filter:v <span class="string">&quot;setpts=2.0*PTS&quot;</span> output.mkv</span><br></pre></td></tr></table></figure>
-
+<p>Note that this method will drop frames to achieve the desired speed.  You can avoid dropped frames by specifying a higher output frame rate than the input. For example, to go from an input of 4 FPS to one that is sped up to 4x that (16 FPS):<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mkv -r 16 -filter:v <span class="string">&quot;setpts=0.25*PTS&quot;</span> output.mkv</span><br></pre></td></tr></table></figure></p>
+<p>To slow down your video, you have to use a multiplier greater than 1:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mkv -filter:v <span class="string">&quot;setpts=2.0*PTS&quot;</span> output.mkv</span><br></pre></td></tr></table></figure></p>
 <h4 id="Smooth"><a href="#Smooth" class="headerlink" title="Smooth"></a>Smooth</h4><p>You can smooth out slow/fast video with the <a target="_blank" rel="noopener" href="http://ffmpeg.org/ffmpeg-filters.html#minterpolate">minterpolate</a> video filter. This is also known as “motion interpolation” or “optical flow”.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mkv -filter:v <span class="string">&quot;minterpolate=&#x27;mi_mode=mci:mc_mode=aobmc:vsbmc=1:fps=120&#x27;&quot;</span> output.mkv</span><br></pre></td></tr></table></figure>
-
 <p>Other options include [<a target="_blank" rel="noopener" href="https://github.com/slowmoVideo/slowmoVideo/">https://github.com/slowmoVideo/slowmoVideo/</a> slowmoVideo] and <a target="_blank" rel="noopener" href="https://github.com/dthpham/butterflow">Butterflow</a>.</p>
-<h3 id="Speeding-up-slowing-down-audio"><a href="#Speeding-up-slowing-down-audio" class="headerlink" title="Speeding up/slowing down audio"></a>Speeding up/slowing down audio</h3><p>You can speed up or slow down audio with the [<a target="_blank" rel="noopener" href="http://ffmpeg.org/ffmpeg-all.html#atempo">http://ffmpeg.org/ffmpeg-all.html#atempo</a> atempo] audio filter. To double the speed of audio:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mkv -filter:a <span class="string">&quot;atempo=2.0&quot;</span> -vn output.mkv</span><br></pre></td></tr></table></figure>
-
-<p>The atempo filter is limited to using values between 0.5 and 2.0 (so it can slow it down to no less than half the original speed, and speed up to no more than double the input). If you need to, you can get around this limitation by stringing multiple atempo filters together. The following with quadruple the audio speed:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mkv -filter:a <span class="string">&quot;atempo=2.0,atempo=2.0&quot;</span> -vn output.mkv</span><br></pre></td></tr></table></figure>
-
-<p>Using a complex filtergraph, you can speed up video and audio at the same time:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mkv -filter_complex <span class="string">&quot;[0:v]setpts=0.5*PTS[v];[0:a]atempo=2.0[a]&quot;</span> -map <span class="string">&quot;[v]&quot;</span> -map <span class="string">&quot;[a]&quot;</span> output.mkv</span><br></pre></td></tr></table></figure>
+<h3 id="Speeding-up-slowing-down-audio"><a href="#Speeding-up-slowing-down-audio" class="headerlink" title="Speeding up/slowing down audio"></a>Speeding up/slowing down audio</h3><p>You can speed up or slow down audio with the [<a target="_blank" rel="noopener" href="http://ffmpeg.org/ffmpeg-all.html#atempo">http://ffmpeg.org/ffmpeg-all.html#atempo</a> atempo] audio filter. To double the speed of audio:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mkv -filter:a <span class="string">&quot;atempo=2.0&quot;</span> -vn output.mkv</span><br></pre></td></tr></table></figure></p>
+<p>The atempo filter is limited to using values between 0.5 and 2.0 (so it can slow it down to no less than half the original speed, and speed up to no more than double the input). If you need to, you can get around this limitation by stringing multiple atempo filters together. The following with quadruple the audio speed:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mkv -filter:a <span class="string">&quot;atempo=2.0,atempo=2.0&quot;</span> -vn output.mkv</span><br></pre></td></tr></table></figure></p>
+<p>Using a complex filtergraph, you can speed up video and audio at the same time:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mkv -filter_complex <span class="string">&quot;[0:v]setpts=0.5*PTS[v];[0:a]atempo=2.0[a]&quot;</span> -map <span class="string">&quot;[v]&quot;</span> -map <span class="string">&quot;[a]&quot;</span> output.mkv</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -503,30 +478,16 @@
 <h5 id="硬字幕"><a href="#硬字幕" class="headerlink" title="硬字幕"></a>硬字幕</h5><p>即将字幕与视频合并，并且不能再分割出来</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i 201907181053358357.mp4 -strict -2 -vf \</span><br><span class="line">subtitles=out.srt:force_style=<span class="string">&#x27;Fontsize=30\,FontName=FZYBKSJW--GB1-0&#x27;</span> -qscale:v 3 output.mp4</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>-strict -2 表示使用ffmpeg 自带的 aac编码器<br>force_style=’Fontsize=30,FontName=FZYBKSJW–GB1-0’<br>如果不能被识别，可以将\ 去掉试试</p>
+<p>-strict -2 表示使用ffmpeg 自带的 aac编码器<br>force_style=’Fontsize=30\,FontName=FZYBKSJW—GB1-0’<br>如果不能被识别，可以将 去掉试试</p>
 </blockquote>
 <h5 id="软字幕"><a href="#软字幕" class="headerlink" title="软字幕"></a>软字幕</h5><p>即内挂字幕，字幕还可以分离出来，插入速度快，但是需要播放器支持</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i 201907181053358357.mp4 -i out.srt -c copy -c:s mov_text output.mp4</span><br></pre></td></tr></table></figure>
-
 <h4 id="音频拼接"><a href="#音频拼接" class="headerlink" title="音频拼接"></a>音频拼接</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i path1 -i path2 -i path3 -i path4 -i path5 \</span><br><span class="line">-filter_complex <span class="string">&quot;[0:0] [1:0] [2:0] [3:0] [4:0] concat=n=5:v=0:a=1 [a]&quot;</span> -map [a] out.mp3</span><br></pre></td></tr></table></figure>
-
-
 <h4 id="音视频合成"><a href="#音视频合成" class="headerlink" title="音视频合成"></a>音视频合成</h4><h5 id="无音轨合并，将一段音频与无音轨的视频进行合并，速度快"><a href="#无音轨合并，将一段音频与无音轨的视频进行合并，速度快" class="headerlink" title="无音轨合并，将一段音频与无音轨的视频进行合并，速度快"></a>无音轨合并，将一段音频与无音轨的视频进行合并，速度快</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i video2.avi -i audio.mp3 -vcodec copy -acodec copy output.avi</span><br></pre></td></tr></table></figure>
 <h5 id="带音轨合并多个音频，可指定时间戳，速度慢"><a href="#带音轨合并多个音频，可指定时间戳，速度慢" class="headerlink" title="带音轨合并多个音频，可指定时间戳，速度慢"></a>带音轨合并多个音频，可指定时间戳，速度慢</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i in.avi -i audio1.wav -i audio2.wav \</span><br><span class="line">-filter_complex <span class="string">&quot;[1]adelay=30000|30000[aud1];[2]adelay=90000|90000[aud2]; [0][aud1][aud2]amix=3&quot;</span> -c:v copy out.avi</span><br></pre></td></tr></table></figure>
-
-
 <h4 id="生成空白音频"><a href="#生成空白音频" class="headerlink" title="生成空白音频"></a>生成空白音频</h4><h5 id="给视频生成一段空白音轨"><a href="#给视频生成一段空白音轨" class="headerlink" title="给视频生成一段空白音轨"></a>给视频生成一段空白音轨</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i video.mp4 -f lavfi -i anullsrc=channel_layout=stereo:sample_rate=44100 -c:v copy -shortest output.mp4</span><br></pre></td></tr></table></figure>
 <h5 id="生成指定时长空白音频"><a href="#生成指定时长空白音频" class="headerlink" title="生成指定时长空白音频"></a>生成指定时长空白音频</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -f lavfi -i aevalsrc=0 -t &#123;time&#125; -q:a 9 -acodec libmp3lame output.mp3</span><br></pre></td></tr></table></figure>
-
-
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 字幕 与 慢速</span><br><span class="line">ffmpeg -i &#123;视频文件&#125; -strict -2 -vf ass&#x3D;&#123;ass字幕文件&#125; -qscale:v 3 &#123;输出文件&#125;</span><br><span class="line"></span><br><span class="line">ffmpeg -i &#123;视频文件&#125; -strict -2 -vf subtitles&#x3D;&#123;srt字幕文件&#125; -qscale:v 3 &#123;输出文件&#125;</span><br><span class="line">ffmpeg -i &#123;视频文件&#125; -filter_complex &quot;[0:v]setpts&#x3D;1.6*PTS[v];[0:a]atempo&#x3D;0.625[a]&quot; -map &quot;[v]&quot; -map &quot;[a]&quot; -y &#123;输出文件&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 
       
     </div>
@@ -587,9 +548,7 @@
       
           <h3 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h3><p>在新的平台上新建一个同名项目，不选择 <code>启用 README.md 文件初始化项目</code>，以及任何 <code>License</code> 和 <code>.gitignore</code> 文件。</p>
 <h3 id="克隆旧平台上的项目"><a href="#克隆旧平台上的项目" class="headerlink" title="克隆旧平台上的项目"></a>克隆旧平台上的项目</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">git <span class="built_in">clone</span> git://github.com/panzhenglian/repo.git --bare</span><br></pre></td></tr></table></figure>
-
 <h3 id="将克隆下来的仓库推送到新的平台"><a href="#将克隆下来的仓库推送到新的平台" class="headerlink" title="将克隆下来的仓库推送到新的平台"></a>将克隆下来的仓库推送到新的平台</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">cd</span> repo.git</span><br><span class="line">git push git://git.panzhenglian.com/repo.git --all</span><br></pre></td></tr></table></figure>
-
 <h3 id="完成后，再执行推送所有的标签。"><a href="#完成后，再执行推送所有的标签。" class="headerlink" title="完成后，再执行推送所有的标签。"></a>完成后，再执行推送所有的标签。</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">git push git://git.panzhenglian.com/repo.git --tags</span><br></pre></td></tr></table></figure>
       
     </div>
@@ -654,7 +613,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><object data="/images/oral_flow.svg" style="max-width: 100%;" ></object></p>
+          <object data="/images/oral_flow.svg" style="max-width: 100%;" ></object>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/05/14/%E4%BA%91%E7%9F%A5%E5%A3%B0%E5%8F%A3%E8%AF%AD%E8%AF%84%E6%B5%8B%E6%9C%8D%E5%8A%A1Android-SDK-API%E6%96%87%E6%A1%A3/#more" rel="contents">
@@ -743,7 +702,7 @@
 </li>
 </ul>
 <p>下面为下载逻辑交互图，一个应用中应当只有一个DownloadService 类，可以有多个DownloadManager 对应不同的下载类型，每一个类型的DownloadManager 将处理多个UI 界面的交互请求。</p>
-<p><object data="/images/download_sq.svg" style="max-width: 100%;" ></object></p>
+<object data="/images/download_sq.svg" style="max-width: 100%;" ></object>
 
       
     </div>
@@ -811,14 +770,16 @@
           <blockquote>
 <p>为方便练字需求，制作的字帖打印工具，目前使用腾讯云进行托管。</p>
 </blockquote>
-<h5 id="功能汇总"><a href="#功能汇总" class="headerlink" title="功能汇总"></a>功能汇总</h5><table>
+<h5 id="功能汇总"><a href="#功能汇总" class="headerlink" title="功能汇总"></a>功能汇总</h5><div class="table-container">
+<table>
 <thead>
 <tr>
 <th><a target="_blank" rel="noopener" href="https://zitie.uuk4.com/">网站主页</a></th>
 <th><a target="_blank" rel="noopener" href="https://zitie.uuk4.com/pdf/all.php">红绿、回米田白写字格汇总</a></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><a target="_blank" rel="noopener" href="https://zitie.uuk4.com/line16/index.html"><strong>16行字帖</strong></a></td>
 <td><a target="_blank" rel="noopener" href="https://zitie.uuk4.com/pdf/index.html"><strong>红绿、回米田白写字格单独</strong></a></td>
 </tr>
@@ -826,7 +787,9 @@
 <td><a target="_blank" rel="noopener" href="https://zitie.uuk4.com/auto/index.html"><strong>17行字帖</strong></a></td>
 <td><a target="_blank" rel="noopener" href="https://zitie.uuk4.com/style/cangyang/index.php"><strong>文章字帖打印</strong></a></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/05/11/%E5%AD%97%E5%B8%96%E6%89%93%E5%8D%B0/#more" rel="contents">
@@ -884,7 +847,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-05-19 13:34:15" itemprop="dateModified" datetime="2019-05-19T13:34:15+08:00">2019-05-19</time>
+                <time title="修改时间：2021-05-02 21:42:00" itemprop="dateModified" datetime="2021-05-02T21:42:00+08:00">2021-05-02</time>
               </span>
 
           
@@ -901,21 +864,58 @@
           <h5 id="圆台的表面积"><a href="#圆台的表面积" class="headerlink" title="圆台的表面积"></a>圆台的表面积</h5><!-- <img src="/images/yuantai_1.svg" style="float:left" /> -->
 <!-- <img src="/images/yuantai_2.svg" style="float:right" /> -->
 <!-- <img src="/images/yuantai.svg" ></img> -->
-<p><object data="/images/yuantai.svg" style="max-width: 100%;" ></object></p>
-<!-- <embed src="/images/yuantai.svg" style="max-width: 100%;" /></embed> -->
+<object data="/images/yuantai.svg" style="max-width: 100%;" ></object>
 
+<!-- <embed src="/images/yuantai.svg" style="max-width: 100%;" /></embed> -->
 <p>​    如图，已知圆台的上底半径为 $r’$, 下底半径为 $r$, 母线为 $l$，求圆台表面积。</p>
 <p>​     <strong>设：</strong>顶部圆锥母线为 $l’$(线段$AB’$)。圆台展开后如虚线所示，则：</p>
 <p>​    $S_{圆台}=S_{上底}+S_{下底}+S_{侧}$</p>
 <p>​    $S_{上底}=\pi (r’)^2 $</p>
 <p>​    $ S_{下底}=\pi r^2$</p>
 <p>​    $S_{侧}=2\pi r\times \frac{1}{2}(l+l’)-2\pi r’\times\frac{1}{2}l’=\pi r(l+l’)-\pi r’\times l’$</p>
-<p>​    根据圆台的立体图可得，$\triangle AOB \sim \triangle AO’B’$,因此<br>$$<br>\frac{l+l’}{l’}=\frac{r}{r’}<br>$$</p>
-<p>化简可得<br>$$<br>l’=\frac{r’ \times l}{r-r’}<br>$$<br>所以<br>$$<br>\begin{align}<br>S_{侧}&amp;=\pi r(l+l’)-\pi r’\times l’\\[2ex]<br>&amp;= \pi r(l+\frac{r’ \times l}{r-r’})-\pi r’(\frac{r’ \times l}{r-r’}) \\[1ex]<br>&amp;= \pi rl+\frac{\pi rr’l}{r-r’}-\frac{\pi r’r’l}{r-r’}\\[1ex]<br>&amp;= \pi rl+\frac{\pi r’l(r-r’)}{r-r’}\\[2ex]<br>&amp;= \pi rl + \pi r’l \\[3ex]<br>S_{圆台}&amp;=\pi r’^2 + \pi r^2 + \pi rl+ \pi r’l \\[3ex]<br>&amp;=\pi (r’^2+r^2+rl+r’l)<br>\end{align}<br>\\[3ex]<br>$$</p>
-<h5 id="圆台的体积"><a href="#圆台的体积" class="headerlink" title="圆台的体积"></a>圆台的体积</h5><p>如图，已知圆台的上底半径为 $r’$, 下底半径为 $r$, 高为 $h$，求圆台体积。</p>
-<p><object data="/images/yuantai_2.svg" style="max-width:100%;" ></object></p>
-<p> 延长圆台到顶部，形成圆锥，如图虚线所画，<strong>设：</strong>顶部圆锥高为 $h’$(线段$AO’$)。则：<br>$$<br>\begin{align}<br>V_{圆台} &amp;= V_{大圆锥}-V_{小圆锥} \\[2ex]<br>V_{圆台} &amp;= \frac{1}{3}\pi r^2(h+h’) - \frac{1}{3}\pi r’^2h’ \\[1ex]<br>V_{圆台} &amp;= \frac{1}{3}\pi (r^2h+r^2h’-r’^2h’)\\[1ex]<br>\end{align}<br>$$<br>与求表面积时类似，根据相似三角形可得<br>$$<br>\frac{h+h’}{h’} =\frac{r}{r’} \Longrightarrow h’ =\frac{r’h}{r-r’}<br>$$<br>所以<br>$$<br>\begin{align}<br>V_{圆台} &amp;= \frac{1}{3}\pi (r^2h+r^2h’-r’^2h’)\\[1ex]<br>&amp;= \frac{1}{3}\pi(r^2h+r^2\times\frac{r’h}{r-r’} - r’^2\times\frac{r’h}{r-r’}) \\[1ex]<br>&amp;= \frac{1}{3}\pi(r^2h+\frac{r’h(r^2-r’^2)}{r-r’})\\[1.5ex]<br>&amp;= \frac{1}{3}\pi(r^2h+rr’h+r’^2h)\\[1.5ex]<br>&amp;= \frac{1}{3}(\pi r^2+\pi rr’+\pi r’^2)h\\[3ex]<br>\end{align}<br>\\<br>$$<br>这里便得到了根据上下底面半径和高，求圆台体积公式，如果知道上下底面的表面积和高：令 $S=\pi r^2 \quad S’=\pi r’^2$，可将上述公式转化为<br>$$<br>\begin{align}<br>V_{圆台} &amp;=\frac{1}{3}(\pi r^2+ \pi rr’+\pi r’^2)h\\[2ex]<br>&amp;=\frac{1}{3}(\pi r^2+ \sqrt{\pi r^2 \times \pi r’^2}+\pi r’^2)h\\[2ex]<br>&amp;=\frac{1}{3}(S+\sqrt{SS’}+S’)h\\[2ex]<br>\end{align}<br>\\<br>$$</p>
+<p>​    根据圆台的立体图可得，$\triangle AOB \sim \triangle AO’B’$,因此</p>
+<script type="math/tex; mode=display">
+\frac{l+l'}{l'}=\frac{r}{r'}</script><p>化简可得</p>
+<script type="math/tex; mode=display">
+l'=\frac{r' \times l}{r-r'}</script><p>所以</p>
+<script type="math/tex; mode=display">
+\begin{align} 
+S_{侧}&=\pi r(l+l')-\pi r'\times l'\\\\[2ex]
+&= \pi r(l+\frac{r' \times l}{r-r'})-\pi r'(\frac{r' \times l}{r-r'}) \\\\[1ex]
+&= \pi rl+\frac{\pi rr'l}{r-r'}-\frac{\pi r'r'l}{r-r'}\\\\[1ex]
+&= \pi rl+\frac{\pi r'l(r-r')}{r-r'}\\\\[2ex]
+&= \pi rl + \pi r'l \\\\[3ex]  
+S_{圆台}&=\pi r'^2 + \pi r^2 + \pi rl+ \pi r'l \\\\[3ex]
+&=\pi (r'^2+r^2+rl+r'l)
+\end{align}
+\\\\[3ex]</script><h5 id="圆台的体积"><a href="#圆台的体积" class="headerlink" title="圆台的体积"></a>圆台的体积</h5><p>如图，已知圆台的上底半径为 $r’$, 下底半径为 $r$, 高为 $h$，求圆台体积。</p>
+<object data="/images/yuantai_2.svg" style="max-width:100%;" ></object>
 
+<p> 延长圆台到顶部，形成圆锥，如图虚线所画，<strong>设：</strong>顶部圆锥高为 $h’$(线段$AO’$)。则：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+V_{圆台} &= V_{大圆锥}-V_{小圆锥} \\\\[2ex]
+V_{圆台} &= \frac{1}{3}\pi r^2(h+h') - \frac{1}{3}\pi r'^2h' \\\\[1ex]
+V_{圆台} &= \frac{1}{3}\pi (r^2h+r^2h'-r'^2h')\\\\[1ex]
+\end{align}</script><p>与求表面积时类似，根据相似三角形可得</p>
+<script type="math/tex; mode=display">
+\frac{h+h'}{h'} =\frac{r}{r'} \Longrightarrow h' =\frac{r'h}{r-r'}</script><p>所以</p>
+<script type="math/tex; mode=display">
+\begin{align}
+V_{圆台} &= \frac{1}{3}\pi (r^2h+r^2h'-r'^2h')\\\\[1ex]
+&= \frac{1}{3}\pi(r^2h+r^2\times\frac{r'h}{r-r'} - r'^2\times\frac{r'h}{r-r'}) \\\\[1ex]
+&= \frac{1}{3}\pi(r^2h+\frac{r'h(r^2-r'^2)}{r-r'})\\\\[1.5ex]
+&= \frac{1}{3}\pi(r^2h+rr'h+r'^2h)\\\\[1.5ex]
+&= \frac{1}{3}(\pi r^2+\pi rr'+\pi r'^2)h\\\\[3ex]
+\end{align}
+\\\\</script><p>这里便得到了根据上下底面半径和高，求圆台体积公式，如果知道上下底面的表面积和高：令 $S=\pi r^2 \quad S’=\pi r’^2$，可将上述公式转化为</p>
+<script type="math/tex; mode=display">
+\begin{align}
+V_{圆台} &=\frac{1}{3}(\pi r^2+ \pi rr'+\pi r'^2)h\\\\[2ex]
+&=\frac{1}{3}(\pi r^2+ \sqrt{\pi r^2 \times \pi r'^2}+\pi r'^2)h\\\\[2ex]
+&=\frac{1}{3}(S+\sqrt{SS'}+S')h\\\\[2ex]
+\end{align}
+\\\\</script>
       
     </div>
 
@@ -1036,14 +1036,14 @@
 
 <div class="copyright">
   
-  &copy; 2016 – 
+  &copy; 
   <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">平凡</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>
 
         
@@ -1094,6 +1094,61 @@
 
 
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 

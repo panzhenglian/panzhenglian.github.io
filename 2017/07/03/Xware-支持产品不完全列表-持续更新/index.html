@@ -6,8 +6,8 @@
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"blog.panzhenglian.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"blog.panzhenglian.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="产品CPU信息获取方式：   登录路由器后台 登录方式一：默认支持telnet或ssh：有些路由器默认支持telnet或ssh，那么直接通过终端程序（如SecureCRT, putty, Xshell等）登录路由器即可，有些路由器支持但默认没有开启，请先到路由器设置页面开启再登录；">
@@ -201,7 +201,7 @@
 <ol>
 <li><p>登录路由器后台<br> 登录方式一：默认支持telnet或ssh：有些路由器默认支持telnet或ssh，那么直接通过终端程序（如SecureCRT, putty, Xshell等）登录路由器即可，有些路由器支持但默认没有开启，请先到路由器设置页面开启再登录；</p>
 <span id="more"></span>
-<p> 登录方式二：使用openwrt, dd-wrt等第三方固件：如果路由器不支持telnet或ssh，可以尝试使用第三方固件，这两种免费的固件可以给你更多对路由器的控制权，如开启telnet和ssh等。详情可查询相关网站（openwrt: <a target="_blank" rel="noopener" href="https://openwrt.org/">https://openwrt.org/</a> dd-wrt: <a target="_blank" rel="noopener" href="http://www.dd-wrt.com);/">http://www.dd-wrt.com）；</a></p>
+<p> 登录方式二：使用openwrt, dd-wrt等第三方固件：如果路由器不支持telnet或ssh，可以尝试使用第三方固件，这两种免费的固件可以给你更多对路由器的控制权，如开启telnet和ssh等。详情可查询相关网站（openwrt: <a target="_blank" rel="noopener" href="https://openwrt.org/">https://openwrt.org/</a> dd-wrt: <a target="_blank" rel="noopener" href="http://www.dd-wrt.com）；">http://www.dd-wrt.com）；</a></p>
 <p> 登录方式三：通过串口线，TTL接口：这些接口一般是开发时的调试接口，需要打开设备外壳，而且不同厂商的连接方法会有较大差异，如果对拥有的设备比较熟悉，也可以用这种方法登录路由器。</p>
 </li>
 <li><p>登录后输入以下命令<br> cat /proc/cpuinfo</p>
@@ -342,14 +342,14 @@
 
 <div class="copyright">
   
-  &copy; 2016 – 
+  &copy; 
   <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">平凡</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>
 
         
@@ -398,6 +398,8 @@
 
 
 
+
+  
 
   
 

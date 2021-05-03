@@ -6,8 +6,8 @@
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"blog.panzhenglian.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"blog.panzhenglian.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="原文链接：FFmpeg  Speeding up&#x2F;slowing down videoYou can change the speed of a video stream using the setpts video filter. Note that in the following examples, the audio stream is not changed, so it should">
@@ -192,28 +192,16 @@
 <p>原文链接：<a target="_blank" rel="noopener" href="http://trac.ffmpeg.org/wiki/How%20to%20speed%20up%20/%20slow%20down%20a%20video">FFmpeg</a></p>
 </blockquote>
 <h3 id="Speeding-up-slowing-down-video"><a href="#Speeding-up-slowing-down-video" class="headerlink" title="Speeding up/slowing down video"></a>Speeding up/slowing down video</h3><p>You can change the speed of a video stream using the <a target="_blank" rel="noopener" href="http://ffmpeg.org/ffmpeg-all.html#setpts_002c-asetpts">setpts</a> video filter. Note that in the following examples, the audio stream is not changed, so it should ideally be disabled with <code>-an</code>.</p>
-<p>To double the speed of the video, you can use:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mkv -filter:v <span class="string">&quot;setpts=0.5*PTS&quot;</span> output.mkv</span><br></pre></td></tr></table></figure>
-
+<p>To double the speed of the video, you can use:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mkv -filter:v <span class="string">&quot;setpts=0.5*PTS&quot;</span> output.mkv</span><br></pre></td></tr></table></figure></p>
 <p>The filter works by changing the presentation timestamp (PTS) of each video frame. For example, if there are two succesive frames shown at timestamps 1 and 2, and you want to speed up the video, those timestamps need to become 0.5 and 1, respectively. Thus, we have to multiply them by 0.5.</p>
-<p>Note that this method will drop frames to achieve the desired speed.  You can avoid dropped frames by specifying a higher output frame rate than the input. For example, to go from an input of 4 FPS to one that is sped up to 4x that (16 FPS):</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mkv -r 16 -filter:v <span class="string">&quot;setpts=0.25*PTS&quot;</span> output.mkv</span><br></pre></td></tr></table></figure>
-
-<p>To slow down your video, you have to use a multiplier greater than 1:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mkv -filter:v <span class="string">&quot;setpts=2.0*PTS&quot;</span> output.mkv</span><br></pre></td></tr></table></figure>
-
+<p>Note that this method will drop frames to achieve the desired speed.  You can avoid dropped frames by specifying a higher output frame rate than the input. For example, to go from an input of 4 FPS to one that is sped up to 4x that (16 FPS):<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mkv -r 16 -filter:v <span class="string">&quot;setpts=0.25*PTS&quot;</span> output.mkv</span><br></pre></td></tr></table></figure></p>
+<p>To slow down your video, you have to use a multiplier greater than 1:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mkv -filter:v <span class="string">&quot;setpts=2.0*PTS&quot;</span> output.mkv</span><br></pre></td></tr></table></figure></p>
 <h4 id="Smooth"><a href="#Smooth" class="headerlink" title="Smooth"></a>Smooth</h4><p>You can smooth out slow/fast video with the <a target="_blank" rel="noopener" href="http://ffmpeg.org/ffmpeg-filters.html#minterpolate">minterpolate</a> video filter. This is also known as “motion interpolation” or “optical flow”.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mkv -filter:v <span class="string">&quot;minterpolate=&#x27;mi_mode=mci:mc_mode=aobmc:vsbmc=1:fps=120&#x27;&quot;</span> output.mkv</span><br></pre></td></tr></table></figure>
-
 <p>Other options include [<a target="_blank" rel="noopener" href="https://github.com/slowmoVideo/slowmoVideo/">https://github.com/slowmoVideo/slowmoVideo/</a> slowmoVideo] and <a target="_blank" rel="noopener" href="https://github.com/dthpham/butterflow">Butterflow</a>.</p>
-<h3 id="Speeding-up-slowing-down-audio"><a href="#Speeding-up-slowing-down-audio" class="headerlink" title="Speeding up/slowing down audio"></a>Speeding up/slowing down audio</h3><p>You can speed up or slow down audio with the [<a target="_blank" rel="noopener" href="http://ffmpeg.org/ffmpeg-all.html#atempo">http://ffmpeg.org/ffmpeg-all.html#atempo</a> atempo] audio filter. To double the speed of audio:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mkv -filter:a <span class="string">&quot;atempo=2.0&quot;</span> -vn output.mkv</span><br></pre></td></tr></table></figure>
-
-<p>The atempo filter is limited to using values between 0.5 and 2.0 (so it can slow it down to no less than half the original speed, and speed up to no more than double the input). If you need to, you can get around this limitation by stringing multiple atempo filters together. The following with quadruple the audio speed:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mkv -filter:a <span class="string">&quot;atempo=2.0,atempo=2.0&quot;</span> -vn output.mkv</span><br></pre></td></tr></table></figure>
-
-<p>Using a complex filtergraph, you can speed up video and audio at the same time:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mkv -filter_complex <span class="string">&quot;[0:v]setpts=0.5*PTS[v];[0:a]atempo=2.0[a]&quot;</span> -map <span class="string">&quot;[v]&quot;</span> -map <span class="string">&quot;[a]&quot;</span> output.mkv</span><br></pre></td></tr></table></figure>
+<h3 id="Speeding-up-slowing-down-audio"><a href="#Speeding-up-slowing-down-audio" class="headerlink" title="Speeding up/slowing down audio"></a>Speeding up/slowing down audio</h3><p>You can speed up or slow down audio with the [<a target="_blank" rel="noopener" href="http://ffmpeg.org/ffmpeg-all.html#atempo">http://ffmpeg.org/ffmpeg-all.html#atempo</a> atempo] audio filter. To double the speed of audio:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mkv -filter:a <span class="string">&quot;atempo=2.0&quot;</span> -vn output.mkv</span><br></pre></td></tr></table></figure></p>
+<p>The atempo filter is limited to using values between 0.5 and 2.0 (so it can slow it down to no less than half the original speed, and speed up to no more than double the input). If you need to, you can get around this limitation by stringing multiple atempo filters together. The following with quadruple the audio speed:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mkv -filter:a <span class="string">&quot;atempo=2.0,atempo=2.0&quot;</span> -vn output.mkv</span><br></pre></td></tr></table></figure></p>
+<p>Using a complex filtergraph, you can speed up video and audio at the same time:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mkv -filter_complex <span class="string">&quot;[0:v]setpts=0.5*PTS[v];[0:a]atempo=2.0[a]&quot;</span> -map <span class="string">&quot;[v]&quot;</span> -map <span class="string">&quot;[a]&quot;</span> output.mkv</span><br></pre></td></tr></table></figure></p>
 
     </div>
 
@@ -345,14 +333,14 @@
 
 <div class="copyright">
   
-  &copy; 2016 – 
+  &copy; 
   <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">平凡</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>
 
         
@@ -401,6 +389,8 @@
 
 
 
+
+  
 
   
 

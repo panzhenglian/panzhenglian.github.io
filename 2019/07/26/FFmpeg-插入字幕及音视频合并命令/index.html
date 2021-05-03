@@ -6,8 +6,8 @@
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"blog.panzhenglian.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"blog.panzhenglian.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="插入字幕分为两种方式 硬字幕即将字幕与视频合并，并且不能再分割出来 12ffmpeg -i 201907181053358357.mp4 -strict -2 -vf \subtitles&#x3D;out.srt:force_style&#x3D;&amp;#x27;Fontsize&#x3D;30\,FontName&#x3D;FZYBKSJW--GB1-0&amp;#x27; -qscale:v 3 output.mp4  -strict -2">
@@ -198,30 +198,16 @@
 <h5 id="硬字幕"><a href="#硬字幕" class="headerlink" title="硬字幕"></a>硬字幕</h5><p>即将字幕与视频合并，并且不能再分割出来</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i 201907181053358357.mp4 -strict -2 -vf \</span><br><span class="line">subtitles=out.srt:force_style=<span class="string">&#x27;Fontsize=30\,FontName=FZYBKSJW--GB1-0&#x27;</span> -qscale:v 3 output.mp4</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>-strict -2 表示使用ffmpeg 自带的 aac编码器<br>force_style=’Fontsize=30,FontName=FZYBKSJW–GB1-0’<br>如果不能被识别，可以将\ 去掉试试</p>
+<p>-strict -2 表示使用ffmpeg 自带的 aac编码器<br>force_style=’Fontsize=30\,FontName=FZYBKSJW—GB1-0’<br>如果不能被识别，可以将 去掉试试</p>
 </blockquote>
 <h5 id="软字幕"><a href="#软字幕" class="headerlink" title="软字幕"></a>软字幕</h5><p>即内挂字幕，字幕还可以分离出来，插入速度快，但是需要播放器支持</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i 201907181053358357.mp4 -i out.srt -c copy -c:s mov_text output.mp4</span><br></pre></td></tr></table></figure>
-
 <h4 id="音频拼接"><a href="#音频拼接" class="headerlink" title="音频拼接"></a>音频拼接</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i path1 -i path2 -i path3 -i path4 -i path5 \</span><br><span class="line">-filter_complex <span class="string">&quot;[0:0] [1:0] [2:0] [3:0] [4:0] concat=n=5:v=0:a=1 [a]&quot;</span> -map [a] out.mp3</span><br></pre></td></tr></table></figure>
-
-
 <h4 id="音视频合成"><a href="#音视频合成" class="headerlink" title="音视频合成"></a>音视频合成</h4><h5 id="无音轨合并，将一段音频与无音轨的视频进行合并，速度快"><a href="#无音轨合并，将一段音频与无音轨的视频进行合并，速度快" class="headerlink" title="无音轨合并，将一段音频与无音轨的视频进行合并，速度快"></a>无音轨合并，将一段音频与无音轨的视频进行合并，速度快</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i video2.avi -i audio.mp3 -vcodec copy -acodec copy output.avi</span><br></pre></td></tr></table></figure>
 <h5 id="带音轨合并多个音频，可指定时间戳，速度慢"><a href="#带音轨合并多个音频，可指定时间戳，速度慢" class="headerlink" title="带音轨合并多个音频，可指定时间戳，速度慢"></a>带音轨合并多个音频，可指定时间戳，速度慢</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i in.avi -i audio1.wav -i audio2.wav \</span><br><span class="line">-filter_complex <span class="string">&quot;[1]adelay=30000|30000[aud1];[2]adelay=90000|90000[aud2]; [0][aud1][aud2]amix=3&quot;</span> -c:v copy out.avi</span><br></pre></td></tr></table></figure>
-
-
 <h4 id="生成空白音频"><a href="#生成空白音频" class="headerlink" title="生成空白音频"></a>生成空白音频</h4><h5 id="给视频生成一段空白音轨"><a href="#给视频生成一段空白音轨" class="headerlink" title="给视频生成一段空白音轨"></a>给视频生成一段空白音轨</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i video.mp4 -f lavfi -i anullsrc=channel_layout=stereo:sample_rate=44100 -c:v copy -shortest output.mp4</span><br></pre></td></tr></table></figure>
 <h5 id="生成指定时长空白音频"><a href="#生成指定时长空白音频" class="headerlink" title="生成指定时长空白音频"></a>生成指定时长空白音频</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -f lavfi -i aevalsrc=0 -t &#123;time&#125; -q:a 9 -acodec libmp3lame output.mp3</span><br></pre></td></tr></table></figure>
-
-
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 字幕 与 慢速</span><br><span class="line">ffmpeg -i &#123;视频文件&#125; -strict -2 -vf ass&#x3D;&#123;ass字幕文件&#125; -qscale:v 3 &#123;输出文件&#125;</span><br><span class="line"></span><br><span class="line">ffmpeg -i &#123;视频文件&#125; -strict -2 -vf subtitles&#x3D;&#123;srt字幕文件&#125; -qscale:v 3 &#123;输出文件&#125;</span><br><span class="line">ffmpeg -i &#123;视频文件&#125; -filter_complex &quot;[0:v]setpts&#x3D;1.6*PTS[v];[0:a]atempo&#x3D;0.625[a]&quot; -map &quot;[v]&quot; -map &quot;[a]&quot; -y &#123;输出文件&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 
     </div>
 
@@ -353,14 +339,14 @@
 
 <div class="copyright">
   
-  &copy; 2016 – 
+  &copy; 
   <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">平凡</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>
 
         
@@ -409,6 +395,8 @@
 
 
 
+
+  
 
   
 

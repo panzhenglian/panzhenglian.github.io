@@ -6,8 +6,8 @@
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
@@ -17,15 +17,15 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"blog.panzhenglian.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"blog.panzhenglian.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="新建项目在新的平台上新建一个同名项目，不选择 启用 README.md 文件初始化项目，以及任何 License 和 .gitignore 文件。 克隆旧平台上的项目12git clone git:&#x2F;&#x2F;github.com&#x2F;panzhenglian&#x2F;repo.git --bare  将克隆下来的仓库推送到新的平台123cd repo.gitgit push git:&#x2F;&#x2F;git.panzhengli">
+  <meta name="description" content="新建项目在新的平台上新建一个同名项目，不选择 启用 README.md 文件初始化项目，以及任何 License 和 .gitignore 文件。 克隆旧平台上的项目12git clone git:&#x2F;&#x2F;github.com&#x2F;panzhenglian&#x2F;repo.git --bare 将克隆下来的仓库推送到新的平台123cd repo.gitgit push git:&#x2F;&#x2F;git.panzhenglia">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git仓库完整迁移">
 <meta property="og:url" content="http://blog.panzhenglian.com/2019/06/06/Git%E4%BB%93%E5%BA%93%E5%AE%8C%E6%95%B4%E8%BF%81%E7%A7%BB/index.html">
 <meta property="og:site_name" content="平凡">
-<meta property="og:description" content="新建项目在新的平台上新建一个同名项目，不选择 启用 README.md 文件初始化项目，以及任何 License 和 .gitignore 文件。 克隆旧平台上的项目12git clone git:&#x2F;&#x2F;github.com&#x2F;panzhenglian&#x2F;repo.git --bare  将克隆下来的仓库推送到新的平台123cd repo.gitgit push git:&#x2F;&#x2F;git.panzhengli">
+<meta property="og:description" content="新建项目在新的平台上新建一个同名项目，不选择 启用 README.md 文件初始化项目，以及任何 License 和 .gitignore 文件。 克隆旧平台上的项目12git clone git:&#x2F;&#x2F;github.com&#x2F;panzhenglian&#x2F;repo.git --bare 将克隆下来的仓库推送到新的平台123cd repo.gitgit push git:&#x2F;&#x2F;git.panzhenglia">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-06-06T03:30:29.000Z">
 <meta property="article:modified_time" content="2019-06-06T03:36:43.520Z">
@@ -191,9 +191,7 @@
       
         <h3 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h3><p>在新的平台上新建一个同名项目，不选择 <code>启用 README.md 文件初始化项目</code>，以及任何 <code>License</code> 和 <code>.gitignore</code> 文件。</p>
 <h3 id="克隆旧平台上的项目"><a href="#克隆旧平台上的项目" class="headerlink" title="克隆旧平台上的项目"></a>克隆旧平台上的项目</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">git <span class="built_in">clone</span> git://github.com/panzhenglian/repo.git --bare</span><br></pre></td></tr></table></figure>
-
 <h3 id="将克隆下来的仓库推送到新的平台"><a href="#将克隆下来的仓库推送到新的平台" class="headerlink" title="将克隆下来的仓库推送到新的平台"></a>将克隆下来的仓库推送到新的平台</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">cd</span> repo.git</span><br><span class="line">git push git://git.panzhenglian.com/repo.git --all</span><br></pre></td></tr></table></figure>
-
 <h3 id="完成后，再执行推送所有的标签。"><a href="#完成后，再执行推送所有的标签。" class="headerlink" title="完成后，再执行推送所有的标签。"></a>完成后，再执行推送所有的标签。</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">git push git://git.panzhenglian.com/repo.git --tags</span><br></pre></td></tr></table></figure>
     </div>
 
@@ -328,14 +326,14 @@
 
 <div class="copyright">
   
-  &copy; 2016 – 
+  &copy; 
   <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">平凡</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>
 
         
@@ -384,6 +382,8 @@
 
 
 
+
+  
 
   
 

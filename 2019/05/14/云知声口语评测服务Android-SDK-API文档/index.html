@@ -6,8 +6,8 @@
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"blog.panzhenglian.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"blog.panzhenglian.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta property="og:type" content="article">
@@ -194,17 +194,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><object data="/images/oral_flow.svg" style="max-width: 100%;" ></object></p>
+        <object data="/images/oral_flow.svg" style="max-width: 100%;" ></object>
+
 <span id="more"></span>
-
-
 <blockquote>
 <p>此文档仅用于个人方便查阅，由于GitHub访问速度慢而移植，不提供任何私密信息。详情请查阅 <a target="_blank" rel="noopener" href="https://github.com/oraleval/OralEvalSDKDocPrj">云知声官方文档</a>，侵删。</p>
 </blockquote>
 <h3 id="OralEvalSDKFactory"><a href="#OralEvalSDKFactory" class="headerlink" title="OralEvalSDKFactory"></a><a name="oralevalsdkfactory"></a>OralEvalSDKFactory</h3><p>评测静态工厂类，用于设置评测服务地址、初始化离线引擎、发起评测等。</p>
-<br/>
-* public final static String SDK_VERSION; 
-
+<p><br/></p>
+<ul>
+<li>public final static String SDK_VERSION; </li>
+</ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -212,7 +213,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>说明</td>
 <td>获得当前SDK版本号</td>
 </tr>
@@ -220,10 +222,14 @@
 <td>版本支持</td>
 <td>最低2.0.0</td>
 </tr>
-</tbody></table>
-<br/>
-* public static void initServerAndPort(String server, int port)
-
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<ul>
+<li>public static void initServerAndPort(String server, int port)</li>
+</ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -231,7 +237,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>说明</td>
 <td>设置服务地址。一般不用设置，使用默认值即可</td>
 </tr>
@@ -247,10 +254,14 @@
 <td>参数 port</td>
 <td>服务的tcp端口</td>
 </tr>
-</tbody></table>
-<br/>
-* public static <a href="#ioralevalsdkofflinesdkpreparationerror">IOralEvalSDK.OfflineSDKError</a> initOfflineSDK(Context context, String workingDir)
-
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<ul>
+<li>public static <a href="#ioralevalsdkofflinesdkpreparationerror">IOralEvalSDK.OfflineSDKError</a> initOfflineSDK(Context context, String workingDir)</li>
+</ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -258,7 +269,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>说明</td>
 <td>初始化离线评测引擎，该方法会解压离线引擎模型并加载模型。调用任何离线功能之前需要确保该初始化成功。如果不需要使用离线评测功能，则无需调用此初始化方法</td>
 </tr>
@@ -278,10 +290,14 @@
 <td>返回值</td>
 <td>初始化正确返回NOERROR；其他错误参考<a href="#ioralevalsdkofflinesdkpreparationerror">IOralEvalSDK.OfflineSDKError</a>的说明</td>
 </tr>
-</tbody></table>
-<br/>
-* public static void cleanupOfflineSDK(Context context)
-
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<ul>
+<li>public static void cleanupOfflineSDK(Context context)</li>
+</ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -289,7 +305,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>说明</td>
 <td>销毁离线引擎。销毁后不能再调用任何离线评测功能</td>
 </tr>
@@ -301,10 +318,14 @@
 <td>参数 context</td>
 <td>android.content.Context实例，比如一个Activity</td>
 </tr>
-</tbody></table>
-<br/>
-* public static <a href="#ioralevalsdk"> IOralEvalSDK </a> start(Context context, <a href="#oralevalsdkfactorystartconfig"> StartConfig </a> cfg, <a href="#ioralevalsdkicallback">  ICallback </a> cb)
-
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<ul>
+<li>public static <a href="#ioralevalsdk"> IOralEvalSDK </a> start(Context context, <a href="#oralevalsdkfactorystartconfig"> StartConfig </a> cfg, <a href="#ioralevalsdkicallback">  ICallback </a> cb)</li>
+</ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -312,7 +333,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>说明</td>
 <td>发起一个评测。评测必须是单实例的，即上一次评测结束之前，不能发起新的评测</td>
 </tr>
@@ -332,11 +354,15 @@
 <td>参数 cb</td>
 <td>监听接口，用于接收评测结果，实时音量，实时语音数据，和错误信息，详见<a href="#ioralevalsdkicallback">ICallback</a></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h4 id="OralEvalSDKFactory-StartConfig"><a href="#OralEvalSDKFactory-StartConfig" class="headerlink" title="OralEvalSDKFactory.StartConfig"></a><a name="oralevalsdkfactorystartconfig"></a>OralEvalSDKFactory.StartConfig</h4><p>评测参数类。标识了所有评测的参数设置。</p>
-<br/>
-* public StartConfig(String oralText)
-
+<p><br/></p>
+<ul>
+<li>public StartConfig(String oralText)</li>
+</ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -344,7 +370,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>说明</td>
 <td>指定评测文本，构建一个默认参数对象。默认ServiceType为A，VadEnable为false，ConnectTimeout为100，useOfflineWhenFailedToConnectToServer为false，AudioStream为null</td>
 </tr>
@@ -360,12 +387,14 @@
 <td>注意</td>
 <td>请不要传递空字符串，否则有可能会抛出IllegalArgumentException异常</td>
 </tr>
-</tbody></table>
-<br/>
-
+</tbody>
+</table>
+</div>
+<p><br/></p>
 <ul>
 <li>public void setUid(String uid)</li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -373,7 +402,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>说明</td>
 <td>指定用户标识。我们的后台提供针对每个用户的统计和学习报告功能，需要根据用户标识获取学习报告</td>
 </tr>
@@ -385,12 +415,14 @@
 <td>参数 uid</td>
 <td>用户标识，如用户名等可以唯一识别用户的字符串</td>
 </tr>
-</tbody></table>
-<br/>
-
+</tbody>
+</table>
+</div>
+<p><br/></p>
 <ul>
 <li>public void setOnline_ip(String online_ip)</li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -398,7 +430,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>说明</td>
 <td>设置在线评测ip和端口号，默认不设置，在线评测就走我们内部默认的ip和端口号，如果设置了ip和端口号，在线评测就走设置的ip和端口号</td>
 </tr>
@@ -410,10 +443,14 @@
 <td>参数 online_ip</td>
 <td>ip和端口号组成的字符串</td>
 </tr>
-</tbody></table>
-<br/>
-* public void setVadEnable(boolean vadEnable)
-
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<ul>
+<li>public void setVadEnable(boolean vadEnable)</li>
+</ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -421,7 +458,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>说明</td>
 <td>设置vad是否启用。VAD用于检测用户是否说话，以及是否说话完成。在检测到用户没有说话或者说话已经完成时会自动结束评测</td>
 </tr>
@@ -433,10 +471,14 @@
 <td>参数 vadEnable</td>
 <td>true启用VAD，false不启用VAD，默认不启动</td>
 </tr>
-</tbody></table>
-<br/>
-* public void setVadBeforeMs(int vadBeforeMs)
-
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<ul>
+<li>public void setVadBeforeMs(int vadBeforeMs)</li>
+</ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -444,7 +486,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>说明</td>
 <td>设置最长前置静音时间。即如果评测开始后的vadBeforeMs毫秒内没有检测到说话，就自动结束。对应<a href="#ioralevalsdkicallback">ICallback</a>中的onStop()方法中的EndReason为NoVoice</td>
 </tr>
@@ -456,10 +499,14 @@
 <td>参数 vadBeforeMs</td>
 <td>最长前置静音时间，默认2000(毫秒)，最大值3000(毫秒)，最小值1000(毫秒)</td>
 </tr>
-</tbody></table>
-<br/>
-* public void setVadAfterMs(int vadAfterMs)
-
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<ul>
+<li>public void setVadAfterMs(int vadAfterMs)</li>
+</ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -467,7 +514,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>说明</td>
 <td>设置最长后置静音时间。即如果检测到说话后，在vadAfterMs毫秒内一直没有检测到说话，就自动结束。对应<a href="#ioralevalsdkicallback">ICallback</a>中的onStop()方法中的EndVoice为VoiceEnd</td>
 </tr>
@@ -479,10 +527,14 @@
 <td>参数 vadAfterMs</td>
 <td>最长后置静音时间，默认2000(毫秒)。此参数最大值支持3000毫秒，大于3000毫秒内部按照3000毫秒处理，最小值1000(毫秒)</td>
 </tr>
-</tbody></table>
-<br/>
-* public void set_useOfflineWhenFailedToConnectToServer(boolean _useOfflineWhenFailedToConnectToServer)
-
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<ul>
+<li>public void set_useOfflineWhenFailedToConnectToServer(boolean _useOfflineWhenFailedToConnectToServer)</li>
+</ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -490,7 +542,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>说明</td>
 <td>设置是否启动离在线混合评测，即遇到网络或者服务错误的时候，自动使用本地的评测引擎。离线评测引擎需要SDK支持</td>
 </tr>
@@ -502,10 +555,14 @@
 <td>参数 _useOfflineWhenFailedToConnectToServer</td>
 <td>true启动混合评测，false仅使用在线评测。默认为false</td>
 </tr>
-</tbody></table>
-<br/>
-* public void setOralText(String oralText)
-
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<ul>
+<li>public void setOralText(String oralText)</li>
+</ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -513,7 +570,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>说明</td>
 <td>设置评测文本</td>
 </tr>
@@ -529,10 +587,14 @@
 <td>注意</td>
 <td>请不要传递空字符串，否则有可能会抛出IllegalArgumentException异常</td>
 </tr>
-</tbody></table>
-<br/>
-* public void setOralEvalMode(OralEvalEnum.OnlineUS)
-
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<ul>
+<li>public void setOralEvalMode(OralEvalEnum.OnlineUS)</li>
+</ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -540,7 +602,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>说明</td>
 <td>设置评测语言</td>
 </tr>
@@ -556,14 +619,14 @@
 <td>注意</td>
 <td>目前仅支持OralEvalEnum.OnlineUS和OralEvalEnum.OnlineCH</td>
 </tr>
-<tr>
-<td><br/></td>
-<td></td>
-</tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
+<p><br/></p>
 <ul>
 <li>public void setScoreAdjuest(float scoreAdjuest)</li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -571,7 +634,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>说明</td>
 <td>调整评分严厉程度，比如对于鼓励为主的应用可以适当提升评测得分</td>
 </tr>
@@ -583,10 +647,14 @@
 <td>参数 scoreAdjuest</td>
 <td>得分系数。具体值请咨询客户经理（默认值是1.0，范围（0.6~1.9））</td>
 </tr>
-</tbody></table>
-<br/>
-* public void setServiceType(String serviceType)
-
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<ul>
+<li>public void setServiceType(String serviceType)</li>
+</ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -594,7 +662,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>说明</td>
 <td>设置评测模式</td>
 </tr>
@@ -606,10 +675,14 @@
 <td>参数 serviceType</td>
 <td>需要评测的模式。具体参考<a href="#评测模式说明">评测模式说明文档</a></td>
 </tr>
-</tbody></table>
-<br/>
-* public void setConnectTimeout(int connectTimeout)
-
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<ul>
+<li>public void setConnectTimeout(int connectTimeout)</li>
+</ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -617,7 +690,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>说明</td>
 <td>设置在线评测时连接服务器的超时时间。对应java.net.socket.connect()中超时参数</td>
 </tr>
@@ -629,10 +703,14 @@
 <td>参数 connectTimeout</td>
 <td>连接评测服务时的超时时间，单位为毫秒。默认值为1000毫秒</td>
 </tr>
-</tbody></table>
-<br/>
-* public void setVolumeReport(boolean on)
-
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<ul>
+<li>public void setVolumeReport(boolean on)</li>
+</ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -640,7 +718,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>说明</td>
 <td>设置SDK是否上报音量，如果应用层不需要实时音量，请关闭上报音量功能，减少不必要的计算消耗</td>
 </tr>
@@ -652,10 +731,14 @@
 <td>参数 on</td>
 <td>true为打开上报，flase关闭上报。默认为true</td>
 </tr>
-</tbody></table>
-<br/>
-* public void setAudioStream(InputStream audioStream)
-
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<ul>
+<li>public void setAudioStream(InputStream audioStream)</li>
+</ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -663,7 +746,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>说明</td>
 <td>设置评测的音频流。音频格式为16k采样，16bit有符号整数，单声道的pcm</td>
 </tr>
@@ -675,10 +759,14 @@
 <td>参数 audioStream</td>
 <td>不为空，则从该流中读取音频评测， 否则从麦克风录音评测。默认从麦克风录音评测</td>
 </tr>
-</tbody></table>
-<br/>
-* public void setMp3Audio(boolean mp3Audio)
-
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<ul>
+<li>public void setMp3Audio(boolean mp3Audio)</li>
+</ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -686,7 +774,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>说明</td>
 <td>设置本地音频数据回调的音频数据格式</td>
 </tr>
@@ -698,10 +787,14 @@
 <td>参数 mp3Audio</td>
 <td>true，则以mp3格式输出， 否则以16k，16bit有符号整数，单声道pcm格式输出</td>
 </tr>
-</tbody></table>
-<br/>
-* public void setBufferLog(boolean bufferLog)
-
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<ul>
+<li>public void setBufferLog(boolean bufferLog)</li>
+</ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -709,7 +802,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>说明</td>
 <td>设置是否保存评测SDK内部Log，以便需要时取出。参考<a href="#ioralevalsdk">IOralEvalSDK</a>.getLog()</td>
 </tr>
@@ -721,12 +815,14 @@
 <td>参数 bufferLog</td>
 <td>true，内部保存Log；否则，内部不保存Log</td>
 </tr>
-</tbody></table>
-<br/>
-
+</tbody>
+</table>
+</div>
+<p><br/></p>
 <ul>
 <li>public void setAsyncRecognize(boolean asyncRecognize)</li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -734,7 +830,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>说明</td>
 <td>设置是否启用延迟评测。</td>
 </tr>
@@ -746,14 +843,14 @@
 <td>参数 asyncRecognize</td>
 <td>true启用延迟评测，false不启用延迟评测，默认不启用</td>
 </tr>
-<tr>
-<td><br/></td>
-<td></td>
-</tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
+<p><br/></p>
 <ul>
 <li>public void setReTry(boolean reTry)</li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -761,7 +858,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>说明</td>
 <td>设置是否使用重试，注意：如果使用重试，在构造OralEvalSDKFactory.StartConfig实例时需要用StartConfig(String oralText, String fileFullName)进行构造，且fileFullName文件为opus格式的文件，可参考demo</td>
 </tr>
@@ -773,18 +871,15 @@
 <td>参数 reTry</td>
 <td>true使用重试，false不使用重试，默认不使用</td>
 </tr>
-<tr>
-<td><br/></td>
-<td></td>
-</tr>
-</tbody></table>
-<h3 id="IOralEvalSDK"><a href="#IOralEvalSDK" class="headerlink" title=" IOralEvalSDK"></a><a name="ioralevalsdk"></a> IOralEvalSDK</h3><br/>
-评测实例，从<a href="#oralevalsdkfactory">OralEvalSDKFactory</a>.start()创建。一个时刻只能有一个评测实例。
-<br/>
-
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<h3 id="IOralEvalSDK"><a href="#IOralEvalSDK" class="headerlink" title=" IOralEvalSDK"></a><a name="ioralevalsdk"></a> IOralEvalSDK</h3><p><br/><br>评测实例，从<a href="#oralevalsdkfactory">OralEvalSDKFactory</a>.start()创建。一个时刻只能有一个评测实例。<br><br/></p>
 <ul>
 <li>public void cancel()</li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -792,7 +887,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>说明</td>
 <td>取消评测，将会在<a href="#ioralevalsdkicallback">IOralEvalSDK.ICallback</a>.onCancel()回调中完全结束上次评测，或者<a href="#ioralevalsdkicallback">IOralEvalSDK.ICallback</a>.onError()中捕获错误</td>
 </tr>
@@ -800,10 +896,14 @@
 <td>版本支持</td>
 <td>最低3.6.16</td>
 </tr>
-</tbody></table>
-<br/>
-* public void stop()
-
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<ul>
+<li>public void stop()</li>
+</ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -811,7 +911,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>说明</td>
 <td>停止评测，将会在 <a href="#ioralevalsdkicallback">IOralEvalSDK.ICallback</a>.onStop()回调中得到结果，或者<a href="#ioralevalsdkicallback">IOralEvalSDK.ICallback</a>.onError()中捕获错误</td>
 </tr>
@@ -819,10 +920,14 @@
 <td>版本支持</td>
 <td>最低2.0.0</td>
 </tr>
-</tbody></table>
-<br/>
-* public String getLog()
-
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<ul>
+<li>public String getLog()</li>
+</ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -830,7 +935,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>说明</td>
 <td>获得该次评测的Log字符串。当遇到问题是，该字符串可以帮助Unisound分析错误原因。</td>
 </tr>
@@ -846,12 +952,12 @@
 <td>版本支持</td>
 <td>最低2.6.5</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h4 id="IOralEvalSDK-OfflineSDKError"><a href="#IOralEvalSDK-OfflineSDKError" class="headerlink" title=" IOralEvalSDK.OfflineSDKError"></a><a name="ioralevalsdkofflinesdkpreparationerror"></a> IOralEvalSDK.OfflineSDKError</h4><p>离线SDK错误类型</p>
-<br/>
-枚举值：
-<br/>
-
+<p><br/><br>枚举值：<br><br/></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -860,7 +966,8 @@
 <th>版本支持</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>NOERROR</td>
 <td>没有错误</td>
 <td>最低2.0.0</td>
@@ -920,8 +1027,11 @@
 <td>超时</td>
 <td>最低3.0.0</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h4 id="SDKError"><a href="#SDKError" class="headerlink" title=" SDKError"></a><a name="ioralevalsdkerror"></a> SDKError</h4><p>在线SDK错误类型和错误码(Category和对应的errno)：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -930,7 +1040,8 @@
 <th>版本支持</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>Network</td>
 <td>网络错误。错误码-7表示连接失败或超时，-8表示读取结果失败，-9标识发送数据失败</td>
 <td>最低3.0.0</td>
@@ -950,12 +1061,16 @@
 <td>服务器错误。 此时错误码是服务端返回的，请联系云知声根据错误码进一步分析。常见内错误码包括0xFFF7文本为空内容，0xE007文本过长，0xE001暂时没有可用资源，0x2003内容格式错误</td>
 <td>最低3.0.0</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>目前阶段后端还有缺陷，不能正确返回所有错误码，故同时需要httpErrorMessage供定位问题。</p>
 <h4 id="IOralEvalSDK-ICallback"><a href="#IOralEvalSDK-ICallback" class="headerlink" title=" IOralEvalSDK.ICallback"></a><a name="ioralevalsdkicallback"></a> IOralEvalSDK.ICallback</h4><p>评测回调接口。由评测发起者实现，用于接收评测结果、评测录音等信息。<br>此接口的方法，由SDK在工作线程中调用，因此不是在UI主线程。且为了正常执行评测过程不能在此接口的方法中执行阻塞或耗时操作</p>
-<br/>
-* public void onStart([IOralEvalSDK](#ioralevalsdk) who, int audioRecorderSessionId)
-
+<p><br/></p>
+<ul>
+<li>public void onStart(<a href="#ioralevalsdk">IOralEvalSDK</a> who, int audioRecorderSessionId)</li>
+</ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -963,7 +1078,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>说明</td>
 <td>评测开始回调</td>
 </tr>
@@ -979,10 +1095,14 @@
 <td>参数 audioRecorderSessionId</td>
 <td>从麦克风录音评测时，启动的AudioRecord实例的AudioSessionId，对应AudioRecord.getAudioSessionId()方法的返回值。如果无法正常取得AudioSessionId，则为-1</td>
 </tr>
-</tbody></table>
-<br/>
-* public void onError <a href="#ioralevalsdk">IOralEvalSDK</a> who, <a href="#ioralevalsdkerror">SDKError</a>  error,  <a href="#ioralevalsdkofflinesdkpreparationerror">OfflineSDKError</a> offlineError)
-
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<ul>
+<li>public void onError <a href="#ioralevalsdk">IOralEvalSDK</a> who, <a href="#ioralevalsdkerror">SDKError</a>  error,  <a href="#ioralevalsdkofflinesdkpreparationerror">OfflineSDKError</a> offlineError)</li>
+</ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -990,7 +1110,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>说明</td>
 <td>评测出错回调。返回错误后，评测会自动结束，不需要再手动调用<a href="#ioralevalsdk">IOralEvalSDK</a>.stop()</td>
 </tr>
@@ -1010,10 +1131,14 @@
 <td>参数 offlineError</td>
 <td>离线评测错误的原因值</td>
 </tr>
-</tbody></table>
-<br/>
-* public void onStop(<a href="#ioralevalsdk">IOralEvalSDK</a> who, String result, boolean isOffline, String url, EndReason stopType)
-
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<ul>
+<li>public void onStop(<a href="#ioralevalsdk">IOralEvalSDK</a> who, String result, boolean isOffline, String url, EndReason stopType)</li>
+</ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1021,7 +1146,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>说明</td>
 <td>评测结果回调。返回结果后，评测会自动结束，不需要再手动调用<a href="#ioralevalsdk">IOralEvalSDK</a>.stop()</td>
 </tr>
@@ -1049,10 +1175,14 @@
 <td>参数 stopType</td>
 <td>结束评测的原因。UserAction是调用<a href="#ioralevalsdk">IOralEvalSDK</a>.stop()结束，VoiceEnd是VAD检测到完成说话结束，NoVoice是VAD检测到长时间没有人说话结束,InputStreamEnd是当使用非mic音频源评测时，音频流结束或读取失败</td>
 </tr>
-</tbody></table>
-<br/>
-* public void onCancel()
-
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<ul>
+<li>public void onCancel()</li>
+</ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1060,7 +1190,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>说明</td>
 <td>取消评测回调。无返回结果，评测会自动结束，需要手动调用<a href="#ioralevalsdk">IOralEvalSDK</a>.cancel()</td>
 </tr>
@@ -1068,10 +1199,14 @@
 <td>版本支持</td>
 <td>最低3.6.16</td>
 </tr>
-</tbody></table>
-<br/>
-* public void onVolume(<a href="#ioralevalsdk">IOralEvalSDK</a> who, int value)
-
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<ul>
+<li>public void onVolume(<a href="#ioralevalsdk">IOralEvalSDK</a> who, int value)</li>
+</ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1079,7 +1214,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>说明</td>
 <td>评测实时音量回调</td>
 </tr>
@@ -1095,10 +1231,14 @@
 <td>参数 value</td>
 <td>实时录音的音频音量值，0-100范围</td>
 </tr>
-</tbody></table>
-<br/>
-* public void onAudioData(<a href="#ioralevalsdk">IOralEvalSDK</a> who, byte[] audioData, int offset, int len)
-
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<ul>
+<li>public void onAudioData(<a href="#ioralevalsdk">IOralEvalSDK</a> who, byte[] audioData, int offset, int len)</li>
+</ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1106,7 +1246,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>说明</td>
 <td>评测实时录音数据回调</td>
 </tr>
@@ -1126,10 +1267,14 @@
 <td>参数 len</td>
 <td>实时录音流数据的总长度</td>
 </tr>
-</tbody></table>
-<br/>
-* public void onOpusData(<a href="#ioralevalsdk">IOralEvalSDK</a> who, byte[] opusData, int offset, int len)
-
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<ul>
+<li>public void onOpusData(<a href="#ioralevalsdk">IOralEvalSDK</a> who, byte[] opusData, int offset, int len)</li>
+</ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1137,7 +1282,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>说明</td>
 <td>评测实时opus流数据回调</td>
 </tr>
@@ -1157,10 +1303,14 @@
 <td>参数 len</td>
 <td>实时录音的opus流数据的总长度</td>
 </tr>
-</tbody></table>
-<br/>
-* public void onAsyncResult([<a href="#ioralevalsdk">IOralEvalSDK</a> who, String url);
-
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<ul>
+<li>public void onAsyncResult([<a href="#ioralevalsdk">IOralEvalSDK</a> who, String url);</li>
+</ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1168,7 +1318,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>说明</td>
 <td>延迟评测回调，默认为不启用，需要设置 public void setAsyncRecognize(boolean asyncRecognize)为true</td>
 </tr>
@@ -1184,10 +1335,14 @@
 <td>参数 url</td>
 <td>延迟评测结果所在的地址</td>
 </tr>
-</tbody></table>
-<br/>
-* public void onStartOralEval()
-
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<ul>
+<li>public void onStartOralEval()</li>
+</ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1195,7 +1350,8 @@
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>说明</td>
 <td>录音结束回调</td>
 </tr>
@@ -1203,14 +1359,14 @@
 <td>版本支持</td>
 <td>3.6.24</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h3 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a><a name="FAQ"></a>FAQ</h3><p><strong>DEMO使用方法</strong></p>
 <blockquote>
 <p>将SDK中libs下面的jar包拷贝到工程的libs目录下；src/main下面的assets、java、jniLibs、res目录以及AndroidMainifest.xml覆盖到工程对应的目录。<br>工程结构图如下：</p>
 </blockquote>
-<img src="/images/oral_project.png" style="zoom:40%;float:left">
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-
+<p><img src="/images/oral_project.png" style="zoom:40%;float:left"><br><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></p>
 <hr>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  sourceSets &#123;</span><br><span class="line">    main &#123;</span><br><span class="line">      jniLibs.srcDir &#39;libs&#39;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">该代码加入到build.gradle</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -1220,214 +1376,222 @@
 <blockquote>
 <p>该功能是自动检测是否在录音，如果没有在录音，则自动停止录音。在V3.6.36版本之前是默认开启的，在V3.6.36版本后默认关闭。</p>
 </blockquote>
-<h3 id="评测返回结果中Json字段说明"><a href="#评测返回结果中Json字段说明" class="headerlink" title="评测返回结果中Json字段说明"></a>评测返回结果中Json字段说明</h3><table>
+<h3 id="评测返回结果中Json字段说明"><a href="#评测返回结果中Json字段说明" class="headerlink" title="评测返回结果中Json字段说明"></a>评测返回结果中Json字段说明</h3><div class="table-container">
+<table>
 <thead>
 <tr>
-<th align="left">名称</th>
-<th align="left">类型</th>
-<th align="left">说明</th>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">说明</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">version</td>
-<td align="left">string</td>
-<td align="left">结果格式版本及版本号</td>
+<tbody>
+<tr>
+<td style="text-align:left">version</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">结果格式版本及版本号</td>
 </tr>
 <tr>
-<td align="left">lines</td>
-<td align="left">array</td>
-<td align="left">每行输入文本的评测结果</td>
+<td style="text-align:left">lines</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">每行输入文本的评测结果</td>
 </tr>
 <tr>
-<td align="left">EvalType</td>
-<td align="left">string</td>
-<td align="left">评测类型：general（朗读评测）、askandanswer（情景问答）、composition（作文）</td>
+<td style="text-align:left">EvalType</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">评测类型：general（朗读评测）、askandanswer（情景问答）、composition（作文）</td>
 </tr>
 <tr>
-<td align="left">sample</td>
-<td align="left">string</td>
-<td align="left">输入的标准文本</td>
+<td style="text-align:left">sample</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">输入的标准文本</td>
 </tr>
 <tr>
-<td align="left">usertext</td>
-<td align="left">string</td>
-<td align="left">用户实际朗读的文本（语音识别结果）</td>
+<td style="text-align:left">usertext</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">用户实际朗读的文本（语音识别结果）</td>
 </tr>
 <tr>
-<td align="left">subwords</td>
-<td align="left">array</td>
-<td align="left">包含单词的音标、开始时间、结束时间、分数、音量信息</td>
+<td style="text-align:left">subwords</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">包含单词的音标、开始时间、结束时间、分数、音量信息</td>
 </tr>
 <tr>
-<td align="left">begin</td>
-<td align="left">double</td>
-<td align="left">开始时间，单位为秒</td>
+<td style="text-align:left">begin</td>
+<td style="text-align:left">double</td>
+<td style="text-align:left">开始时间，单位为秒</td>
 </tr>
 <tr>
-<td align="left">end</td>
-<td align="left">double</td>
-<td align="left">开始时间，单位为秒</td>
+<td style="text-align:left">end</td>
+<td style="text-align:left">double</td>
+<td style="text-align:left">开始时间，单位为秒</td>
 </tr>
 <tr>
-<td align="left">volume</td>
-<td align="left">double</td>
-<td align="left">音量</td>
+<td style="text-align:left">volume</td>
+<td style="text-align:left">double</td>
+<td style="text-align:left">音量</td>
 </tr>
 <tr>
-<td align="left">score</td>
-<td align="left">string</td>
-<td align="left">分值</td>
+<td style="text-align:left">score</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">分值</td>
 </tr>
 <tr>
-<td align="left">subtext</td>
-<td align="left">string</td>
-<td align="left">音标或重音符号信息</td>
+<td style="text-align:left">subtext</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">音标或重音符号信息</td>
 </tr>
 <tr>
-<td align="left">integrity</td>
-<td align="left">double</td>
-<td align="left">录入语音的完整度</td>
+<td style="text-align:left">integrity</td>
+<td style="text-align:left">double</td>
+<td style="text-align:left">录入语音的完整度</td>
 </tr>
 <tr>
-<td align="left">pronunciation</td>
-<td align="left">double</td>
-<td align="left">录入语音的标准度</td>
+<td style="text-align:left">pronunciation</td>
+<td style="text-align:left">double</td>
+<td style="text-align:left">录入语音的标准度</td>
 </tr>
 <tr>
-<td align="left">fluency</td>
-<td align="left">double</td>
-<td align="left">录入语音的流利度</td>
+<td style="text-align:left">fluency</td>
+<td style="text-align:left">double</td>
+<td style="text-align:left">录入语音的流利度</td>
 </tr>
 <tr>
-<td align="left">words</td>
-<td align="left">array</td>
-<td align="left">每个词的评测结果</td>
+<td style="text-align:left">words</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">每个词的评测结果</td>
 </tr>
 <tr>
-<td align="left">text</td>
-<td align="left">string</td>
-<td align="left">单词或音素文本 (词的字符串，使用”sil”表示语音中的静音段)</td>
+<td style="text-align:left">text</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">单词或音素文本 (词的字符串，使用”sil”表示语音中的静音段)</td>
 </tr>
 <tr>
-<td align="left">type</td>
-<td align="left">int</td>
-<td align="left">类型，共有6种类型，分别是：<br>0 多词：仅B，C，G模式出现，当朗读内容大于文本内容时，多余的单词type值为0；eg：文本：nice to meet you，音频：nice nice to meet you，第二个nice的type值为0；<br>1 漏词：所有模式都有，当朗读内容小于文本内容时，未读的单词type值为1；eg：文本：nice to meet you，音频：nice meet you，结果中to的type值为1；<br>2 正常词：所有模式都有，识别正常的词；<br>3 错误词：仅B，C，G模式出现，当朗读的文本某个单词识别成文本中其他单词时，该单词type值为3。 eg：文本：nice to meet you，音频：nice you meet you，结果中第一个you的type值为3；<br>4 静音：所有模式；<br>5 重复词：预留接口，未实现；<br>7 空格or标点：仅E模式，空格和标点的结构type值为7；<br>8 生词：所有模式</td>
+<td style="text-align:left">type</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">类型，共有6种类型，分别是：<br>0 多词：仅B，C，G模式出现，当朗读内容大于文本内容时，多余的单词type值为0；eg：文本：nice to meet you，音频：nice nice to meet you，第二个nice的type值为0；<br>1 漏词：所有模式都有，当朗读内容小于文本内容时，未读的单词type值为1；eg：文本：nice to meet you，音频：nice meet you，结果中to的type值为1；<br>2 正常词：所有模式都有，识别正常的词；<br>3 错误词：仅B，C，G模式出现，当朗读的文本某个单词识别成文本中其他单词时，该单词type值为3。 eg：文本：nice to meet you，音频：nice you meet you，结果中第一个you的type值为3；<br>4 静音：所有模式；<br>5 重复词：预留接口，未实现；<br>7 空格or标点：仅E模式，空格和标点的结构type值为7；<br>8 生词：所有模式</td>
 </tr>
 <tr>
-<td align="left">sentSample</td>
-<td align="left">array</td>
-<td align="left">句式标准文本</td>
+<td style="text-align:left">sentSample</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">句式标准文本</td>
 </tr>
 <tr>
-<td align="left">sentScore</td>
-<td align="left">array</td>
-<td align="left">句式总分</td>
+<td style="text-align:left">sentScore</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">句式总分</td>
 </tr>
 <tr>
-<td align="left">sentPronunciation</td>
-<td align="left">array</td>
-<td align="left">句式标准度得分</td>
+<td style="text-align:left">sentPronunciation</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">句式标准度得分</td>
 </tr>
 <tr>
-<td align="left">sentFluency</td>
-<td align="left">array</td>
-<td align="left">句式流利度得分</td>
+<td style="text-align:left">sentFluency</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">句式流利度得分</td>
 </tr>
 <tr>
-<td align="left">sentIntegrity</td>
-<td align="left">array</td>
-<td align="left">句式完整度得分</td>
+<td style="text-align:left">sentIntegrity</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">句式完整度得分</td>
 </tr>
 <tr>
-<td align="left">keySample</td>
-<td align="left">array</td>
-<td align="left">关键词sample（包括关键词和每个关键词的得分</td>
+<td style="text-align:left">keySample</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">关键词sample（包括关键词和每个关键词的得分</td>
 </tr>
 <tr>
-<td align="left">keysScore</td>
-<td align="left">array</td>
-<td align="left">关键词总分</td>
+<td style="text-align:left">keysScore</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">关键词总分</td>
 </tr>
 <tr>
-<td align="left">keysPronunciation</td>
-<td align="left">array</td>
-<td align="left">关键词标准度得分</td>
+<td style="text-align:left">keysPronunciation</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">关键词标准度得分</td>
 </tr>
 <tr>
-<td align="left">keysIntegrity</td>
-<td align="left">array</td>
-<td align="left">关键词完整度得分</td>
+<td style="text-align:left">keysIntegrity</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">关键词完整度得分</td>
 </tr>
 <tr>
-<td align="left">keysFluency</td>
-<td align="left">array</td>
-<td align="left">关键词流利度</td>
+<td style="text-align:left">keysFluency</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">关键词流利度</td>
 </tr>
 <tr>
-<td align="left">standardScore</td>
-<td align="left">string</td>
-<td align="left">客户定制，输出的分制，当前含有4分制和8分制</td>
+<td style="text-align:left">standardScore</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">客户定制，输出的分制，当前含有4分制和8分制</td>
 </tr>
 <tr>
-<td align="left">StressOfSent</td>
-<td align="left">string</td>
-<td align="left">句子重读，每个单词都输出，0：该单词没有被重读；1：该单词被重读</td>
+<td style="text-align:left">StressOfSent</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">句子重读，每个单词都输出，0：该单词没有被重读；1：该单词被重读</td>
 </tr>
 <tr>
-<td align="left">StressOfWord</td>
-<td align="left">string</td>
-<td align="left">单词重音，将用户发音和词典的重音位置做比较，0：该单词重音朗读错误；1：该单词重音朗读正确</td>
+<td style="text-align:left">StressOfWord</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">单词重音，将用户发音和词典的重音位置做比较，0：该单词重音朗读错误；1：该单词重音朗读正确</td>
 </tr>
 <tr>
-<td align="left">tone</td>
-<td align="left">array</td>
-<td align="left">输出全部信息，数据可以用于画用户的发音曲线，目前只有内部在使用</td>
+<td style="text-align:left">tone</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">输出全部信息，数据可以用于画用户的发音曲线，目前只有内部在使用</td>
 </tr>
 <tr>
-<td align="left">audiocheck</td>
-<td align="left">array</td>
-<td align="left">音质检测结果。volume：音量过小的置信度；clipping：截幅的置信度；noise：噪音过大的置信度；cut:截断的置信度；too short：是否音频过短；emptyAudio：是否是空音频。<br>备注：置信度的值为0和10，10代表可能存在该项音质问题，0代表该项检测正常</td>
+<td style="text-align:left">audiocheck</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">音质检测结果。volume：音量过小的置信度；clipping：截幅的置信度；noise：噪音过大的置信度；cut:截断的置信度；too short：是否音频过短；emptyAudio：是否是空音频。<br>备注：置信度的值为0和10，10代表可能存在该项音质问题，0代表该项检测正常</td>
 </tr>
-</tbody></table>
-<h3 id="评测模式说明"><a href="#评测模式说明" class="headerlink" title="评测模式说明"></a>评测模式说明</h3><table>
+</tbody>
+</table>
+</div>
+<h3 id="评测模式说明"><a href="#评测模式说明" class="headerlink" title="评测模式说明"></a>评测模式说明</h3><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>模式</th>
-<th align="left">模式说明</th>
-<th align="left">适用场景</th>
+<th style="text-align:left">模式说明</th>
+<th style="text-align:left">适用场景</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>A</td>
-<td align="left">性能最高模式，输出单词打分，不输出音素及音素打分情况</td>
-<td align="left">1. 适用于单词、句子评测，且不需要返回音 标信息的 <br/>2. 适用于半开放题型，如三问五答，话题简 述、看图说话等 <br/>3. 该模式强制按照文本顺序匹配，如果存在 读多遍的情况，按照第一遍进行评分，不适 用于篇章</td>
+<td style="text-align:left">性能最高模式，输出单词打分，不输出音素及音素打分情况</td>
+<td style="text-align:left">1. 适用于单词、句子评测，且不需要返回音 标信息的 <br/>2. 适用于半开放题型，如三问五答，话题简 述、看图说话等 <br/>3. 该模式强制按照文本顺序匹配，如果存在 读多遍的情况，按照第一遍进行评分，不适 用于篇章</td>
 </tr>
 <tr>
 <td>B</td>
-<td align="left">可以输出单词打分及音素，但不输出音素打分</td>
-<td align="left">1. 该模式可以适用于只需要输出单词或句子 打分，需要音素音标但不需要音素打分的场景<br/>2. 多读扣分</td>
+<td style="text-align:left">可以输出单词打分及音素，但不输出音素打分</td>
+<td style="text-align:left">1. 该模式可以适用于只需要输出单词或句子 打分，需要音素音标但不需要音素打分的场景<br/>2. 多读扣分</td>
 </tr>
 <tr>
 <td>C</td>
-<td align="left">json 输出跟 A 模式相 同，非强制按文本顺序 匹配</td>
-<td align="left">适用于篇章评测</td>
+<td style="text-align:left">json 输出跟 A 模式相 同，非强制按文本顺序 匹配</td>
+<td style="text-align:left">适用于篇章评测</td>
 </tr>
 <tr>
 <td>E</td>
-<td align="left">输出单词打分、音素及音素打分，同时输出空格和标点信息</td>
-<td align="left">1.适用于输出文本需要和输入文本一致的场 景<br/>2.多读不扣分</td>
+<td style="text-align:left">输出单词打分、音素及音素打分，同时输出空格和标点信息</td>
+<td style="text-align:left">1.适用于输出文本需要和输入文本一致的场 景<br/>2.多读不扣分</td>
 </tr>
 <tr>
 <td>G</td>
-<td align="left">输出单词打分、音素及音素打分</td>
-<td align="left">适用于单词、句子评测且需要返回音标即音标打分详细信息的场景</td>
+<td style="text-align:left">输出单词打分、音素及音素打分</td>
+<td style="text-align:left">适用于单词、句子评测且需要返回音标即音标打分详细信息的场景</td>
 </tr>
 <tr>
 <td>H</td>
-<td align="left">选择题模式</td>
-<td align="left">有多个选项，选项之间用\n 或是换行隔开， 通过朗读任意文本可以自动匹配上答案</td>
+<td style="text-align:left">选择题模式</td>
+<td style="text-align:left">有多个选项，选项之间用\n 或是换行隔开， 通过朗读任意文本可以自动匹配上答案</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 
     </div>
 
@@ -1559,14 +1723,14 @@
 
 <div class="copyright">
   
-  &copy; 2016 – 
+  &copy; 
   <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">平凡</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>
 
         
@@ -1615,6 +1779,8 @@
 
 
 
+
+  
 
   
 
