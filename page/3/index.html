@@ -155,6 +155,104 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.panzhenglian.com/2017/05/22/Android-animated-vector-%E5%B0%8F%E4%BE%8B%E5%AD%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="name" content="平凡">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="平凡">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/05/22/Android-animated-vector-%E5%B0%8F%E4%BE%8B%E5%AD%90/" class="post-title-link" itemprop="url">Android animated-vector 小例子</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-05-22 18:17:46" itemprop="dateCreated datePublished" datetime="2017-05-22T18:17:46+08:00">2017-05-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2017-06-07 11:37:07" itemprop="dateModified" datetime="2017-06-07T11:37:07+08:00">2017-06-07</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>   Android 从5.0开始引入 VectorDrawable，用于实现矢量图。默认情况下，Android L 之前的版本并不支持 vector 标签，<br>但是在 <code>com.android.support:appcompat-v7:23.2.0</code>以上的包中，Google 对vector进行了部分兼容。以下内容，均为兼容 api14以上的代码。</p>
+<ul>
+<li>引入appcompat,我这里引入的是25.3.1<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compile &quot;com.android.support:appcompat-v7:25.3.1&quot;</span><br></pre></td></tr></table></figure></li>
+<li><p>在 Module的 build.gradle 文件中，加入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vectorDrawables.useSupportLibrary &#x3D; true</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果不加的话，只能兼容静态 vector 标签，而且兼容方式是通过生成位图来做的，在 L版本以前的设备会使用工程生成的 png文件，L版本以后不受影响，但是apk 体积会增大。</p>
+</blockquote>
+</li>
+<li><p>编写vector,这里写一个播放图标效果,静态效果如下,<br><img src="/images/play_drawable.png " width="100" height="100"/><br>文件名<code>svg_flash_play.xml</code></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">vector</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:width</span>=<span class="string">&quot;25dp&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:height</span>=<span class="string">&quot;25dp&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:viewportHeight</span>=<span class="string">&quot;50.0&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:viewportWidth</span>=<span class="string">&quot;50.0&quot;</span>&gt;</span></span><br><span class="line">    &lt;path</span><br><span class="line">        android:name=&quot;p1&quot;</span><br><span class="line">        android:pathData=&quot;M12 ,38 v-28&quot;</span><br><span class="line">        android:strokeColor=&quot;#fff&quot;</span><br><span class="line">        android:strokeWidth=&quot;4&quot; /&gt;</span><br><span class="line">    &lt;path</span><br><span class="line">        android:name=&quot;p2&quot;</span><br><span class="line">        android:pathData=&quot;M21 ,38 v-30&quot;</span><br><span class="line">        android:strokeColor=&quot;#fff&quot;</span><br><span class="line">        android:strokeWidth=&quot;4&quot;</span><br><span class="line">        android:trimPathEnd=&quot;0.4&quot; /&gt;</span><br><span class="line">    &lt;path</span><br><span class="line">        android:name=&quot;p3&quot;</span><br><span class="line">        android:pathData=&quot;M29 ,38 v-34&quot;</span><br><span class="line">        android:strokeColor=&quot;#fff&quot;</span><br><span class="line">        android:strokeWidth=&quot;4&quot; /&gt;</span><br><span class="line">    &lt;path</span><br><span class="line">        android:name=&quot;p4&quot;</span><br><span class="line">        android:pathData=&quot;M38 ,38 v-32&quot;</span><br><span class="line">        android:strokeColor=&quot;#fff&quot;</span><br><span class="line">        android:strokeWidth=&quot;4&quot;</span><br><span class="line">        android:trimPathEnd=&quot;0.45&quot; /&gt;</span><br><span class="line"><span class="tag">&lt;/<span class="name">vector</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编写animated-vector，animated-vector 可以看作是一个关联动画与vector适配器,文件名：<code>animation_svg_play.xml</code></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;animated-vector</span><br><span class="line">    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    android:drawable=&quot;@drawable/svg_flash_play&quot;&gt;</span><br><span class="line">    &lt;target</span><br><span class="line">        android:name=&quot;p1&quot;</span><br><span class="line">        android:animation=&quot;@animator/anim_p1&quot;/&gt;</span><br><span class="line">    &lt;target</span><br><span class="line">        android:name=&quot;p2&quot;</span><br><span class="line">        android:animation=&quot;@animator/anim_p2&quot;/&gt;</span><br><span class="line">    &lt;target</span><br><span class="line">        android:name=&quot;p3&quot;</span><br><span class="line">        android:animation=&quot;@animator/anim_p3&quot;/&gt;</span><br><span class="line">    &lt;target</span><br><span class="line">        android:name=&quot;p4&quot;</span><br><span class="line">        android:animation=&quot;@animator/anim_p4&quot;/&gt;</span><br><span class="line"><span class="tag">&lt;/<span class="name">animated-vector</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>  drawable属性关联需要执行动画的vector，这里写之前的vector文件。</p>
+</li>
+<li><p>这里的四个 target 对应四个属性动画，四个文件差不多，这里只贴其中之一,<code>anim_p1.xml</code></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">objectAnimator</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:duration</span>=<span class="string">&quot;300&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:propertyName</span>=<span class="string">&quot;trimPathEnd&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:repeatCount</span>=<span class="string">&quot;infinite&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:repeatMode</span>=<span class="string">&quot;reverse&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:valueFrom</span>=<span class="string">&quot;1&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:valueTo</span>=<span class="string">&quot;0.3&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>属性讲解：</p>
+<ol>
+<li>propertyName ：对应要执行动画的属性名，这里写的 <code>trimPathEnd</code>,该属性是 vector 下 path 标签的属性,属性取值范围：0-1</li>
+<li>repeatMode 有两个取值，reverse和restart，代表反转与重新开始执行动画。</li>
+<li>valueFrom 起始值，这里写的1，对应之前 <code>propertyName=&quot;trimPathEnd&quot;</code>,动画开始的时候，第一条线是 画满的，</li>
+<li>valueTo 结束值，这里写的0.3，对应之前 <code>propertyName=&quot;trimPathEnd&quot;</code>,第一次动画结束时，第一条线会只画到0.3的长度。</li>
+</ol>
+</li>
+<li><p>设置<br>在 ImageView 中设置 <code>app:srcCompat=&quot;@drawable/animation_svg_play&quot;</code> 即可，不能直接用 android:src,这样会报错的。<br>代码中开启动画:  </p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ImageView imageView = (ImageView) findViewById(R.id.image_view);</span><br><span class="line">Drawable drawable = imageView.getDrawable();</span><br><span class="line"><span class="keyword">if</span> (drawable <span class="keyword">instanceof</span> Animatable)&#123;</span><br><span class="line">     ((Animatable) drawable).start();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  如果需要在java 代码中设置图片，可以这么写  </p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">AnimatedVectorDrawableCompat animatedVectorDrawableCompat &#x3D; AnimatedVectorDrawableCompat.create(</span><br><span class="line">    getContext(), R.drawable.animation_svg_play</span><br><span class="line">);</span><br><span class="line">imageView.setImageDrawable(animatedVectorDrawableCompat);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>效果<br><img src="/images/anim.gif" style="zoom:30%" /><br>代码已提交 <a target="_blank" rel="noopener" href="https://github.com/panzhenglian/VectorDemo">github</a></p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://blog.panzhenglian.com/2017/05/21/Android-Studio-Logcat%E9%A2%9C%E8%89%B2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2507,87 +2605,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://blog.panzhenglian.com/2016/05/28/%E6%90%AD%E5%BB%BAshadowsocks%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-      <meta itemprop="name" content="平凡">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="平凡">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2016/05/28/%E6%90%AD%E5%BB%BAshadowsocks%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="post-title-link" itemprop="url">搭建shadowsocks服务器</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2016-05-28 02:16:08" itemprop="dateCreated datePublished" datetime="2016-05-28T02:16:08+08:00">2016-05-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-05-11 23:02:25" itemprop="dateModified" datetime="2019-05-11T23:02:25+08:00">2019-05-11</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BF%BB%E5%A2%99/" itemprop="url" rel="index"><span itemprop="name">翻墙</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>安装<br>Debian/Ubuntu:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt-get install python-pip</span><br><span class="line">pip install shadowsocks</span><br></pre></td></tr></table></figure><br>CentOS:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install python-setuptools &amp;&amp; easy_install pip</span><br><span class="line">pip install shadowsocks</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>easy_install貌似也可以装shadowsocks，但笔者装完之后未成功连接</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo easy_install shadowsocks</span><br></pre></td></tr></table></figure>
-<p>用vi新建一个配置文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi &#x2F;etc&#x2F;shadowsocks.json</span><br></pre></td></tr></table></figure><br>然后输入如下内容：<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   <span class="attr">&quot;server&quot;</span>:<span class="string">&quot;server_ip&quot;</span>,</span><br><span class="line">   <span class="attr">&quot;server_port&quot;</span>:<span class="number">12342</span>,</span><br><span class="line">   <span class="attr">&quot;local_address&quot;</span>: <span class="string">&quot;127.0.0.1&quot;</span>,</span><br><span class="line">   <span class="attr">&quot;local_port&quot;</span>:<span class="number">1080</span>,</span><br><span class="line">   <span class="attr">&quot;password&quot;</span>:<span class="string">&quot;password&quot;</span>,</span><br><span class="line">   <span class="attr">&quot;timeout&quot;</span>:<span class="number">300</span>,</span><br><span class="line">   <span class="attr">&quot;method&quot;</span>:<span class="string">&quot;rc4-md5&quot;</span>,</span><br><span class="line">   <span class="attr">&quot;fast_open&quot;</span>: <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>保存退出。</p>
-<p>后台启动和停止shadowsocks服务器：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssserver -c &#x2F;etc&#x2F;shadowsocks.json -d start</span><br><span class="line">ssserver -c &#x2F;etc&#x2F;shadowsocks.json -d stop</span><br></pre></td></tr></table></figure><br>或<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup ssserver -c &#x2F;etc&#x2F;shadowsocks.json &amp;</span><br></pre></td></tr></table></figure></p>
-<p>如果启动报错，安装依赖的工具<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 一些安装包需要的编译工具</span><br><span class="line">yum install gcc</span><br><span class="line">yum install libevent</span><br><span class="line">yum install python-devel</span><br><span class="line">pip install gevent</span><br><span class="line"># 安装加密工具</span><br><span class="line">yum install openssl-devel</span><br><span class="line">yum install swig</span><br><span class="line">pip install M2Crypto</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -2659,7 +2676,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-count">37</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
